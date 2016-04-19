@@ -1,0 +1,112 @@
+/***
+    title: Icon
+    section: Icons
+    description: Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.
+    example:
+        <p>
+            <a href="#" class="icon-facebook">Facebook</a>
+            <a href="#" class="icon-twitter">Twitter</a>
+            <a href="#" class="icon-facebook icon--round" title="Facebook"></a>
+            <a href="#" class="icon-twitter icon--round" title="Twitter"></a>
+            <button class="icon-search">Find</button>
+            <a href="#" class="icon-right icon--after">Icon after text</a>
+        </p>
+
+        <ul class="cols cols--2">
+            <li class="icon-facebook icon--above">Facebook</li>
+            <li class="icon-twitter icon--above">Twitter</li>
+        </ul>
+***/
+/**
+ * Some icon tweaks and margins
+ */
+[class^="icon-"],
+[class*="icon-"] {
+	&:before {
+		margin: 0 .2em 0 0;
+	}
+
+	&.icon--after:after {
+		margin: 0 0 0 .2em;
+	}
+
+	&:empty:after,
+	&:empty:before {
+		margin: 0;
+	}
+}
+
+/**
+ * Spinner
+ */
+@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.icon-spinner:before,
+.icon-spinner.icon--after:after {
+	animation: spin 1.5s infinite linear;
+}
+
+/**
+ * Round icon
+ */
+@mixin icon-round {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:before,
+	&.icon--after:after {
+		background: $color-darkgray;
+
+		width: 2.2em;
+		height: 2.2em;
+
+		line-height: 2.2em;
+		text-align: center;
+		color: $color-white;
+		text-shadow: none;
+
+		border-radius: 50%;
+		transition: border-radius .05s ease-out;
+	}
+}
+
+.icon--round {
+	@include icon-round;
+
+	&--transparent:before,
+	&--transparent.icon--after:after {
+		background: transparent;
+		border: 1px solid $color-white;
+	}
+}
+
+a.icon--round:hover,
+a:hover .icon--round {
+	&:before,
+	&.icon--after:after {
+		border-radius: .2rem;
+	}
+}
+
+/**
+ * Icon Above
+ */
+.icon--above {
+	text-align: center;
+
+	&:before {
+		display: block;
+		margin: 0 auto;
+		font-size: $font-size-x-large;
+	}
+}

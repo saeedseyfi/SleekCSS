@@ -1,0 +1,42 @@
+/***
+    title: List
+    section: Lists
+    description: Various classes you can use on lists, or list like markup.
+    example:
+        <h2>Pipe separated</h2>
+        <ul class="list--pipe-separated">
+            <li>Pipes</li>
+            <li>Separate</li>
+            <li>Me</li>
+        </ul>
+        <h2>Inline list</h2>
+        <ul class="list--inline text--center">
+            <li>Inline list</li>
+            <li>Inline list</li>
+            <li>Inline list</li>
+            <li>Inline list</li>
+        </ul>
+***/
+// Pipe separated list
+.list--pipe-separated {
+	@include separated-list(' | ');
+}
+
+// Inline list
+.list--inline {
+	margin-left: 0;
+	list-style: none;
+
+	> * {
+		display: inline-block;
+		margin-right: $margin-small;
+		margin-bottom: $margin-small;
+	}
+}
+
+.text--center .list--inline,
+.text--center.list--inline {
+	> * {
+		margin: 0 ($margin-small / 2);
+	}
+}

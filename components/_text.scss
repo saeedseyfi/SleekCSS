@@ -1,0 +1,24 @@
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+***/
+.text--upper {
+	text-transform: uppercase;
+}
+
+.text--center {
+	text-align: center;
+}
+
+@mixin ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.text--ellipsis {
+	@include ellipsis;
+}

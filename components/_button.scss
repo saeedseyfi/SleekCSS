@@ -1,0 +1,118 @@
+/***
+    title: Button
+    section: Buttons
+    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.
+    example:
+        <p><a href="#" class="button">I'm a normal button</a></p>
+        <p><button>Button elements automatically look like buttons</button></p>
+        <p><input type="submit" value="Submit inputs too!"></p>
+        <p><button class="button--wide">Full width!</button></p>
+        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray">Cancel</a></p>
+        <p><a href="#" class="button button--small">Small button</a></p>
+***/
+@mixin button-background ($color) {
+	@if ($button-fade > 0) {
+		background-image: linear-gradient($color, darken($color, $button-fade));
+
+		&:active {
+			background-image: linear-gradient(darken($color, $button-fade), $color);
+		}
+	}
+	@else {
+		background-color: $color;
+
+		&:hover {
+			background-color: lighten($color, 5%);
+		}
+
+		&:active {
+			background-color: darken($color, 5%);
+		}
+	}
+
+	@if (lightness($color) > 70) {
+		color: invert($button-text-color);
+
+		&:hover {
+			color: invert($button-text-color);
+		}
+	}
+}
+
+@mixin button {
+	// Gradient or solid background with hover/active states
+	@include button-background($button-color);
+
+	// Hello
+	display: inline-block;
+	vertical-align: middle;
+
+	// Size
+	box-sizing: border-box;
+	padding: $button-padding-vertical $button-padding-horizontal;
+
+	// Font styling
+	font-size: $button-font-size;
+	line-height: $button-line-height;
+	color: $button-text-color;
+	font-weight: $button-font-weight;
+	text-transform: $button-text-transform;
+	text-decoration: none;
+	text-align: center;
+
+	&:hover {
+		color: $button-text-color;
+		text-decoration: none;
+	}
+
+	// Radius
+	border: 0;
+	border-radius: $button-border-radius;
+
+	// Text shadow?
+	@if ($button-text-shadow == true) {
+		text-shadow: -1px -1px 0 $color-shadow;
+	}
+	@elseif ($button-text-shadow) {
+		text-shadow: $button-text-shadow;
+	}
+	@else {
+		text-shadow: none;
+	}
+
+	// Box shadow?
+	@if ($button-shadow == true) {
+		box-shadow: 1px 1px 1px $color-shadow;
+	}
+	@elseif ($button-shadow) {
+		box-shadow: $button-shadow;
+	}
+	@else {
+		box-shadow: none;
+	}
+}
+
+.button,
+input[type=submit],
+button {
+	@include button;
+}
+
+@each $button-color in $button-colors {
+	.button--#{nth($button-color, 1)} {
+		@include button-background(nth($button-color, 2));
+	}
+}
+
+// Our stuff
+.button--small {
+	font-size: $font-size-small;
+	padding: #{$button-padding-vertical * .8} #{$button-padding-horizontal * .8};
+}
+
+.button--wide {
+	display: block;
+	width: 100%; // In case it's used on an input[type=submit]
+	padding-right: $padding-default;
+	padding-left: $padding-default;
+}

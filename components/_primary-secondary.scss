@@ -1,0 +1,56 @@
+/***
+    title: Primary/Secondary
+    section: Grid
+    description: Super basic primary/secondary content columns when you really don't need an entire grid system.
+    example:
+        <div class="box box__content">
+            <div class="primary">
+                <p>Primary content here</p>
+            </div>
+            <div class="secondary">
+                <p>Secondary content here</p>
+            </div>
+        </div>
+        <div class="box box__content">
+            <div class="secondary">
+                <p>Reversed order here</p>
+            </div>
+            <div class="primary">
+                <p>Primary content here</p>
+            </div>
+        </div>
+***/
+@media #{$bp-medium} {
+	div.primary {
+		width: 60%;
+		float: left;
+	}
+
+	div.secondary {
+		width: 35%;
+		float: left;
+	}
+
+	div.primary + div.secondary {
+		margin-left: 5%;
+	}
+
+	div.secondary + div.primary {
+		margin-left: 5%;
+	}
+
+	div.primary + div.secondary + * {
+		clear: both;
+	}
+
+	div.secondary + div.primary + * {
+		clear: both;
+	}
+}
+
+@media #{$bp-medium-max} {
+	div.primary,
+	div.secondary {
+		margin-bottom: $margin-default;
+	}
+}

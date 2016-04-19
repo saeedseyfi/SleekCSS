@@ -1,0 +1,50 @@
+.table-grid {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+
+    &--border {
+        border-top: 1px solid $color-border;
+
+        > :not(:last-child) {
+            border-bottom: 1px solid $color-border;
+        }
+    }
+}
+
+// TODO: @each through $table-grid-breakpoints just like cols
+@media #{$bp-medium} {
+    .table-grid--bp-medium {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+
+        > * {
+            display: table-cell;
+
+            &:not(.box__content) {
+                padding-right: ($gutter-default / 2);
+                padding-left: ($gutter-default / 2);
+            }
+        }
+
+        > :first-child:not(.box__content) {
+            padding-left: 0;
+        }
+
+        > :last-child:not(.box__content) {
+            padding-right: 0;
+        }
+    }
+
+    .table-grid--border {
+        > * {
+            border-bottom: 0;
+            border-right: 1px solid $color-border;
+
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+}
