@@ -15,6 +15,11 @@
 	padding-top: $section-padding;
 	padding-bottom: $section-padding;
 
+	@media #{$bp-medium} {
+		padding-top: $section-padding--bp-medium;
+		padding-bottom: $section-padding--bp-medium;
+	}
+
 	@include section-centering($width);
 }
 
@@ -77,6 +82,10 @@
  */
 @mixin section-bottom {
 	bottom: $section-padding;
+
+	@media #{$bp-medium} {
+		bottom: $section-padding--bp-medium;
+	}
 }
 
 /**
@@ -86,6 +95,10 @@
  */
 @mixin section-top {
 	top: $section-padding;
+
+	@media #{$bp-medium} {
+		top: $section-padding--bp-medium;
+	}
 }
 
 /**
@@ -112,7 +125,7 @@
 		padding-right: calc(50vw - #{$width / 2});
 	}
 
-	// Some styling
+	// Some padding
 	padding-top: $section-padding;
 	padding-bottom: $section-padding;
 	margin-top: $section-padding;
@@ -123,6 +136,20 @@
 	}
 	@if ($align == bottom) {
 		margin-bottom: -$section-padding;
+	}
+
+	@media #{$bp-medium} {
+		padding-top: $section-padding--bp-medium;
+		padding-bottom: $section-padding--bp-medium;
+		margin-top: $section-padding--bp-medium;
+		margin-bottom: $section-padding--bp-medium;
+
+		@if ($align == top) {
+			margin-top: -$section-padding--bp-medium;
+		}
+		@if ($align == bottom) {
+			margin-bottom: -$section-padding--bp-medium;
+		}
 	}
 }
 

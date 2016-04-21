@@ -22,6 +22,11 @@
  */
 [class^="icon-"],
 [class*="icon-"] {
+	&:before,
+	&:after {
+		text-decoration: none;
+	}
+
 	&:before {
 		margin: 0 .2em 0 0;
 	}

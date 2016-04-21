@@ -51,6 +51,11 @@
 	box-sizing: border-box;
 	padding: $button-padding-vertical $button-padding-horizontal;
 
+	&:empty {
+		padding-left: $button-empty-padding-horizontal;
+		padding-right: $button-empty-padding-horizontal;
+	}
+
 	// Font styling
 	font-size: $button-font-size;
 	line-height: $button-line-height;
@@ -104,15 +109,16 @@ button {
 	}
 }
 
-// Our stuff
 .button--small {
 	font-size: $font-size-small;
 	padding: #{$button-padding-vertical * .8} #{$button-padding-horizontal * .8};
 }
 
+.button--large {
+	font-size: $font-size-large;
+}
+
 .button--wide {
 	display: block;
 	width: 100%; // In case it's used on an input[type=submit]
-	padding-right: $padding-default;
-	padding-left: $padding-default;
 }

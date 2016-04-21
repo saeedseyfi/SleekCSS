@@ -2,6 +2,8 @@
 @import "mixins/a11y-hide";
 @import "mixins/arrow";
 @import "mixins/clearfix";
+@import "mixins/fixed-after-far-scroll";
+@import "mixins/img-replace";
 @import "mixins/separated-list";
 
 // Config
@@ -29,6 +31,7 @@
 @import "components/list";
 @import "components/primary-secondary";
 @import "components/section";
+@import "components/table-grid";
 @import "components/text-colors";
 @import "components/text";
 @import "components/utils";
