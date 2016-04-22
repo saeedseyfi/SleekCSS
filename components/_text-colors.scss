@@ -50,15 +50,10 @@
 		.heading--5,
 		.heading--6,
 		a:not(.button),
-		.link {
-			color: #{nth($color, 2)};
-			text-decoration: none;
-		}
-
-		// Make sure links still look like links on hover
+		.link,
 		a:not(.button):hover,
 		.link:hover {
-			color: $color-link-hover;
+			color: #{nth($color, 2)};
 			text-decoration: none;
 		}
 	}

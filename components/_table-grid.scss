@@ -3,17 +3,21 @@
 	padding-left: 0;
 	list-style: none;
 
+	> * {
+		display: block;
+	}
+
 	@if ($border == true) {
 		> :not(:last-child) {
-			margin-bottom: $gutter / 2;
-			padding-bottom: $gutter / 2;
+			margin-bottom: $margin-default;
+			padding-bottom: $margin-default;
 			border-bottom: 1px solid $color-border;
 		}
 	}
 	@elseif ($border) {
 		> :not(:last-child) {
-			margin-bottom: $gutter / 2;
-			padding-bottom: $gutter / 2;
+			margin-bottom: $margin-default;
+			padding-bottom: $margin-default;
 			border-bottom: $border;
 		}
 	}
@@ -57,4 +61,8 @@
 
 .table-grid {
 	@include table-grid;
+}
+
+.table-grid--bp-medium {
+	@include table-grid($gutter-default, false, $bp-medium);
 }
