@@ -34,12 +34,12 @@
 	}
 
 	// Make sure first element in row clears previous row
-	> #{$selector}:nth-of-type(#{$num}n) + * {
+	> #{$selector}:nth-child(#{$num}n) + * {
 		clear: both;
 	}
 
 	// Make sure all elements except first clear none
-	> #{$selector}:not(:nth-of-type(#{$num}n)) + * {
+	> #{$selector}:not(:nth-child(#{$num}n)) + * {
 		clear: none;
 	}
 }
@@ -74,12 +74,12 @@
 	}
 
 	// Margin right for all but last element in row
-	&:not(:nth-of-type(#{$num}n)) {
+	&:not(:nth-child(#{$num}n)) {
 		margin-right: $gutter;
 	}
 
 	// No margin right for last element in row
-	&:nth-of-type(#{$num}n) {
+	&:nth-child(#{$num}n) {
 		margin-right: 0;
 	}
 }

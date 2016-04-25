@@ -4,6 +4,9 @@
 @import "mixins/clearfix";
 @import "mixins/fixed-after-far-scroll";
 @import "mixins/img-replace";
+@import "mixins/increment-transition";
+@import "mixins/osx-dock";
+@import "mixins/rotate-elements";
 @import "mixins/separated-list";
 
 // Config
@@ -13,6 +16,7 @@
 @import "config/colors";
 @import "config/cols";
 @import "config/form";
+@import "config/icons";
 @import "config/layout";
 @import "config/text-colors";
 @import "config/typography";

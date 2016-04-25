@@ -107,11 +107,35 @@ a:hover .icon--round {
  * Icon Above
  */
 .icon--above {
+	display: inline-block;
 	text-align: center;
 
 	&:before {
 		display: block;
 		margin: 0 auto;
 		font-size: $font-size-x-large;
+	}
+}
+
+/**
+ * Icon colors
+ */
+@each $color in $icon-colors {
+ 	.icon--#{nth($color, 1)} {
+		&:before {
+			color: #{nth($color, 2)};
+		}
+	}
+
+ 	.icon--after.icon--#{nth($color, 1)} {
+		&:after {
+			color: #{nth($color, 2)};
+		}
+	}
+
+ 	.icon--round--#{nth($color, 1)} {
+		&:before {
+			background-color: #{nth($color, 2)};
+		}
 	}
 }
