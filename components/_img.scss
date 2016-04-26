@@ -12,3 +12,7 @@
 .img--rounded {
 	border-radius: .4rem;
 }
+
+.img--grayscale {
+	filter: grayscale(100%);
+}

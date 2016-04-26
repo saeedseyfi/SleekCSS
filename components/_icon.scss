@@ -117,6 +117,17 @@ a:hover .icon--round {
 	}
 }
 
+.icon--after.icon--below {
+	display: inline-block;
+	text-align: center;
+
+	&:after {
+		display: block;
+		margin: 0 auto;
+		font-size: $font-size-x-large;
+	}
+}
+
 /**
  * Icon colors
  */

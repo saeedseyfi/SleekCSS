@@ -53,7 +53,13 @@
 		border-#{$invPosition}-color: $border-color;
 		border-width: $size + $border-width + 1px;
 		#{$horizOrVertic}: $align;
-		margin-#{$horizOrVertic}: -($size + $border-width + 1px);
+
+		@if ($align == 100%) {
+			margin-#{$horizOrVertic}: -$size * 2;
+		}
+		@elseif ($align != 0) {
+			margin-#{$horizOrVertic}: -$size;
+		}
 	}
 
 	&:after {
@@ -61,7 +67,13 @@
 		border-#{$invPosition}-color: $background;
 		border-width: $size;
 		#{$horizOrVertic}: $align;
-		margin-#{$horizOrVertic}: -$size;
+
+		@if ($align == 100%) {
+			margin-#{$horizOrVertic}: -$size * 2;
+		}
+		@elseif ($align != 0) {
+			margin-#{$horizOrVertic}: -$size;
+		}
 	}
 
 	/* &:after,

@@ -49,8 +49,8 @@
 }
 
 @media #{$bp-medium-max} {
-	div.primary-content,
-	div.secondary-content {
+	.primary-content,
+	.secondary-content {
 		margin-bottom: $margin-default;
 	}
 }
