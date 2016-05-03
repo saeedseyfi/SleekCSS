@@ -15,7 +15,7 @@
 	}
 
 	// When the user has scrolled down far and starts scrolling up - reveal the header
-	html.has-scrolled-down-far.scrolling-up & {
+	html.has-scrolled-down-far.scrolling-up-far & {
 		transform: translateY(0);
 		transition: transform .15s ease-out;
 	}

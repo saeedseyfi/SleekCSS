@@ -95,13 +95,18 @@
 	}
 }
 
-a.icon--round:hover,
+a.icon--round--transparent:hover:before {
+	background-color: $color-white;
+	color: $color-darkblue;
+}
+
+/* a.icon--round:hover,
 a:hover .icon--round {
 	&:before,
 	&.icon--after:after {
 		border-radius: .2rem;
 	}
-}
+} */
 
 /**
  * Icon Above
