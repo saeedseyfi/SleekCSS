@@ -28,7 +28,7 @@
 		color: #{nth($color, 2)};
 	}
 
-	// Make sure links still look like links on hover
+	// Make sure links still look like links on hover(?)
 	a.color--#{nth($color, 1)}:hover,
 	.link.color--#{nth($color, 1)}:hover {
 		color: $color-link-hover;

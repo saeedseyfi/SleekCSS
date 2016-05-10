@@ -27,14 +27,17 @@
 		text-decoration: none;
 	}
 
+	// Separate icons and text
 	&:before {
 		margin: 0 .2em 0 0;
 	}
 
+	// Other way for icons after text
 	&.icon--after:after {
 		margin: 0 0 0 .2em;
 	}
 
+	// No margin around empty icons
 	&:empty:after,
 	&:empty:before {
 		margin: 0;
@@ -60,6 +63,7 @@
 
 /**
  * Round icon
+ * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
  */
 @mixin icon-round {
 	text-decoration: none;
@@ -70,7 +74,7 @@
 
 	&:before,
 	&.icon--after:after {
-		background: $color-darkgray;
+		background: $icon-round-color;
 
 		width: 2.2em;
 		height: 2.2em;
@@ -88,10 +92,11 @@
 .icon--round {
 	@include icon-round;
 
-	&--transparent:before,
-	&--transparent.icon--after:after {
+	&--ghost:before,
+	&--ghost.icon--after:after {
 		background: transparent;
-		border: 1px solid $color-white;
+		color: $icon-round-color;
+		border: 1px solid $icon-round-color;
 	}
 }
 
@@ -113,7 +118,7 @@ a:hover .icon--round {
 	&:before {
 		display: block;
 		margin: 0 auto;
-		font-size: $font-size-x-large;
+		font-size: 2em;
 	}
 }
 
@@ -124,7 +129,7 @@ a:hover .icon--round {
 	&:after {
 		display: block;
 		margin: 0 auto;
-		font-size: $font-size-x-large;
+		font-size: 2em;
 	}
 }
 
@@ -134,19 +139,25 @@ a:hover .icon--round {
 @each $color in $icon-colors {
  	.icon--#{nth($color, 1)} {
 		&:before {
-			color: #{nth($color, 2)};
+			color: nth($color, 2);
 		}
 	}
 
  	.icon--after.icon--#{nth($color, 1)} {
 		&:after {
-			color: #{nth($color, 2)};
+			color: nth($color, 2);
 		}
 	}
 
  	.icon--round--#{nth($color, 1)} {
 		&:before {
-			background-color: #{nth($color, 2)};
+			background-color: nth($color, 2);
+		}
+
+		&.icon--round--ghost {
+			background-color: transparent;
+			color: nth($color, 2);
+			border-color: nth($color, 2);
 		}
 	}
 }

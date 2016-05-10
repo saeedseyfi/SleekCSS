@@ -1,6 +1,6 @@
 @mixin img-replace ($src, $w: 100%, $h: 100%) {
 	background: url($src) no-repeat;
-	background-size: cover;
+	background-size: contain;
 	display: inline-block;
 	width: $w;
 	height: $h;

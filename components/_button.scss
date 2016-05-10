@@ -11,31 +11,60 @@
         <p><a href="#" class="button button--small">Small button</a></p>
 ***/
 @mixin button-background ($color) {
-	@if ($button-fade > 0) {
-		background-image: linear-gradient($color, darken($color, $button-fade));
+	// If a gradient is specified
+	@if ($button-gradient > 0) {
+		background-image: linear-gradient($color, darken($color, $button-gradient));
 
+		// TODO: Something here?
+		&:hover {
+			background-image: linear-gradient($color, darken($color, $button-gradient));
+		}
+
+		// Invert gradient on active
 		&:active {
-			background-image: linear-gradient(darken($color, $button-fade), $color);
+			background-image: linear-gradient(darken($color, $button-gradient), $color);
 		}
 	}
+	// Solid background
 	@else {
 		background-color: $color;
 
+		// Darken on hover
 		&:hover {
 			background-color: darken($color, 10%);
 		}
 
+		// Darken even more on active
 		&:active {
 			background-color: darken($color, 15%);
 		}
 	}
 
+	// Invert text color if button too light
 	@if (lightness($color) > 70) {
 		color: invert($button-text-color);
 
 		&:hover {
 			color: invert($button-text-color);
 		}
+	}
+
+	// Border?
+	@if ($button-border-width) {
+		@if ($button-border-color == true) {
+			$border-color: darken($color, 10%);
+		}
+		@elseif ($button-border-color) {
+			$border-color: $button-border-color;
+		}
+		@else {
+			$border-color: transparent;
+		}
+
+		border: $button-border-width $button-border-style $border-color;
+	}
+	@else {
+		border: 0;
 	}
 }
 
@@ -51,7 +80,7 @@
 	box-sizing: border-box;
 	padding: $button-padding-vertical $button-padding-horizontal;
 
-	&:empty {
+	&:empty:not([value]) {
 		padding-left: $button-empty-padding-horizontal;
 		padding-right: $button-empty-padding-horizontal;
 	}
@@ -72,7 +101,6 @@
 	}
 
 	// Radius
-	border: 0;
 	border-radius: $button-border-radius;
 
 	// Transition?
@@ -106,27 +134,66 @@
 	}
 }
 
+// Button class and submits
 .button,
 input[type=submit],
 button {
 	@include button;
 }
 
-@each $button-color in $button-colors {
-	.button--#{nth($button-color, 1)} {
-		@include button-background(nth($button-color, 2));
+.button--ghost {
+	background-color: transparent;
+	color: $button-color;
+	border: $button-border-width $button-border-style $button-color;
+
+	&:hover {
+		background-color: $button-color;
+
+		@if (lightness($button-color) > 70) {
+			color: invert($button-text-color);
+		}
+		@else {
+			color: $button-text-color;
+		}
 	}
 }
 
+// Button colors
+@each $bc in $button-colors {
+	.button--#{nth($bc, 1)} {
+		@include button-background(nth($bc, 2));
+
+		&.button--ghost {
+			background-color: transparent;
+			color: nth($bc, 2);
+			border-color: nth($bc, 2);
+
+			&:hover {
+				background-color: nth($bc, 2);
+
+				@if (lightness(nth($bc, 2)) > 70) {
+					color: invert($button-text-color);
+				}
+				@else {
+					color: $button-text-color;
+				}
+			}
+		}
+	}
+}
+
+// Small
 .button--small {
 	font-size: $font-size-small;
 	padding: #{$button-padding-vertical * .8} #{$button-padding-horizontal * .8};
 }
 
+// Large
 .button--large {
 	font-size: $font-size-large;
 }
 
+// Wide
 .button--wide {
 	display: block;
 	width: 100%; // In case it's used on an input[type=submit]

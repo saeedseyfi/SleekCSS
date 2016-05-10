@@ -9,6 +9,7 @@
 @import "mixins/link-border";
 @import "mixins/osx-dock";
 @import "mixins/rotate-elements";
+@import "mixins/semi-underline";
 @import "mixins/separated-list";
 
 // Config
@@ -25,6 +26,7 @@
 
 // Components
 @import "components/bg-colors";
+@import "components/bg-overlay";
 @import "components/button";
 @import "components/cols";
 @import "components/container";
