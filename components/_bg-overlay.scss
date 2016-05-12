@@ -17,7 +17,11 @@
 		top: 0;
 		right: 0;
 		bottom: 0;
-		min-height: 500%; // IE fix for when used inside table-cell elements
+
+		// IE fix for when used inside table-cell elements
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			min-height: 500%;
+		}
 	}
 
 	// Render content on top of overlay
