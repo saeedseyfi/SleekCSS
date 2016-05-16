@@ -51,14 +51,13 @@
 
 	// Border?
 	@if ($button-border-width) {
+		$border-color: transparent;
+
 		@if ($button-border-color == true) {
 			$border-color: darken($color, 10%);
 		}
 		@elseif ($button-border-color) {
 			$border-color: $button-border-color;
-		}
-		@else {
-			$border-color: transparent;
 		}
 
 		border: $button-border-width $button-border-style $border-color;
