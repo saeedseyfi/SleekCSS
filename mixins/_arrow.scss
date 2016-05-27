@@ -8,7 +8,7 @@
  * @param		color		$background: the arrow's background color
  * @param		unit		$border-width: the width of the arrow's border
  * @param		color		$border-color: color of the border
- * @param		percent		$align: how to align the arrow
+ * @param		percent		$align: how to align the arrow (left|10px|50% etc)
  */
 @mixin arrow ($position, $size, $background, $border-width, $border-color, $align: 50%) {
 	$invPosition: right;
@@ -49,21 +49,21 @@
 	}
 
 	&:before {
-		border-color: rgba(102, 102, 102, 0);
+		border-color: rgba(0, 0, 0, 0);
 		border-#{$invPosition}-color: $border-color;
-		border-width: $size + $border-width + 1px;
+		border-width: $size + $border-width;
 		#{$horizOrVertic}: $align;
 
 		@if ($align == 100%) {
 			margin-#{$horizOrVertic}: -$size * 2;
 		}
 		@elseif ($align != 0) {
-			margin-#{$horizOrVertic}: -$size;
+			margin-#{$horizOrVertic}: -($size + $border-width);
 		}
 	}
 
 	&:after {
-		border-color: rgba(250, 250, 250, 0);
+		border-color: rgba(0, 0, 0, 0);
 		border-#{$invPosition}-color: $background;
 		border-width: $size;
 		#{$horizOrVertic}: $align;

@@ -5,16 +5,31 @@
     example:
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
-.inline-grid {
+@mixin inline-grid ($num, $bp: false, $gutter: $gutter-default) {
 	margin-left: 0;
 	padding-left: 0;
+	font-size: 0;
 	list-style: none;
 
 	> * {
+		font-size: $font-size-default;
 		display: inline-block;
 		vertical-align: top;
 		width: 100%;
+
+		@if ($bp) {
+			@media #{$bp} {
+				width: 100% / $num;
+			}
+		}
+		@else {
+			width: 100% / $num;
+		}
 	}
+}
+
+.inline-grid {
+	@include inline-grid(2);
 }
 
 @each $num in $col-nums {

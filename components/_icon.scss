@@ -45,70 +45,6 @@
 }
 
 /**
- * Spinner
- */
-@keyframes spin {
-	0% {
-		transform: rotate(0);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-.icon-spinner:before,
-.icon-spinner.icon--after:after {
-	animation: spin 1.5s infinite linear;
-}
-
-/**
- * Round icon
- * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
- */
-@mixin icon-round {
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: none;
-	}
-
-	&:before,
-	&.icon--after:after {
-		background: $icon-round-color;
-
-		width: 2.2em;
-		height: 2.2em;
-
-		line-height: 2.2em;
-		text-align: center;
-		color: $color-white;
-		text-shadow: none;
-
-		border-radius: 50%;
-		transition: border-radius .05s ease-out;
-	}
-}
-
-.icon--round {
-	@include icon-round;
-
-	&--ghost:before,
-	&--ghost.icon--after:after {
-		background: transparent;
-		color: $icon-round-color;
-		border: 1px solid $icon-round-color;
-	}
-}
-
-/* a.icon--round:hover,
-a:hover .icon--round {
-	&:before,
-	&.icon--after:after {
-		border-radius: .2rem;
-	}
-} */
-
-/**
  * Icon Above
  */
 .icon--above {
@@ -134,6 +70,81 @@ a:hover .icon--round {
 }
 
 /**
+ * Spinner
+ */
+@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.icon-spinner:before,
+.icon-spinner.icon--after:after {
+	animation: spin 1.5s infinite linear;
+}
+
+/**
+ * Round icon
+ * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
+ */
+@mixin icon-round ($irc: $icon-round-color) {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:before,
+	&.icon--after:after {
+		background: $irc;
+
+		width: 2.2em;
+		height: 2.2em;
+
+		line-height: 2.2em;
+		text-align: center;
+		color: $color-white;
+		text-shadow: none;
+
+		border-radius: 50%;
+		transition: all .25s ease-out;
+	}
+
+	&:hover:before,
+	&.icon--after:hover:after {
+		background: rgba($irc, .2);
+		color: $irc;
+	}
+}
+
+.icon--round {
+	@include icon-round;
+
+	&--ghost:before,
+	&--ghost.icon--after:after {
+		background: transparent;
+		color: $icon-round-color;
+		border: 1px solid $icon-round-color;
+	}
+
+	&--ghost:hover:before,
+	&--ghost.icon--after:hover:after {
+		background: rgba($icon-round-color, .2);
+	}
+}
+
+/* a.icon--round:hover,
+a:hover .icon--round {
+	&:before,
+	&.icon--after:after {
+		border-radius: .2rem;
+	}
+} */
+
+/**
  * Icon colors
  */
 @each $color in $icon-colors {
@@ -149,15 +160,25 @@ a:hover .icon--round {
 		}
 	}
 
+	// TODO: Supper for icon--after
  	.icon--round--#{nth($color, 1)} {
 		&:before {
 			background-color: nth($color, 2);
 		}
 
-		&.icon--round--ghost {
+		&.icon--round--ghost:before {
 			background-color: transparent;
 			color: nth($color, 2);
 			border-color: nth($color, 2);
+		}
+
+		&:hover:before {
+			background-color: rgba(nth($color, 2), .2);
+			color: nth($color, 2);
+		}
+
+		&.icon--round--ghost:hover:before {
+			background-color: rgba(nth($color, 2), .2);
 		}
 	}
 }

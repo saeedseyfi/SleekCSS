@@ -59,17 +59,19 @@ h6,
 }
 
 // Slightly smaller H1/H2 in low res
-@media #{$bp-medium-max} {
+/* @media #{$bp-medium-max} {
 	h1,
 	.heading--1 {
-		font-size: $font-size-h1 * .7;
+		font-size: $font-size-h1 * .8;
 	}
+
 	h2,
 	.heading--2 {
-		font-size: $font-size-h2 * .7;
+		font-size: $font-size-h2 * .8;
 	}
+
 	h3,
 	.heading--3 {
-		font-size: $font-size-h3 * .7;
+		font-size: $font-size-h3 * .8;
 	}
-}
+} */

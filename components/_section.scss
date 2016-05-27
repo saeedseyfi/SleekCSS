@@ -39,8 +39,8 @@
  * Takes care of centering the section content using padding and calc
  */
 @mixin section-centering ($width: $site-width) {
-	padding-left: (100% - $site-width-max) / 2;
-	padding-right: (100% - $site-width-max) / 2;
+	padding-left: $padding-default;
+	padding-right: $padding-default;
 
 	@media (min-width: $width + 100) {
 		padding-left: calc(50% - #{$width / 2});
@@ -55,7 +55,7 @@
  * Positions an element at the right edge of the inner content of the section
  */
 @mixin section-right ($width: $site-width) {
-	right: (100% - $site-width-max) / 2;
+	right: $padding-default;
 
 	@media (min-width: $width + 100) {
 		right: calc(50% - #{$width / 2});
@@ -68,7 +68,7 @@
  * Positions an element at the left edge of the inner content of the section
  */
 @mixin section-left ($width: $site-width) {
-	left: (100% - $site-width-max) / 2;
+	left: $padding-default;
 
 	@media (min-width: $width + 100) {
 		left: calc(50% - #{$width / 2});
@@ -109,18 +109,21 @@
  * @param	string	$align: top/bottom; if you want to pull it up towards the top or down towards the bottom
  */
 @mixin section-inner ($align: false, $width: $site-width) {
-	// We're so clever
-	box-sizing: border-box;
-	width: 100vw; // GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH Why does Chromes count the fucking scrollbar!=? - OK, all browsers except FF seem to do that (stoopid) but we can set body overflow-x hidden so... (https://bugzilla.mozilla.org/show_bug.cgi?id=811403)
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+	margin-left: -$padding-default;
+	margin-right: -$padding-default;
+	padding-left: $padding-default;
+	padding-right: $padding-default;
 
-	// Centering
-	padding-left: #{strip-units((100% - $site-width-max) / 2)}vw;
-	padding-right: #{strip-units((100% - $site-width-max) / 2)}vw;
-
+	// We're so clever :P
 	@media (min-width: $width + 100) {
+		box-sizing: border-box;
+		width: 100vw; // GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH Why does Chromes count the fucking scrollbar!=? - OK, all browsers except FF seem to do that (stoopid) but we can set body overflow-x hidden so... (https://bugzilla.mozilla.org/show_bug.cgi?id=811403)
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+
+		margin-left: 0;
+		margin-right: 0;
 		padding-left: calc(50vw - #{$width / 2});
 		padding-right: calc(50vw - #{$width / 2});
 	}
@@ -161,8 +164,8 @@
 @mixin section-border-centering ($width: $site-width) {
 	padding-left: 0;
 	padding-right: 0;
-	border-left: #{strip-units((100% - $site-width-max) / 2)}vw solid transparent;
-	border-right: #{strip-units((100% - $site-width-max) / 2)}vw solid transparent;
+	border-left: $padding-default solid transparent;
+	border-right: $padding-default solid transparent;
 
 	@media (min-width: $width + 100) {
 		padding-left: 0;
