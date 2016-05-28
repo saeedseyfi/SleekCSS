@@ -106,6 +106,10 @@ form {
 // Labels
 label {
 	display: block;
+
+	span.value {
+		float: right;
+	}
 }
 
 // Fields
