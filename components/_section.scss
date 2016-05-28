@@ -38,13 +38,13 @@
  *
  * Takes care of centering the section content using padding and calc
  */
-@mixin section-centering ($width: $site-width) {
-	padding-left: $padding-default;
-	padding-right: $padding-default;
+@mixin section-centering ($width: $site-width, $offset: 0rem) {
+	padding-left: $padding-default + $offset;
+	padding-right: $padding-default + $offset;
 
 	@media (min-width: $width + 100) {
-		padding-left: calc(50% - #{$width / 2});
-		padding-right: calc(50% - #{$width / 2});
+		padding-left: calc(50% - #{$width / 2} + #{$offset});
+		padding-right: calc(50% - #{$width / 2} + #{$offset});
 
 	}
 }

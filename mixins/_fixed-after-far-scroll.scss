@@ -4,7 +4,10 @@
 
 	// As soon as the user has scrolled down far - fix the header
 	html.has-scrolled-down-far & {
-		background: $bg;
+		@if ($bg) {
+			background: $bg;
+		}
+
 		position: fixed;
 		transform: translateY(-100%);
 	}
