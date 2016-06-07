@@ -49,9 +49,9 @@
 		.heading--4,
 		.heading--5,
 		.heading--6,
-		a:not(.button),
+		a,
 		.link,
-		a:not(.button):hover,
+		a:hover,
 		.link:hover {
 			color: #{nth($color, 2)};
 			text-decoration: none;

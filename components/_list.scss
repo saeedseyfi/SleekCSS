@@ -64,3 +64,12 @@
 .list--border {
 	@include bordered-list;
 }
+
+.list--plain {
+	margin-left: 0;
+	list-style: none;
+
+	> * {
+		
+	}
+}

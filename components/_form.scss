@@ -63,7 +63,9 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 
 	&:hover,
 	&:focus {
-		border-color: darken($color-border, 10%);
+		@if ($form-border == true) {
+			border-color: darken($color-border, 10%);
+		}
 	}
 
 	width: 100%;

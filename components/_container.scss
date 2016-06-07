@@ -8,9 +8,17 @@
             <p>In the middle of the page</p>
         </div>
 ***/
+@mixin container {
+	margin-left: 1rem;
+	margin-right: 1rem;
+
+	@media (min-width: $site-width + 100) {
+		max-width: $site-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 .container {
-	width: $site-width-max;
-	max-width: $site-width;
-	margin-left: auto;
-	margin-right: auto;
+	@include container;
 }

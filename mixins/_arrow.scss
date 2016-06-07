@@ -1,3 +1,34 @@
+@mixin arrow-inner ($position, $size, $background, $border-width, $border-color, $align: 50%) {
+	$invPosition: right;
+	$horizOrVertic: top;
+
+	@if ($position == left) {
+		$invPosition: right;
+		$horizOrVertic: top;
+	}
+	@elseif ($position == top) {
+		$invPosition: bottom;
+		$horizOrVertic: left;
+	}
+	@elseif ($position == right) {
+		$invPosition: left;
+		$horizOrVertic: top;
+	}
+	@elseif ($position == bottom) {
+		$invPosition: top;
+		$horizOrVertic: left;
+	}
+
+	@include arrow($invPosition, $size, $background, $border-width, $border-color, $align);
+
+	@if ($position == bottom) {
+		&:before,
+		&:after {
+			bottom: 0;
+		}
+	}
+}
+
 /**
  * @arrow
  *
