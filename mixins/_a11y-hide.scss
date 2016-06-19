@@ -4,7 +4,7 @@
 	top: -100000px;
 }
 
-@a11y-show {
+@mixin a11y-show {
 	position: static;
 	left: auto;
 	top: auto;
