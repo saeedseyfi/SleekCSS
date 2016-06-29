@@ -40,7 +40,7 @@
 	.text--center &,
 	&.text--center {
 		> * {
-			margin: 0 ($margin-small / 2);
+			margin: 0 ($margin-small / 2) $margin-small;
 		}
 	}
 }
@@ -71,5 +71,11 @@
 
 	> * {
 
+	}
+
+	&--margin {
+		> * {
+			margin-bottom: $margin-small;
+		}
 	}
 }

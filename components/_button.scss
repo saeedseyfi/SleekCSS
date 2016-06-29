@@ -95,6 +95,12 @@
 	text-align: center;
 	// cursor: default;
 
+	a,
+	a:hover {
+		color: $button-text-color;
+		text-decoration: none;
+	}
+
 	&:hover {
 		color: $button-text-color;
 		text-decoration: none;
@@ -185,7 +191,7 @@ button {
 // Small
 .button--small {
 	font-size: $font-size-small;
-	padding: #{$button-padding-vertical * .8} #{$button-padding-horizontal * .8};
+	padding: #{$button-padding-vertical * $button-small-percentage} #{$button-padding-horizontal * $button-small-percentage};
 }
 
 // Large
