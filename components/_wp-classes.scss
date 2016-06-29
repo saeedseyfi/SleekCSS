@@ -1,25 +1,10 @@
+// Float classes
 .alignleft,
 .alignright,
 .alignnone {
 	display: block;
 	width: 100%;
 	margin-bottom: $margin-default;
-}
-
-.wp-caption {
-	background: $color-lightgray;
-	display: block;
-	width: 100%;
-	margin: 0 0 $margin-default;
-
-	img {
-		display: block;
-		width: 100%;
-	}
-
-	figcaption {
-		padding: .5rem;
-	}
 }
 
 @media #{$bp-medium} {
@@ -33,5 +18,53 @@
 		float: right;
 		width: auto;
 		margin: 0 0 $margin-default $margin-default;
+	}
+}
+
+// Image with caption
+.wp-caption {
+	background: $color-lightgray;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 0 $margin-default;
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	figcaption {
+		padding: .5rem;
+	}
+}
+
+// Gallery
+div.gallery {
+	margin-left: -$margin-default / 2 !important;
+	margin-right: -$margin-default / 2 !important;
+
+	dl.gallery-item {
+		margin-top: 0 !important;
+		margin-bottom: $margin-default;
+		padding-left: $margin-default / 2;
+		padding-right: $margin-default / 2;
+		position: relative;
+		overflow: hidden;
+
+		dt {
+			a {
+				display: block;
+				margin-bottom: $margin-small;
+
+				img {
+					display: block;
+					border: 0 !important;
+				}
+			}
+		}
+
+		dd {
+		}
 	}
 }
