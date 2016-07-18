@@ -31,15 +31,15 @@
 
 	// Hover effect
 	@if ($hover) {
-		background-size: 100% auto;
-		transition: background-size .2s ease-out;
+		/* background-size: 100% auto;
+		transition: background-size .2s ease-out; */
 
 		&:before {
 			transition: background-color .2s ease-out;
 		}
 
 		&:hover {
-			background-size: 110% auto;
+			// background-size: 110% auto;
 
 			&:before {
 				background: rgba($color, .9);
