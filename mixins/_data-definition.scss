@@ -1,0 +1,24 @@
+@mixin data-definition {
+	dt {
+		display: inline;
+		font-weight: bold;
+	}
+
+	dt:after {
+		content: ": ";
+	}
+
+	dd {
+		display: inline;
+		margin: 0;
+	}
+
+	dd:after {
+		content: "\a";
+		white-space: pre;
+	}
+}
+
+dl.key-val {
+	@include data-definition;
+}
