@@ -15,7 +15,7 @@
 	@if ($button-gradient > 0) {
 		background-image: linear-gradient($color, darken($color, $button-gradient));
 
-		// TODO: Something here?
+		// TODO: Something here? Eh? WTF is this comment supposed to mean? :P
 		&:hover {
 			background-image: linear-gradient($color, darken($color, $button-gradient));
 		}
@@ -90,6 +90,7 @@
 	line-height: $button-line-height;
 	color: $button-text-color;
 	font-weight: $button-font-weight;
+	font-style: normal; // TODO: $button-font-style
 	text-transform: $button-text-transform;
 	text-decoration: none;
 	text-align: center;
