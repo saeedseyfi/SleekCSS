@@ -32,7 +32,7 @@
 	a.color--#{nth($color, 1)}:hover,
 	.link.color--#{nth($color, 1)}:hover {
 		color: $color-link-hover;
-		text-decoration: none;
+		text-decoration: $text-decoration-link-hover;
 	}
 
 	// Colors added to parent element
@@ -49,9 +49,9 @@
 		.heading--4,
 		.heading--5,
 		.heading--6,
-		a,
+		a:not(.button),
 		.link,
-		a:hover,
+		a:not(.button):hover,
 		.link:hover {
 			color: #{nth($color, 2)};
 			text-decoration: none;
