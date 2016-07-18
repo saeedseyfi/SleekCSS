@@ -81,29 +81,47 @@
 }
 
 /**
+ * Large icon
+ */
+.icon--large {
+	&:before,
+	&.icon--after:after {
+		font-size: 1.5em;
+	}
+}
+
+
+/**
  * Icon Above
  */
-.icon--above {
-	display: inline-block;
-	text-align: center;
+[class^="icon-"],
+[class*="icon-"] {
+	&.icon--above {
+		display: inline-block;
+		text-align: center;
 
-	&:before {
-		display: block;
-		margin: 0 auto;
-		font-size: 2em;
+		&:before {
+			display: block;
+			margin: 0 auto;
+			font-size: $icon-above-size;
+		}
 	}
 }
 
-.icon--after.icon--below {
-	display: inline-block;
-	text-align: center;
+[class^="icon-"],
+[class*="icon-"] {
+	&.icon--after.icon--below {
+		display: inline-block;
+		text-align: center;
 
-	&:after {
-		display: block;
-		margin: 0 auto;
-		font-size: 2em;
+		&:after {
+			display: block;
+			margin: 0 auto;
+			font-size: $icon-above-size;
+		}
 	}
 }
+
 
 /**
  * Spinner
@@ -137,10 +155,10 @@
 	&.icon--after:after {
 		background: $irc;
 
-		width: 2.2em;
-		height: 2.2em;
+		width: $icon-round-size;
+		height: $icon-round-size;
 
-		line-height: 2.2em;
+		line-height: $icon-round-size;
 		text-align: center;
 		color: $color-white;
 		text-shadow: none;
@@ -156,19 +174,22 @@
 	}
 }
 
-.icon--round {
-	@include icon-round;
+[class^="icon-"],
+[class*="icon-"] {
+	&.icon--round {
+		@include icon-round;
 
-	&--ghost:before,
-	&--ghost.icon--after:after {
-		background: transparent;
-		color: $icon-round-color;
-		border: 1px solid $icon-round-color;
-	}
+		&--ghost:before,
+		&--ghost.icon--after:after {
+			background: transparent;
+			color: $icon-round-color;
+			border: 1px solid $icon-round-color;
+		}
 
-	&--ghost:hover:before,
-	&--ghost.icon--after:hover:after {
-		background: rgba($icon-round-color, .2);
+		&--ghost:hover:before,
+		&--ghost.icon--after:hover:after {
+			background: rgba($icon-round-color, .2);
+		}
 	}
 }
 
@@ -196,7 +217,7 @@ a:hover .icon--round {
 		}
 	}
 
-	// TODO: Supper for icon--after
+	// TODO: Support for icon--after
  	.icon--round--#{nth($color, 1)} {
 		&:before {
 			background-color: nth($color, 2);
