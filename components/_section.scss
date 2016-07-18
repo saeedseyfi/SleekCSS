@@ -39,8 +39,8 @@
  * Takes care of centering the section content using padding and calc
  */
 @mixin section-centering ($width: $site-width, $offset: 0rem) {
-	padding-left: 1rem + $offset;
-	padding-right: 1rem + $offset;
+	padding-left: $padding-default + $offset;
+	padding-right: $padding-default + $offset;
 
 	@media (min-width: $width + 100) {
 		padding-left: calc(50% - #{$width / 2} + #{$offset});
@@ -49,8 +49,8 @@
 }
 
 @mixin section-centering-vw ($width: $site-width, $offset: 0rem) {
-	padding-left: 1rem + $offset;
-	padding-right: 1rem + $offset;
+	padding-left: $padding-default + $offset;
+	padding-right: $padding-default + $offset;
 
 	@media (min-width: $width + 100) {
 		padding-left: calc(50vw - #{$width / 2} + #{$offset});
@@ -64,7 +64,7 @@
  * Positions an element at the right edge of the inner content of the section
  */
 @mixin section-right ($width: $site-width) {
-	right: 1rem;
+	right: $padding-default;
 
 	@media (min-width: $width + 100) {
 		right: calc(50% - #{$width / 2});
@@ -77,7 +77,7 @@
  * Positions an element at the left edge of the inner content of the section
  */
 @mixin section-left ($width: $site-width) {
-	left: 1rem;
+	left: $padding-default;
 
 	@media (min-width: $width + 100) {
 		left: calc(50% - #{$width / 2});
@@ -118,10 +118,10 @@
  * @param	string	$align: top/bottom; if you want to pull it up towards the top or down towards the bottom
  */
 @mixin section-inner ($align: false, $width: $site-width) {
-	margin-left: -1rem;
-	margin-right: -1rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	margin-left: -$padding-default;
+	margin-right: -$padding-default;
+	padding-left: $padding-default;
+	padding-right: $padding-default;
 
 	// We're so clever :P
 	@media (min-width: $width + 100) {
@@ -173,8 +173,8 @@
 @mixin section-border-centering ($width: $site-width) {
 	padding-left: 0;
 	padding-right: 0;
-	border-left: 1rem solid transparent;
-	border-right: 1rem solid transparent;
+	border-left: $padding-default solid transparent;
+	border-right: $padding-default solid transparent;
 
 	@media (min-width: $width + 100) {
 		padding-left: 0;
