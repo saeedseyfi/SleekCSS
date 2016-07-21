@@ -1,3 +1,5 @@
+@import "functions";
+
 // Mixins
 @import "mixins/a11y-hide";
 @import "mixins/arrow";
@@ -45,7 +47,8 @@
 @import "components/popup";
 @import "components/primary-secondary";
 @import "components/section";
-@import "components/table-grid";
+@import "components/strike-through";
+// @import "components/table-grid"; // TODO: Needs work
 @import "components/text-colors";
 @import "components/text";
 @import "components/utils";

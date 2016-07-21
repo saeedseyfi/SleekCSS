@@ -48,6 +48,16 @@
 	}
 }
 
+/***
+    title: Background Overlay
+    section: Layout
+    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect.
+    example:
+        <header class="bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
+            <h2>I'm a box</h2>
+            <p>With some content</p>
+        </header>
+***/
 .bg-overlay {
 	@include bg-overlay($color-overlay, false);
 

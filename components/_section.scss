@@ -38,23 +38,59 @@
  *
  * Takes care of centering the section content using padding and calc
  */
-@mixin section-centering ($width: $site-width, $offset: 0rem) {
+@mixin section-padding-left ($width: $site-width, $offset: 0rem) {
 	padding-left: $padding-default + $offset;
-	padding-right: $padding-default + $offset;
 
 	@media (min-width: $width + 100) {
 		padding-left: calc(50% - #{$width / 2} + #{$offset});
+	}
+}
+
+@mixin section-padding-right ($width: $site-width, $offset: 0rem) {
+	padding-right: $padding-default + $offset;
+
+	@media (min-width: $width + 100) {
 		padding-right: calc(50% - #{$width / 2} + #{$offset});
 	}
 }
 
-@mixin section-centering-vw ($width: $site-width, $offset: 0rem) {
+@mixin section-padding-left-vw () {
 	padding-left: $padding-default + $offset;
-	padding-right: $padding-default + $offset;
 
 	@media (min-width: $width + 100) {
 		padding-left: calc(50vw - #{$width / 2} + #{$offset});
+	}
+}
+
+@mixin section-padding-right-vw () {
+	padding-right: $padding-default + $offset;
+
+	@media (min-width: $width + 100) {
 		padding-right: calc(50vw - #{$width / 2} + #{$offset});
+	}
+}
+
+@mixin section-centering ($width: $site-width, $offset: 0rem) {
+	@include section-padding-left;
+	@include section-padding-right;
+}
+
+@mixin section-centering-vw ($width: $site-width, $offset: 0rem) {
+	@include section-padding-left-vw;
+	@include section-padding-right-vw;
+}
+
+@mixin section-centering-border ($width: $site-width) {
+	padding-left: 0;
+	padding-right: 0;
+	border-left: $padding-default solid transparent;
+	border-right: $padding-default solid transparent;
+
+	@media (min-width: $width + 100) {
+		padding-left: 0;
+		padding-right: 0;
+		border-left-width: calc(50vw - #{$width / 2});
+		border-right-width: calc(50vw - #{$width / 2});
 	}
 }
 
@@ -165,31 +201,12 @@
 	} */
 }
 
-/**
- * @section-border-centering
- *
- * Same as @section-centering but uses border instead of padding
- */
-@mixin section-border-centering ($width: $site-width) {
-	padding-left: 0;
-	padding-right: 0;
-	border-left: $padding-default solid transparent;
-	border-right: $padding-default solid transparent;
-
-	@media (min-width: $width + 100) {
-		padding-left: 0;
-		padding-right: 0;
-		border-left-width: calc(50vw - #{$width / 2});
-		border-right-width: calc(50vw - #{$width / 2});
-	}
-}
-
 /***
     title: Section
     section: Layout
-    description: Creates a full width section with centered content (based on site-width).
+    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn't work nested like in the styleguide (that's why it looks broken here).
     example:
-        <div class="section bg--blue">
+        <div class="section bg--white">
             <h2>I'm a section</h2>
             <p>With some content</p>
         </div>

@@ -86,7 +86,7 @@
 .icon--large {
 	&:before,
 	&.icon--after:after {
-		font-size: 1.5em;
+		font-size: $icon-large-size;
 	}
 }
 
@@ -103,7 +103,7 @@
 		&:before {
 			display: block;
 			margin: 0 auto;
-			font-size: $icon-above-size;
+			font-size: $icon-large-size;
 		}
 	}
 }
@@ -117,7 +117,7 @@
 		&:after {
 			display: block;
 			margin: 0 auto;
-			font-size: $icon-above-size;
+			font-size: $icon-large-size;
 		}
 	}
 }

@@ -1,9 +1,9 @@
 /***
     title: Container
     section: Layout
-    description: Centers an element on the screen at a width of $site-width-max and a max width of $site-width.
+    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body and doesn't work nested like this.
     example:
-        <div class="container">
+        <div class="container bg--white">
             <h1>I'm centered</h1>
             <p>In the middle of the page</p>
         </div>
