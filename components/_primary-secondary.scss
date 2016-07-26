@@ -22,21 +22,23 @@
 ***/
 @media #{$bp-medium} {
 	.primary-content {
-		width: 60%;
+		@include clearfix;
+		width: calc(#{$primary-content-width} - #{$gutter-large / 2});
 		float: left;
 	}
 
 	.secondary-content {
-		width: 35%;
+		@include clearfix;
+		width: calc(#{100% - $primary-content-width} - #{$gutter-large / 2});
 		float: left;
 	}
 
 	.primary-content + .secondary-content {
-		margin-left: 5%;
+		margin-left: $gutter-large;
 	}
 
 	.secondary-content + .primary-content {
-		margin-left: 5%;
+		margin-left: $gutter-large;
 	}
 
 	.primary-content + .secondary-content + * {
