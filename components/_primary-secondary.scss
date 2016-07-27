@@ -20,7 +20,7 @@
             </div>
         </div>
 ***/
-@media #{$bp-medium} {
+@media #{$bp-large} {
 	.primary-content {
 		@include clearfix;
 		width: calc(#{$primary-content-width} - #{$gutter-large / 2});
@@ -50,7 +50,7 @@
 	}
 }
 
-@media #{$bp-medium-max} {
+@media #{$bp-large-max} {
 	.primary-content,
 	.secondary-content {
 		margin-bottom: $margin-default;
