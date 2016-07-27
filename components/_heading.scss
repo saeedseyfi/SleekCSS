@@ -31,6 +31,14 @@ h6,
 .heading--5,
 .heading--6 {
 	@include heading;
+
+	a {
+		color: $color-heading;
+
+		&:hover {
+			color: $color-link-hover;
+		}
+	}
 }
 
 h2,

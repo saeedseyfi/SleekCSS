@@ -18,11 +18,13 @@
         </ul>
 ***/
 // Taken directly from fontello.scss
-@mixin icon () {
+@mixin icon ($iconCode: '[NO-ICON]') {
 	font-family: "fontello";
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
+
+	content: $iconCode;
 
 	display: inline-block;
 	text-decoration: inherit;
