@@ -143,11 +143,6 @@ textarea {
 	max-width: 100%;
 }
 
-select {
-	box-sizing: border-box;
-	max-width: 100%;
-}
-
 // Placeholder
 ::placeholder {
 	color: $color-form-placeholder;
@@ -159,15 +154,30 @@ button {
 	outline: 0;
 }
 
-// Connected form fields
-form .form__connected-fields {
-	@include clearfix;
+// Select
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
 
-	> * {
-		float: left;
-		width: auto;
-		min-height: 3.2rem; // Slight hack, need to be same as form fields
+	background: $form-select-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
+	background-size: $form-select-arrow-size auto;
+
+	box-sizing: border-box;
+	max-width: 100%;
+
+	padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
+
+	@if ($form-select-border == true) {
+		border: 1px solid $color-border;
 	}
+	@elseif ($form-select-border) {
+		border: $form-select-border;
+	}
+	@else {
+		border: 0;
+	}
+
+	border-radius: $form-select-border-radius;
 }
 
 // Range input (http://www.hongkiat.com/blog/html5-range-slider-style/)
@@ -222,6 +232,8 @@ form .form__connected-fields {
 		border: 0;
 	}
 
+	color: $form-range-bg;
+	cursor: pointer;
 	outline: 0;
 	border-radius: $form-range-border-radius;
 
@@ -232,15 +244,11 @@ form .form__connected-fields {
 
 input[type=range] {
 	@include range-track;
-	margin-bottom: $form-range-thumb-radius;
+	margin: $form-range-thumb-radius 0;
 
 	// The track
 	&::-ms-track {
-		width: 100%;
-		cursor: pointer;
-		background: transparent;
-		border: 0;
-		color: transparent;
+		@include range-track;
 	}
 
 	&::-moz-range-track {

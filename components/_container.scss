@@ -9,8 +9,8 @@
         </div>
 ***/
 @mixin container {
-	margin-left: $padding-default;
-	margin-right: $padding-default;
+	margin-left: $section-padding-horizontal;
+	margin-right: $section-padding-horizontal;
 
 	@media (min-width: $site-width + 100) {
 		max-width: $site-width;

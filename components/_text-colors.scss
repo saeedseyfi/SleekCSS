@@ -37,18 +37,7 @@
 
 	// Colors added to parent element
 	.color--#{nth($color, 1)} {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		.heading--1,
-		.heading--2,
-		.heading--3,
-		.heading--4,
-		.heading--5,
-		.heading--6,
+		#{$headings},
 		a:not(.button),
 		.link,
 		a:not(.button):hover,
