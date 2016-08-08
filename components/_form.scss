@@ -184,8 +184,6 @@ select {
 @mixin range-thumb {
 	-webkit-appearance: none;
 
-	background: $form-range-thumb-bg;
-
 	width: $form-range-thumb-radius * 2;
 	height: $form-range-thumb-radius * 2;
 
@@ -206,6 +204,7 @@ select {
 		box-shadow: $form-range-thumb-shadow;
 	}
 
+	cursor: pointer;
 	outline: 0;
 	border-radius: $form-range-thumb-border-radius;
 
@@ -217,10 +216,9 @@ select {
 @mixin range-track {
 	-webkit-appearance: none;
 
-	background: $form-range-bg;
-
 	width: 100%;
 	height: $form-range-height;
+	padding: 0;
 
 	@if ($form-range-border == true) {
 		border: 1px solid $color-border;
@@ -232,8 +230,6 @@ select {
 		border: 0;
 	}
 
-	color: $form-range-bg;
-	cursor: pointer;
 	outline: 0;
 	border-radius: $form-range-border-radius;
 
@@ -242,12 +238,78 @@ select {
 	}
 }
 
+@mixin range-color ($track-color, $thumb-color) {
+	// The track
+	&::-webkit-slider-runnable-track {
+		background: $track-color;
+	}
+
+	&::-ms-track {
+		background: $track-color;
+		color: $track-color;
+	}
+
+	&::-ms-fill-lower {
+		background: $track-color;
+		color: $track-color;
+	}
+
+	&::-ms-fill-upper {
+		background: $track-color;
+		color: $track-color;
+	}
+
+	&::-moz-range-track {
+		background: $track-color;
+	}
+
+	// The thumbs
+	&::-webkit-slider-thumb {
+		background: $thumb-color;
+	}
+
+	&::-moz-range-thumb {
+		background: $thumb-color;
+	}
+
+	&::-ms-thumb {
+		background: $thumb-color;
+	}
+}
+
 input[type=range] {
-	@include range-track;
-	margin: $form-range-thumb-radius 0;
+	-webkit-appearance: none;
+
+	@include range-color($form-range-bg, $form-range-thumb-bg);
+
+	background: transparent;
+	width: 100%;
+	height: $form-range-thumb-radius * 2;
+	padding: 0;
+	border: 0;
+
+	&:focus {
+		outline: 0;
+	}
+
+	&::-moz-focus-outer {
+		border: 0;
+	}
 
 	// The track
+	&::-webkit-slider-runnable-track {
+		@include range-track;
+	}
+
 	&::-ms-track {
+		@include range-track;
+	}
+
+	&::-ms-fill-lower {
+		@include range-track;
+	}
+
+	&::-ms-fill-upper {
 		@include range-track;
 	}
 
@@ -258,6 +320,7 @@ input[type=range] {
 	// The thumbs
 	&::-webkit-slider-thumb {
 		@include range-thumb;
+		margin-top: -($form-range-thumb-radius - $form-range-height / 2);
 	}
 
 	&::-moz-range-thumb {
@@ -266,5 +329,6 @@ input[type=range] {
 
 	&::-ms-thumb {
 		@include range-thumb;
+		transform: translateY($form-range-height);
 	}
 }
