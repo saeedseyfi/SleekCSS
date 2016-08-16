@@ -71,13 +71,13 @@
 }
 
 @mixin section-centering ($width: $site-width, $offset: 0rem) {
-	@include section-padding-left;
-	@include section-padding-right;
+	@include section-padding-left($width, $offset);
+	@include section-padding-right($width, $offset);
 }
 
 @mixin section-centering-vw ($width: $site-width, $offset: 0rem) {
-	@include section-padding-left-vw;
-	@include section-padding-right-vw;
+	@include section-padding-left-vw($width, $offset);
+	@include section-padding-right-vw($width, $offset);
 }
 
 @mixin section-centering-border ($width: $site-width) {

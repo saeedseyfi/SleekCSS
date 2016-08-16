@@ -20,7 +20,7 @@
  * @param	unit	$gutter: space between columns
  * @param	string	$selector: child-selector
  */
-@mixin cols ($num: 3, $gutter: $gutter, $selector: '*') {
+@mixin cols ($num: 3, $gutter: $gutter-default, $selector: '*') {
 	@include clearfix;
 
 	clear: both; // Probably desirable
