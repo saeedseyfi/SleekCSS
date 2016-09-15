@@ -156,13 +156,12 @@ button {
 
 // Select
 select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+	appearance: none;
 
 	background: $form-select-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
 	background-size: $form-select-arrow-size auto;
 
-	box-sizing: border-box;
+//	box-sizing: border-box;
 	max-width: 100%;
 
 	padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
@@ -182,7 +181,7 @@ select {
 
 // Range input (http://www.hongkiat.com/blog/html5-range-slider-style/)
 @mixin range-thumb {
-	-webkit-appearance: none;
+	appearance: none;
 
 	width: $form-range-thumb-radius * 2;
 	height: $form-range-thumb-radius * 2;
@@ -214,7 +213,7 @@ select {
 }
 
 @mixin range-track {
-	-webkit-appearance: none;
+	appearance: none;
 
 	width: 100%;
 	height: $form-range-height;
@@ -278,7 +277,7 @@ select {
 }
 
 input[type=range] {
-	-webkit-appearance: none;
+	appearance: none;
 
 	@include range-color($form-range-bg, $form-range-thumb-bg);
 

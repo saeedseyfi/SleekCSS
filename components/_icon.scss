@@ -104,7 +104,7 @@
 
 		&:before {
 			display: block;
-			margin: 0 auto;
+			margin: 0 auto $margin-small;
 			font-size: $icon-large-size;
 		}
 	}
@@ -207,37 +207,40 @@ a:hover .icon--round {
  * Icon colors
  */
 @each $color in $icon-colors {
- 	.icon--#{nth($color, 1)} {
-		&:before {
-			color: nth($color, 2);
-		}
-	}
-
- 	.icon--after.icon--#{nth($color, 1)} {
-		&:after {
-			color: nth($color, 2);
-		}
-	}
-
-	// TODO: Support for icon--after
- 	.icon--round--#{nth($color, 1)} {
-		&:before {
-			background-color: nth($color, 2);
+	[class^="icon-"],
+	[class*="icon-"] {
+		&.icon--#{nth($color, 1)} {
+			&:before {
+				color: nth($color, 2);
+			}
 		}
 
-		&.icon--round--ghost:before {
-			background-color: transparent;
-			color: nth($color, 2);
-			border-color: nth($color, 2);
+	 	&.icon--after.icon--#{nth($color, 1)} {
+			&:after {
+				color: nth($color, 2);
+			}
 		}
 
-		&:hover:before {
-			background-color: rgba(nth($color, 2), .2);
-			color: nth($color, 2);
-		}
+		// TODO: Support for icon--after
+	 	&.icon--round--#{nth($color, 1)} {
+			&:before {
+				background-color: nth($color, 2);
+			}
 
-		&.icon--round--ghost:hover:before {
-			background-color: rgba(nth($color, 2), .2);
+			&.icon--round--ghost:before {
+				background-color: transparent;
+				color: nth($color, 2);
+				border-color: nth($color, 2);
+			}
+
+			&:hover:before {
+				background-color: rgba(nth($color, 2), .2);
+				color: nth($color, 2);
+			}
+
+			&.icon--round--ghost:hover:before {
+				background-color: rgba(nth($color, 2), .2);
+			}
 		}
 	}
 }

@@ -4,13 +4,13 @@
 	&--large {
 		margin-bottom: $margin-default;
 
-		@media #{$bp-medium} {
+	//	@media #{$bp-medium} {
 			margin-bottom: $margin-large;
-		}
+	//	}
 	}
 
 	&--x-large {
-		margin-bottom: $margin-default;
+		margin-bottom: $margin-large;
 
 		@media #{$bp-medium} {
 			margin-bottom: $margin-x-large;
