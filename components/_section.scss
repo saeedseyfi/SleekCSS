@@ -54,7 +54,7 @@
 	}
 }
 
-@mixin section-padding-left-vw () {
+@mixin section-padding-left-vw ($width: $site-width, $offset: 0rem) {
 	padding-left: $section-padding-horizontal + $offset;
 
 	@media (min-width: $width + 100) {
@@ -62,7 +62,7 @@
 	}
 }
 
-@mixin section-padding-right-vw () {
+@mixin section-padding-right-vw ($width: $site-width, $offset: 0rem) {
 	padding-right: $section-padding-horizontal + $offset;
 
 	@media (min-width: $width + 100) {
@@ -99,11 +99,11 @@
  *
  * Positions an element at the right edge of the inner content of the section
  */
-@mixin section-right ($width: $site-width) {
+@mixin section-right ($width: $site-width, $offset: 0rem) {
 	right: $section-padding-horizontal;
 
 	@media (min-width: $width + 100) {
-		right: calc(50% - #{$width / 2});
+		right: calc(50% - #{$width / 2} + #{$offset});
 	}
 }
 
@@ -112,11 +112,11 @@
  *
  * Positions an element at the left edge of the inner content of the section
  */
-@mixin section-left ($width: $site-width) {
+@mixin section-left ($width: $site-width, $offset: 0rem) {
 	left: $section-padding-horizontal;
 
 	@media (min-width: $width + 100) {
-		left: calc(50% - #{$width / 2});
+		left: calc(50% - #{$width / 2} + #{$offset});
 	}
 }
 

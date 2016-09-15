@@ -161,7 +161,7 @@ select {
 	background: $form-select-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
 	background-size: $form-select-arrow-size auto;
 
-//	box-sizing: border-box;
+	box-sizing: border-box;
 	max-width: 100%;
 
 	padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
@@ -176,7 +176,12 @@ select {
 		border: 0;
 	}
 
-	border-radius: $form-select-border-radius;
+	@if ($form-select-border-radius) {
+		border-radius: $form-select-border-radius;
+	}
+	@else {
+		border-radius: 0;
+	}
 }
 
 // Range input (http://www.hongkiat.com/blog/html5-range-slider-style/)
