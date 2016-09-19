@@ -45,8 +45,7 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 	color: $color-form-text;
 	line-height: 1.2\9;
 
-	-moz-appearance: none;
-	-webkit-appearance: none;
+	appearance: none;
 
 	@if ($form-border == true) {
 		border: 1px solid $color-border;
