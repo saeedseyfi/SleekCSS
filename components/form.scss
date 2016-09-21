@@ -58,7 +58,7 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 
 	font-size: $font-size-default;
 	color: $color-form-text;
-	line-height: 1.2\9;
+	line-height: $button-line-height;
 
 	appearance: none;
 
