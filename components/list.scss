@@ -79,3 +79,16 @@
 		}
 	}
 }
+
+// CSS counter
+@mixin list-counter {
+	counter-reset: list-counter;
+
+	> * {
+		counter-increment: list-counter;
+
+		&:before {
+			content: counter(list-counter) '. ';
+		}
+	}
+}
