@@ -1,12 +1,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var sassGlob = require('gulp-sass-glob');
 var autoprefixer = require('gulp-autoprefixer');
 var styleguidejs = require('gulp-styleguidejs');
 
 gulp.task('sass', function () {
 	return gulp.src('sleek-css.scss')
-		.pipe(sassGlob())
 		.pipe(sass())
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('.'));
@@ -14,7 +12,6 @@ gulp.task('sass', function () {
 
 gulp.task('styleguide', function () {
 	return gulp.src('sleek-css.scss')
-		.pipe(sassGlob())
 		.pipe(sass())
 		.pipe(autoprefixer())
 		.pipe(styleguidejs({

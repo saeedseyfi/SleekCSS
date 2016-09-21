@@ -662,7 +662,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   padding: 0.6rem 0.6rem;
   font-size: 1rem;
   color: #333;
-  line-height: 1.2\9;
+  line-height: 1.2;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1654,6 +1654,45 @@ a,
 	@include table-grid($gutter-default, false, $bp-medium);
 } */
 /***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+***/
+.text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+  word-wrap: break-word;
+  font-weight: normal; }
+
+.text--upper {
+  text-transform: uppercase; }
+
+.text--center {
+  text-align: center; }
+
+.text--left {
+  text-align: left; }
+
+.text--right {
+  text-align: right; }
+
+.text--small {
+  font-size: 0.8rem; }
+
+.text--large {
+  font-size: 1.2rem; }
+
+.text--ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+/***
     title: Text Colors
     section: Colors
     description: Use to give an element's text a different color. This class affects everything, including headings and links.
@@ -1695,45 +1734,6 @@ a.color--white:hover,
 .color--white .link:hover {
   color: #09f;
   text-decoration: none; }
-
-/***
-    title: Text
-    section: Typography
-    description: Various helper classes for working with text.
-    example:
-        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
-***/
-.text {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: Helvetica, sans-serif;
-  color: #333;
-  word-wrap: break-word;
-  font-weight: normal; }
-
-.text--upper {
-  text-transform: uppercase; }
-
-.text--center {
-  text-align: center; }
-
-.text--left {
-  text-align: left; }
-
-.text--right {
-  text-align: right; }
-
-.text--small {
-  font-size: 0.8rem; }
-
-.text--large {
-  font-size: 1.2rem; }
-
-.text--ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
 
 .alignleft,
 .alignright,
