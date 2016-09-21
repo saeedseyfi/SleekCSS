@@ -78,22 +78,19 @@ dl.key-val dd:after {
 /***
     title: Background Colors
     section: Colors
-    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/_bg-colors.scss.
+    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.
     example:
         <div class="bg--white">I have a white background color</div>
 ***/
-.bg--transparent {
-  background-color: transparent; }
-
 .bg--white {
   background-color: #fff; }
 
 /***
     title: Background Overlay
     section: Layout
-    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect.
+    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).
     example:
-        <header class="bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
+        <header class="card bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
             <h2>I'm a box</h2>
             <p>With some content</p>
         </header>
@@ -146,56 +143,6 @@ dl.key-val dd:after {
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     .bg-overlay--hover:hover:before {
-      background: rgba(0, 0, 0, 0.9); }
-
-.bg-overlay--transparent {
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  position: relative;
-  overflow: hidden; }
-  .bg-overlay--transparent:before {
-    background: rgba(0, 0, 0, 0.7);
-    display: block;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .bg-overlay--transparent:before {
-        min-height: 500%; } }
-  .bg-overlay--transparent > * {
-    position: relative; }
-  .bg-overlay--transparent.bg-overlay--hover {
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    position: relative;
-    overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
-    .bg-overlay--transparent.bg-overlay--hover:before {
-      background: rgba(0, 0, 0, 0.7);
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0; }
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        .bg-overlay--transparent.bg-overlay--hover:before {
-          min-height: 500%; } }
-    .bg-overlay--transparent.bg-overlay--hover > * {
-      position: relative; }
-    .bg-overlay--transparent.bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
-    .bg-overlay--transparent.bg-overlay--hover:hover:before {
       background: rgba(0, 0, 0, 0.9); }
 
 .bg-overlay--white {
@@ -251,43 +198,44 @@ dl.key-val dd:after {
 /***
     title: Button
     section: Buttons
-    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.
+    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;
     example:
         <p><a href="#" class="button">I'm a normal button</a></p>
-        <p><button>Button elements automatically look like buttons</button></p>
+        <p><button class="button--ghost">Button elements automatically look like buttons</button></p>
         <p><input type="submit" value="Submit inputs too!"></p>
         <p><button class="button--wide">Full width!</button></p>
-        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray">Cancel</a></p>
+        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
         <p><a href="#" class="button button--small">Small button</a></p>
+        <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 .button,
 input[type=submit],
 button {
-  background-color: #06f;
+  background-color: #777;
   border: 2px solid transparent;
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  padding: 0.8rem 2.4rem;
+  padding: 0.6rem 2rem;
   font-size: 1rem;
   line-height: 1.2;
   color: #fff;
   font-weight: bold;
-  font-style: normal;
+  font-style: bold;
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 2rem;
+  border-radius: 0.2rem;
   text-shadow: none;
   box-shadow: none; }
   .button:hover,
   input[type=submit]:hover,
   button:hover {
-    background-color: #005ce6; }
+    background-color: #6a6a6a; }
   .button:active,
   input[type=submit]:active,
   button:active {
-    background-color: #0052cc; }
+    background-color: #5e5e5e; }
   .button[class*="icon-"]:empty:not([value]),
   input[type=submit][class*="icon-"]:empty:not([value]),
   button[class*="icon-"]:empty:not([value]) {
@@ -309,26 +257,11 @@ button {
 
 .button--ghost {
   background-color: transparent;
-  color: #06f;
-  border: 2px solid #06f; }
+  color: #777;
+  border: 2px solid #777; }
   .button--ghost:hover {
-    background-color: #06f;
+    background-color: #777;
     color: #fff; }
-
-.button--blue {
-  background-color: #06f;
-  border: 2px solid transparent; }
-  .button--blue:hover {
-    background-color: #005ce6; }
-  .button--blue:active {
-    background-color: #0052cc; }
-  .button--blue.button--ghost {
-    background-color: transparent;
-    color: #06f;
-    border-color: #06f; }
-    .button--blue.button--ghost:hover {
-      background-color: #06f;
-      color: #fff; }
 
 .button--red {
   background-color: #600;
@@ -340,32 +273,47 @@ button {
   .button--red.button--ghost {
     background-color: transparent;
     color: #600;
-    border-color: #600; }
+    border: 2px solid #600; }
     .button--red.button--ghost:hover {
       background-color: #600;
       color: #fff; }
 
 .button--small {
-  font-size: 80%;
-  padding: 0.64rem 1.92rem; }
+  font-size: 0.8rem;
+  padding: 0.48rem 1.6rem; }
 
 .button--large {
-  font-size: 120%; }
+  font-size: 1.2rem; }
 
 .button--wide {
   display: block;
   width: 100%; }
 
 /***
+    title: Card
+    section: Layout
+    description: A simple box/card. Can be used with the bg-classes.
+    example:
+        <div class="card bg--white">I'm a shadowed card</div>
+***/
+.card {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+/***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config/_cols.scss.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
     example:
-        <ul class="cols cols--2 cols--4--bp-medium">
-            <li>I'm two columns</li>
-            <li>In low resolution</li>
-            <li>But four columns</li>
-            <li>In high resolution</li>
+        <ul class="cols cols--2--bp-medium cols--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
         </ul>
 ***/
 /**
@@ -388,15 +336,19 @@ button {
 .cols {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols:after {
     content: "";
     display: table;
     clear: both; }
+  .cols > * {
+    margin-bottom: 1rem; }
 
 .cols--2 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--2:after {
     content: "";
@@ -427,6 +379,7 @@ button {
 .cols--3 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--3:after {
     content: "";
@@ -454,139 +407,11 @@ button {
   .cols--3 > *:not(:nth-child(3n)) + * {
     clear: none; }
 
-.cols--4 {
-  clear: both;
-  margin-left: 0;
-  list-style: none; }
-  .cols--4:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--4 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(25% - 0.75rem);
-    margin-right: 1rem;
-    width: calc(24.75% - 0.75rem) \9; }
-    .cols--4 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--4 > * {
-        width: calc(24.75% - 0.75rem); } }
-    .cols--4 > *:not(:nth-child(4n)) {
-      margin-right: 1rem; }
-    .cols--4 > *:nth-child(4n) {
-      margin-right: 0; }
-  .cols--4 > *:nth-child(4n) + * {
-    clear: both; }
-  .cols--4 > *:not(:nth-child(4n)) + * {
-    clear: none; }
-
-@media (min-width: 400px) {
-  .cols--2--bp-small {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--2--bp-small:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-small > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.5rem);
-      margin-right: 1rem;
-      width: calc(49.5% - 0.5rem) \9; }
-      .cols--2--bp-small > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 400px) and (-ms-high-contrast: none), (min-width: 400px) and (-ms-high-contrast: active) {
-      .cols--2--bp-small > * {
-        width: calc(49.5% - 0.5rem); } }
-
-@media (min-width: 400px) {
-      .cols--2--bp-small > *:not(:nth-child(2n)) {
-        margin-right: 1rem; }
-      .cols--2--bp-small > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-small > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-small > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 400px) {
-  .cols--3--bp-small {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--3--bp-small:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-small > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 0.66667rem);
-      margin-right: 1rem;
-      width: calc(33% - 0.66667rem) \9; }
-      .cols--3--bp-small > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 400px) and (-ms-high-contrast: none), (min-width: 400px) and (-ms-high-contrast: active) {
-      .cols--3--bp-small > * {
-        width: calc(33% - 0.66667rem); } }
-
-@media (min-width: 400px) {
-      .cols--3--bp-small > *:not(:nth-child(3n)) {
-        margin-right: 1rem; }
-      .cols--3--bp-small > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-small > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-small > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 400px) {
-  .cols--4--bp-small {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-small:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-small > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-small > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 400px) and (-ms-high-contrast: none), (min-width: 400px) and (-ms-high-contrast: active) {
-      .cols--4--bp-small > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 400px) {
-      .cols--4--bp-small > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-small > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-small > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-small > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
 @media (min-width: 760px) {
   .cols--2--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-medium:after {
       content: "";
@@ -620,6 +445,7 @@ button {
   .cols--3--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-medium:after {
       content: "";
@@ -649,43 +475,11 @@ button {
     .cols--3--bp-medium > *:not(:nth-child(3n)) + * {
       clear: none; } }
 
-@media (min-width: 760px) {
-  .cols--4--bp-medium {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-medium:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-medium > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-medium > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 760px) and (-ms-high-contrast: none), (min-width: 760px) and (-ms-high-contrast: active) {
-      .cols--4--bp-medium > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 760px) {
-      .cols--4--bp-medium > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-medium > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-medium > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-medium > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
 @media (min-width: 1020px) {
   .cols--2--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-large:after {
       content: "";
@@ -719,6 +513,7 @@ button {
   .cols--3--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-large:after {
       content: "";
@@ -748,142 +543,10 @@ button {
     .cols--3--bp-large > *:not(:nth-child(3n)) + * {
       clear: none; } }
 
-@media (min-width: 1020px) {
-  .cols--4--bp-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1020px) and (-ms-high-contrast: none), (min-width: 1020px) and (-ms-high-contrast: active) {
-      .cols--4--bp-large > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 1020px) {
-      .cols--4--bp-large > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-large > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-large > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-large > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
-@media (min-width: 1600px) {
-  .cols--2--bp-x-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--2--bp-x-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-x-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.5rem);
-      margin-right: 1rem;
-      width: calc(49.5% - 0.5rem) \9; }
-      .cols--2--bp-x-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1600px) and (-ms-high-contrast: none), (min-width: 1600px) and (-ms-high-contrast: active) {
-      .cols--2--bp-x-large > * {
-        width: calc(49.5% - 0.5rem); } }
-
-@media (min-width: 1600px) {
-      .cols--2--bp-x-large > *:not(:nth-child(2n)) {
-        margin-right: 1rem; }
-      .cols--2--bp-x-large > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-x-large > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-x-large > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 1600px) {
-  .cols--3--bp-x-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--3--bp-x-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-x-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 0.66667rem);
-      margin-right: 1rem;
-      width: calc(33% - 0.66667rem) \9; }
-      .cols--3--bp-x-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1600px) and (-ms-high-contrast: none), (min-width: 1600px) and (-ms-high-contrast: active) {
-      .cols--3--bp-x-large > * {
-        width: calc(33% - 0.66667rem); } }
-
-@media (min-width: 1600px) {
-      .cols--3--bp-x-large > *:not(:nth-child(3n)) {
-        margin-right: 1rem; }
-      .cols--3--bp-x-large > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-x-large > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-x-large > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 1600px) {
-  .cols--4--bp-x-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-x-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-x-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-x-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1600px) and (-ms-high-contrast: none), (min-width: 1600px) and (-ms-high-contrast: active) {
-      .cols--4--bp-x-large > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 1600px) {
-      .cols--4--bp-x-large > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-x-large > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-x-large > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-x-large > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
 /***
     title: Container
     section: Layout
-    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body and doesn't work nested like this.
+    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don't work properly when nested like this. You can also use @include container;
     example:
         <div class="container bg--white">
             <h1>I'm centered</h1>
@@ -898,6 +561,28 @@ button {
       max-width: 960px;
       margin-left: auto;
       margin-right: auto; } }
+
+.pull-right {
+  float: right; }
+
+img.pull-right {
+  margin-left: 1rem;
+  margin-bottom: 1rem; }
+
+.pull-left {
+  float: left; }
+
+img.pull-left {
+  margin-right: 1rem;
+  margin-bottom: 1rem; }
+
+.clear {
+  clear: both; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 /***
     title: Forms
@@ -915,6 +600,21 @@ button {
                 <label>
                     Email<br>
                     <input type="email" name="email" placeholder="eg. john.doe@example.com">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Sex<br>
+                    <select name="sex">
+                        <option value="f">Female</option>
+                        <option value="m">Male</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Age<br>
+                    <input type="range" name="age" min="1" max="150">
                 </label>
             </p>
             <p>
@@ -959,7 +659,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   box-sizing: border-box;
   max-width: 100%;
   margin: 0;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.6rem;
   font-size: 1rem;
   color: #333;
   line-height: 1.2\9;
@@ -1011,8 +711,8 @@ select {
   background-size: 0.5rem auto;
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0.4rem 2.4rem 0.4rem 0.4rem;
-  border: 0;
+  padding: 0.6rem 2.6rem 0.6rem 0.6rem;
+  border: 1px solid rgba(100, 100, 100, 0.5);
   border-radius: 0.2rem; }
 
 input[type=range] {
@@ -1134,6 +834,16 @@ input[type=range] {
     input[type=range]::-ms-thumb:focus {
       outline: 0; }
 
+/***
+    title: Group
+    section: Layout
+    description: Use this class to add margin-bottom to an element.
+    example:
+        <div class="card bg--white group--x-large">
+            <h2>I have margin</h2>
+            <p>More than usual</p>
+        </div>
+***/
 .group {
   margin-bottom: 1rem; }
   .group--large {
@@ -1148,7 +858,7 @@ input[type=range] {
 /***
     title: Headings
     section: Typography
-    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size.
+    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;
     example:
         <h1 class="heading--4">I'm a H1 but look like a H4</h1>
         <h3>I'm a normal H3</h3>
@@ -1347,30 +1057,30 @@ a:hover .icon--round {
  */
 [class^="icon-"].icon--blue:before,
 [class*="icon-"].icon--blue:before {
-  color: #0000ff; }
+  color: #06f; }
 
 [class^="icon-"].icon--after.icon--blue:after,
 [class*="icon-"].icon--after.icon--blue:after {
-  color: #0000ff; }
+  color: #06f; }
 
 [class^="icon-"].icon--round--blue:before,
 [class*="icon-"].icon--round--blue:before {
-  background-color: #0000ff; }
+  background-color: #06f; }
 
 [class^="icon-"].icon--round--blue.icon--round--ghost:before,
 [class*="icon-"].icon--round--blue.icon--round--ghost:before {
   background-color: transparent;
-  color: #0000ff;
-  border-color: #0000ff; }
+  color: #06f;
+  border-color: #06f; }
 
 [class^="icon-"].icon--round--blue:hover:before,
 [class*="icon-"].icon--round--blue:hover:before {
-  background-color: rgba(0, 0, 255, 0.2);
-  color: #0000ff; }
+  background-color: rgba(0, 102, 255, 0.2);
+  color: #06f; }
 
 [class^="icon-"].icon--round--blue.icon--round--ghost:hover:before,
 [class*="icon-"].icon--round--blue.icon--round--ghost:hover:before {
-  background-color: rgba(0, 0, 255, 0.2); }
+  background-color: rgba(0, 102, 255, 0.2); }
 
 /***
     title: Images
@@ -1389,10 +1099,15 @@ a:hover .icon--round {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%); }
 
+.img--wide {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem; }
+
 /***
     title: Inline Grid
     section: Grid
-    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that there can't be any whitespace between elements in the HTML source code and for some reason doesn't work in the styleguide.
+    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element's font-size back to $font-size-default.
     example:
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
@@ -1417,21 +1132,6 @@ a:hover .icon--round {
 .inline-grid--3 > * {
   width: calc(33.33333% - 1rem); }
 
-.inline-grid--4 > * {
-  width: calc(25% - 1rem); }
-
-@media (min-width: 400px) {
-  .inline-grid--2--bp-small > * {
-    width: calc(50% - 1rem); } }
-
-@media (min-width: 400px) {
-  .inline-grid--3--bp-small > * {
-    width: calc(33.33333% - 1rem); } }
-
-@media (min-width: 400px) {
-  .inline-grid--4--bp-small > * {
-    width: calc(25% - 1rem); } }
-
 @media (min-width: 760px) {
   .inline-grid--2--bp-medium > * {
     width: calc(50% - 1rem); } }
@@ -1440,10 +1140,6 @@ a:hover .icon--round {
   .inline-grid--3--bp-medium > * {
     width: calc(33.33333% - 1rem); } }
 
-@media (min-width: 760px) {
-  .inline-grid--4--bp-medium > * {
-    width: calc(25% - 1rem); } }
-
 @media (min-width: 1020px) {
   .inline-grid--2--bp-large > * {
     width: calc(50% - 1rem); } }
@@ -1451,22 +1147,6 @@ a:hover .icon--round {
 @media (min-width: 1020px) {
   .inline-grid--3--bp-large > * {
     width: calc(33.33333% - 1rem); } }
-
-@media (min-width: 1020px) {
-  .inline-grid--4--bp-large > * {
-    width: calc(25% - 1rem); } }
-
-@media (min-width: 1600px) {
-  .inline-grid--2--bp-x-large > * {
-    width: calc(50% - 1rem); } }
-
-@media (min-width: 1600px) {
-  .inline-grid--3--bp-x-large > * {
-    width: calc(33.33333% - 1rem); } }
-
-@media (min-width: 1600px) {
-  .inline-grid--4--bp-x-large > * {
-    width: calc(25% - 1rem); } }
 
 /***
     title: Link
@@ -1568,6 +1248,62 @@ a,
   list-style: none; }
   .list--plain--margin > * {
     margin-bottom: 0.5rem; }
+
+.pane__overlay {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 100;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
+  .pane__overlay.open {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101;
+    -webkit-transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: transform 0s linear, background .2s ease-out;
+    transition: transform 0s linear, background .2s ease-out, -webkit-transform 0s linear; }
+
+.pane {
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 100;
+  width: 80%;
+  max-width: 30rem;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .2s .2s ease-out;
+  transition: -webkit-transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out, -webkit-transform .2s .2s ease-out; }
+  .pane--right {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+    .pane--right .pane__toggle {
+      left: auto;
+      right: 100%; }
+  .pane.open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101; }
+  .pane__toggle {
+    position: absolute;
+    left: 100%;
+    top: 1rem; }
 
 .popup {
   background: rgba(0, 0, 0, 0.5);
@@ -1737,7 +1473,7 @@ a,
 /***
     title: Section
     section: Layout
-    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn't work nested like in the styleguide (that's why it looks broken here).
+    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don't work properly nested like in the styleguide (that's why it looks broken here).
     example:
         <div class="section bg--white">
             <h2>I'm a section</h2>
@@ -1910,86 +1646,23 @@ a,
     -webkit-transform: translateY(50%) translateX(1rem);
             transform: translateY(50%) translateX(1rem); }
 
-.table-grid {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-  .table-grid > * {
-    display: block; }
-  @media (min-width: 760px) {
-    .table-grid {
-      display: table;
-      table-layout: fixed;
-      margin-left: -0.5rem;
-      margin-right: -0.5rem;
-      width: 100%;
-      width: calc(100% + 1rem); }
-      .table-grid > * {
-        display: table-cell;
-        vertical-align: top;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem; } }
+/* .table-grid {
+	@include table-grid;
+}
 
 .table-grid--bp-medium {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-  .table-grid--bp-medium > * {
-    display: block; }
-  @media (min-width: 760px) {
-    .table-grid--bp-medium {
-      display: table;
-      table-layout: fixed;
-      margin-left: -0.5rem;
-      margin-right: -0.5rem;
-      width: 100%;
-      width: calc(100% + 1rem); }
-      .table-grid--bp-medium > * {
-        display: table-cell;
-        vertical-align: top;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem; } }
-
+	@include table-grid($gutter-default, false, $bp-medium);
+} */
 /***
     title: Text Colors
     section: Colors
-    description: Use to give an element's text a different color.
+    description: Use to give an element's text a different color. This class affects everything, including headings and links.
     example:
         <div class="bg--blue color--white">
             <h2>I have white</h2>
             <p>Text text text text text text text text text text text text text</p>
         </div>
 ***/
-.color--transparent,
-h1.color--transparent,
-h2.color--transparent,
-h3.color--transparent,
-h4.color--transparent,
-h5.color--transparent,
-h6.color--transparent,
-.heading--1.color--transparent,
-.heading--2.color--transparent,
-.heading--3.color--transparent,
-.heading--4.color--transparent,
-.heading--5.color--transparent,
-.heading--6.color--transparent,
-a.color--transparent,
-.link.color--transparent {
-  color: transparent; }
-
-a.color--transparent:hover,
-.link.color--transparent:hover {
-  color: #09f;
-  text-decoration: none; }
-
-.color--transparent h1, .color--transparent h2, .color--transparent h3, .color--transparent h4, .color--transparent h5, .color--transparent h6, .color--transparent .heading--1, .color--transparent .heading--2, .color--transparent .heading--3, .color--transparent .heading--4, .color--transparent .heading--5, .color--transparent .heading--6,
-.color--transparent a:not(.button),
-.color--transparent .link,
-.color--transparent a:not(.button):hover,
-.color--transparent .link:hover {
-  color: transparent;
-  text-decoration: none; }
-
 .color--white,
 h1.color--white,
 h2.color--white,
@@ -2014,10 +1687,13 @@ a.color--white:hover,
 
 .color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
 .color--white a:not(.button),
-.color--white .link,
+.color--white .link {
+  color: #fff;
+  text-decoration: none; }
+
 .color--white a:not(.button):hover,
 .color--white .link:hover {
-  color: #fff;
+  color: #09f;
   text-decoration: none; }
 
 /***
@@ -2048,32 +1724,16 @@ a.color--white:hover,
 .text--right {
   text-align: right; }
 
+.text--small {
+  font-size: 0.8rem; }
+
+.text--large {
+  font-size: 1.2rem; }
+
 .text--ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
-
-.pull-right {
-  float: right; }
-
-img.pull-right {
-  margin-left: 1rem;
-  margin-bottom: 1rem; }
-
-.pull-left {
-  float: left; }
-
-img.pull-left {
-  margin-right: 1rem;
-  margin-bottom: 1rem; }
-
-.clear {
-  clear: both; }
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both; }
 
 .alignleft,
 .alignright,
@@ -2200,22 +1860,19 @@ dl.key-val dd:after {
 /***
     title: Background Colors
     section: Colors
-    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/_bg-colors.scss.
+    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.
     example:
         <div class="bg--white">I have a white background color</div>
 ***/
-.bg--transparent {
-  background-color: transparent; }
-
 .bg--white {
   background-color: #fff; }
 
 /***
     title: Background Overlay
     section: Layout
-    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect.
+    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).
     example:
-        <header class="bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
+        <header class="card bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
             <h2>I'm a box</h2>
             <p>With some content</p>
         </header>
@@ -2268,56 +1925,6 @@ dl.key-val dd:after {
       -webkit-transition: background-color .2s ease-out;
       transition: background-color .2s ease-out; }
     .bg-overlay--hover:hover:before {
-      background: rgba(0, 0, 0, 0.9); }
-
-.bg-overlay--transparent {
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  position: relative;
-  overflow: hidden; }
-  .bg-overlay--transparent:before {
-    background: rgba(0, 0, 0, 0.7);
-    display: block;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .bg-overlay--transparent:before {
-        min-height: 500%; } }
-  .bg-overlay--transparent > * {
-    position: relative; }
-  .bg-overlay--transparent.bg-overlay--hover {
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    position: relative;
-    overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
-    .bg-overlay--transparent.bg-overlay--hover:before {
-      background: rgba(0, 0, 0, 0.7);
-      display: block;
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0; }
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        .bg-overlay--transparent.bg-overlay--hover:before {
-          min-height: 500%; } }
-    .bg-overlay--transparent.bg-overlay--hover > * {
-      position: relative; }
-    .bg-overlay--transparent.bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
-    .bg-overlay--transparent.bg-overlay--hover:hover:before {
       background: rgba(0, 0, 0, 0.9); }
 
 .bg-overlay--white {
@@ -2373,43 +1980,44 @@ dl.key-val dd:after {
 /***
     title: Button
     section: Buttons
-    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.
+    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;
     example:
         <p><a href="#" class="button">I'm a normal button</a></p>
-        <p><button>Button elements automatically look like buttons</button></p>
+        <p><button class="button--ghost">Button elements automatically look like buttons</button></p>
         <p><input type="submit" value="Submit inputs too!"></p>
         <p><button class="button--wide">Full width!</button></p>
-        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray">Cancel</a></p>
+        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
         <p><a href="#" class="button button--small">Small button</a></p>
+        <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 .button,
 input[type=submit],
 button {
-  background-color: #06f;
+  background-color: #777;
   border: 2px solid transparent;
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  padding: 0.8rem 2.4rem;
+  padding: 0.6rem 2rem;
   font-size: 1rem;
   line-height: 1.2;
   color: #fff;
   font-weight: bold;
-  font-style: normal;
+  font-style: bold;
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 2rem;
+  border-radius: 0.2rem;
   text-shadow: none;
   box-shadow: none; }
   .button:hover,
   input[type=submit]:hover,
   button:hover {
-    background-color: #005ce6; }
+    background-color: #6a6a6a; }
   .button:active,
   input[type=submit]:active,
   button:active {
-    background-color: #0052cc; }
+    background-color: #5e5e5e; }
   .button[class*="icon-"]:empty:not([value]),
   input[type=submit][class*="icon-"]:empty:not([value]),
   button[class*="icon-"]:empty:not([value]) {
@@ -2431,26 +2039,11 @@ button {
 
 .button--ghost {
   background-color: transparent;
-  color: #06f;
-  border: 2px solid #06f; }
+  color: #777;
+  border: 2px solid #777; }
   .button--ghost:hover {
-    background-color: #06f;
+    background-color: #777;
     color: #fff; }
-
-.button--blue {
-  background-color: #06f;
-  border: 2px solid transparent; }
-  .button--blue:hover {
-    background-color: #005ce6; }
-  .button--blue:active {
-    background-color: #0052cc; }
-  .button--blue.button--ghost {
-    background-color: transparent;
-    color: #06f;
-    border-color: #06f; }
-    .button--blue.button--ghost:hover {
-      background-color: #06f;
-      color: #fff; }
 
 .button--red {
   background-color: #600;
@@ -2462,32 +2055,47 @@ button {
   .button--red.button--ghost {
     background-color: transparent;
     color: #600;
-    border-color: #600; }
+    border: 2px solid #600; }
     .button--red.button--ghost:hover {
       background-color: #600;
       color: #fff; }
 
 .button--small {
-  font-size: 80%;
-  padding: 0.64rem 1.92rem; }
+  font-size: 0.8rem;
+  padding: 0.48rem 1.6rem; }
 
 .button--large {
-  font-size: 120%; }
+  font-size: 1.2rem; }
 
 .button--wide {
   display: block;
   width: 100%; }
 
 /***
+    title: Card
+    section: Layout
+    description: A simple box/card. Can be used with the bg-classes.
+    example:
+        <div class="card bg--white">I'm a shadowed card</div>
+***/
+.card {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+/***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config/_cols.scss.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
     example:
-        <ul class="cols cols--2 cols--4--bp-medium">
-            <li>I'm two columns</li>
-            <li>In low resolution</li>
-            <li>But four columns</li>
-            <li>In high resolution</li>
+        <ul class="cols cols--2--bp-medium cols--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
         </ul>
 ***/
 /**
@@ -2510,15 +2118,19 @@ button {
 .cols {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols:after {
     content: "";
     display: table;
     clear: both; }
+  .cols > * {
+    margin-bottom: 1rem; }
 
 .cols--2 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--2:after {
     content: "";
@@ -2549,6 +2161,7 @@ button {
 .cols--3 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--3:after {
     content: "";
@@ -2576,139 +2189,11 @@ button {
   .cols--3 > *:not(:nth-child(3n)) + * {
     clear: none; }
 
-.cols--4 {
-  clear: both;
-  margin-left: 0;
-  list-style: none; }
-  .cols--4:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .cols--4 > * {
-    float: left;
-    box-sizing: border-box;
-    width: calc(25% - 0.75rem);
-    margin-right: 1rem;
-    width: calc(24.75% - 0.75rem) \9; }
-    .cols--4 > *:after {
-      content: "";
-      display: table;
-      clear: both; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .cols--4 > * {
-        width: calc(24.75% - 0.75rem); } }
-    .cols--4 > *:not(:nth-child(4n)) {
-      margin-right: 1rem; }
-    .cols--4 > *:nth-child(4n) {
-      margin-right: 0; }
-  .cols--4 > *:nth-child(4n) + * {
-    clear: both; }
-  .cols--4 > *:not(:nth-child(4n)) + * {
-    clear: none; }
-
-@media (min-width: 400px) {
-  .cols--2--bp-small {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--2--bp-small:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-small > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.5rem);
-      margin-right: 1rem;
-      width: calc(49.5% - 0.5rem) \9; }
-      .cols--2--bp-small > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 400px) and (-ms-high-contrast: none), (min-width: 400px) and (-ms-high-contrast: active) {
-      .cols--2--bp-small > * {
-        width: calc(49.5% - 0.5rem); } }
-
-@media (min-width: 400px) {
-      .cols--2--bp-small > *:not(:nth-child(2n)) {
-        margin-right: 1rem; }
-      .cols--2--bp-small > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-small > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-small > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 400px) {
-  .cols--3--bp-small {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--3--bp-small:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-small > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 0.66667rem);
-      margin-right: 1rem;
-      width: calc(33% - 0.66667rem) \9; }
-      .cols--3--bp-small > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 400px) and (-ms-high-contrast: none), (min-width: 400px) and (-ms-high-contrast: active) {
-      .cols--3--bp-small > * {
-        width: calc(33% - 0.66667rem); } }
-
-@media (min-width: 400px) {
-      .cols--3--bp-small > *:not(:nth-child(3n)) {
-        margin-right: 1rem; }
-      .cols--3--bp-small > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-small > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-small > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 400px) {
-  .cols--4--bp-small {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-small:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-small > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-small > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 400px) and (-ms-high-contrast: none), (min-width: 400px) and (-ms-high-contrast: active) {
-      .cols--4--bp-small > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 400px) {
-      .cols--4--bp-small > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-small > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-small > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-small > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
 @media (min-width: 760px) {
   .cols--2--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-medium:after {
       content: "";
@@ -2742,6 +2227,7 @@ button {
   .cols--3--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-medium:after {
       content: "";
@@ -2771,43 +2257,11 @@ button {
     .cols--3--bp-medium > *:not(:nth-child(3n)) + * {
       clear: none; } }
 
-@media (min-width: 760px) {
-  .cols--4--bp-medium {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-medium:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-medium > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-medium > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 760px) and (-ms-high-contrast: none), (min-width: 760px) and (-ms-high-contrast: active) {
-      .cols--4--bp-medium > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 760px) {
-      .cols--4--bp-medium > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-medium > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-medium > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-medium > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
 @media (min-width: 1020px) {
   .cols--2--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-large:after {
       content: "";
@@ -2841,6 +2295,7 @@ button {
   .cols--3--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-large:after {
       content: "";
@@ -2870,142 +2325,10 @@ button {
     .cols--3--bp-large > *:not(:nth-child(3n)) + * {
       clear: none; } }
 
-@media (min-width: 1020px) {
-  .cols--4--bp-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1020px) and (-ms-high-contrast: none), (min-width: 1020px) and (-ms-high-contrast: active) {
-      .cols--4--bp-large > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 1020px) {
-      .cols--4--bp-large > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-large > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-large > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-large > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
-@media (min-width: 1600px) {
-  .cols--2--bp-x-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--2--bp-x-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--2--bp-x-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(50% - 0.5rem);
-      margin-right: 1rem;
-      width: calc(49.5% - 0.5rem) \9; }
-      .cols--2--bp-x-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1600px) and (-ms-high-contrast: none), (min-width: 1600px) and (-ms-high-contrast: active) {
-      .cols--2--bp-x-large > * {
-        width: calc(49.5% - 0.5rem); } }
-
-@media (min-width: 1600px) {
-      .cols--2--bp-x-large > *:not(:nth-child(2n)) {
-        margin-right: 1rem; }
-      .cols--2--bp-x-large > *:nth-child(2n) {
-        margin-right: 0; }
-    .cols--2--bp-x-large > *:nth-child(2n) + * {
-      clear: both; }
-    .cols--2--bp-x-large > *:not(:nth-child(2n)) + * {
-      clear: none; } }
-
-@media (min-width: 1600px) {
-  .cols--3--bp-x-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--3--bp-x-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--3--bp-x-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(33.33333% - 0.66667rem);
-      margin-right: 1rem;
-      width: calc(33% - 0.66667rem) \9; }
-      .cols--3--bp-x-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1600px) and (-ms-high-contrast: none), (min-width: 1600px) and (-ms-high-contrast: active) {
-      .cols--3--bp-x-large > * {
-        width: calc(33% - 0.66667rem); } }
-
-@media (min-width: 1600px) {
-      .cols--3--bp-x-large > *:not(:nth-child(3n)) {
-        margin-right: 1rem; }
-      .cols--3--bp-x-large > *:nth-child(3n) {
-        margin-right: 0; }
-    .cols--3--bp-x-large > *:nth-child(3n) + * {
-      clear: both; }
-    .cols--3--bp-x-large > *:not(:nth-child(3n)) + * {
-      clear: none; } }
-
-@media (min-width: 1600px) {
-  .cols--4--bp-x-large {
-    clear: both;
-    margin-left: 0;
-    list-style: none; }
-    .cols--4--bp-x-large:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .cols--4--bp-x-large > * {
-      float: left;
-      box-sizing: border-box;
-      width: calc(25% - 0.75rem);
-      margin-right: 1rem;
-      width: calc(24.75% - 0.75rem) \9; }
-      .cols--4--bp-x-large > *:after {
-        content: "";
-        display: table;
-        clear: both; } }
-    @media all and (min-width: 1600px) and (-ms-high-contrast: none), (min-width: 1600px) and (-ms-high-contrast: active) {
-      .cols--4--bp-x-large > * {
-        width: calc(24.75% - 0.75rem); } }
-
-@media (min-width: 1600px) {
-      .cols--4--bp-x-large > *:not(:nth-child(4n)) {
-        margin-right: 1rem; }
-      .cols--4--bp-x-large > *:nth-child(4n) {
-        margin-right: 0; }
-    .cols--4--bp-x-large > *:nth-child(4n) + * {
-      clear: both; }
-    .cols--4--bp-x-large > *:not(:nth-child(4n)) + * {
-      clear: none; } }
-
 /***
     title: Container
     section: Layout
-    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body and doesn't work nested like this.
+    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don't work properly when nested like this. You can also use @include container;
     example:
         <div class="container bg--white">
             <h1>I'm centered</h1>
@@ -3020,6 +2343,28 @@ button {
       max-width: 960px;
       margin-left: auto;
       margin-right: auto; } }
+
+.pull-right {
+  float: right; }
+
+img.pull-right {
+  margin-left: 1rem;
+  margin-bottom: 1rem; }
+
+.pull-left {
+  float: left; }
+
+img.pull-left {
+  margin-right: 1rem;
+  margin-bottom: 1rem; }
+
+.clear {
+  clear: both; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 /***
     title: Forms
@@ -3037,6 +2382,21 @@ button {
                 <label>
                     Email<br>
                     <input type="email" name="email" placeholder="eg. john.doe@example.com">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Sex<br>
+                    <select name="sex">
+                        <option value="f">Female</option>
+                        <option value="m">Male</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Age<br>
+                    <input type="range" name="age" min="1" max="150">
                 </label>
             </p>
             <p>
@@ -3081,7 +2441,7 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   box-sizing: border-box;
   max-width: 100%;
   margin: 0;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.6rem;
   font-size: 1rem;
   color: #333;
   line-height: 1.2\9;
@@ -3133,8 +2493,8 @@ select {
   background-size: 0.5rem auto;
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0.4rem 2.4rem 0.4rem 0.4rem;
-  border: 0;
+  padding: 0.6rem 2.6rem 0.6rem 0.6rem;
+  border: 1px solid rgba(100, 100, 100, 0.5);
   border-radius: 0.2rem; }
 
 input[type=range] {
@@ -3256,6 +2616,16 @@ input[type=range] {
     input[type=range]::-ms-thumb:focus {
       outline: 0; }
 
+/***
+    title: Group
+    section: Layout
+    description: Use this class to add margin-bottom to an element.
+    example:
+        <div class="card bg--white group--x-large">
+            <h2>I have margin</h2>
+            <p>More than usual</p>
+        </div>
+***/
 .group {
   margin-bottom: 1rem; }
   .group--large {
@@ -3270,7 +2640,7 @@ input[type=range] {
 /***
     title: Headings
     section: Typography
-    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size.
+    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;
     example:
         <h1 class="heading--4">I'm a H1 but look like a H4</h1>
         <h3>I'm a normal H3</h3>
@@ -3469,30 +2839,30 @@ a:hover .icon--round {
  */
 [class^="icon-"].icon--blue:before,
 [class*="icon-"].icon--blue:before {
-  color: #0000ff; }
+  color: #06f; }
 
 [class^="icon-"].icon--after.icon--blue:after,
 [class*="icon-"].icon--after.icon--blue:after {
-  color: #0000ff; }
+  color: #06f; }
 
 [class^="icon-"].icon--round--blue:before,
 [class*="icon-"].icon--round--blue:before {
-  background-color: #0000ff; }
+  background-color: #06f; }
 
 [class^="icon-"].icon--round--blue.icon--round--ghost:before,
 [class*="icon-"].icon--round--blue.icon--round--ghost:before {
   background-color: transparent;
-  color: #0000ff;
-  border-color: #0000ff; }
+  color: #06f;
+  border-color: #06f; }
 
 [class^="icon-"].icon--round--blue:hover:before,
 [class*="icon-"].icon--round--blue:hover:before {
-  background-color: rgba(0, 0, 255, 0.2);
-  color: #0000ff; }
+  background-color: rgba(0, 102, 255, 0.2);
+  color: #06f; }
 
 [class^="icon-"].icon--round--blue.icon--round--ghost:hover:before,
 [class*="icon-"].icon--round--blue.icon--round--ghost:hover:before {
-  background-color: rgba(0, 0, 255, 0.2); }
+  background-color: rgba(0, 102, 255, 0.2); }
 
 /***
     title: Images
@@ -3511,10 +2881,15 @@ a:hover .icon--round {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%); }
 
+.img--wide {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem; }
+
 /***
     title: Inline Grid
     section: Grid
-    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that there can't be any whitespace between elements in the HTML source code and for some reason doesn't work in the styleguide.
+    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element's font-size back to $font-size-default.
     example:
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
@@ -3539,21 +2914,6 @@ a:hover .icon--round {
 .inline-grid--3 > * {
   width: calc(33.33333% - 1rem); }
 
-.inline-grid--4 > * {
-  width: calc(25% - 1rem); }
-
-@media (min-width: 400px) {
-  .inline-grid--2--bp-small > * {
-    width: calc(50% - 1rem); } }
-
-@media (min-width: 400px) {
-  .inline-grid--3--bp-small > * {
-    width: calc(33.33333% - 1rem); } }
-
-@media (min-width: 400px) {
-  .inline-grid--4--bp-small > * {
-    width: calc(25% - 1rem); } }
-
 @media (min-width: 760px) {
   .inline-grid--2--bp-medium > * {
     width: calc(50% - 1rem); } }
@@ -3562,10 +2922,6 @@ a:hover .icon--round {
   .inline-grid--3--bp-medium > * {
     width: calc(33.33333% - 1rem); } }
 
-@media (min-width: 760px) {
-  .inline-grid--4--bp-medium > * {
-    width: calc(25% - 1rem); } }
-
 @media (min-width: 1020px) {
   .inline-grid--2--bp-large > * {
     width: calc(50% - 1rem); } }
@@ -3573,22 +2929,6 @@ a:hover .icon--round {
 @media (min-width: 1020px) {
   .inline-grid--3--bp-large > * {
     width: calc(33.33333% - 1rem); } }
-
-@media (min-width: 1020px) {
-  .inline-grid--4--bp-large > * {
-    width: calc(25% - 1rem); } }
-
-@media (min-width: 1600px) {
-  .inline-grid--2--bp-x-large > * {
-    width: calc(50% - 1rem); } }
-
-@media (min-width: 1600px) {
-  .inline-grid--3--bp-x-large > * {
-    width: calc(33.33333% - 1rem); } }
-
-@media (min-width: 1600px) {
-  .inline-grid--4--bp-x-large > * {
-    width: calc(25% - 1rem); } }
 
 /***
     title: Link
@@ -3690,6 +3030,62 @@ a,
   list-style: none; }
   .list--plain--margin > * {
     margin-bottom: 0.5rem; }
+
+.pane__overlay {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 100;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
+  .pane__overlay.open {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101;
+    -webkit-transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: transform 0s linear, background .2s ease-out;
+    transition: transform 0s linear, background .2s ease-out, -webkit-transform 0s linear; }
+
+.pane {
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 100;
+  width: 80%;
+  max-width: 30rem;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .2s .2s ease-out;
+  transition: -webkit-transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out, -webkit-transform .2s .2s ease-out; }
+  .pane--right {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+    .pane--right .pane__toggle {
+      left: auto;
+      right: 100%; }
+  .pane.open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101; }
+  .pane__toggle {
+    position: absolute;
+    left: 100%;
+    top: 1rem; }
 
 .popup {
   background: rgba(0, 0, 0, 0.5);
@@ -3859,7 +3255,7 @@ a,
 /***
     title: Section
     section: Layout
-    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn't work nested like in the styleguide (that's why it looks broken here).
+    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don't work properly nested like in the styleguide (that's why it looks broken here).
     example:
         <div class="section bg--white">
             <h2>I'm a section</h2>
@@ -4032,86 +3428,23 @@ a,
     -webkit-transform: translateY(50%) translateX(1rem);
             transform: translateY(50%) translateX(1rem); }
 
-.table-grid {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-  .table-grid > * {
-    display: block; }
-  @media (min-width: 760px) {
-    .table-grid {
-      display: table;
-      table-layout: fixed;
-      margin-left: -0.5rem;
-      margin-right: -0.5rem;
-      width: 100%;
-      width: calc(100% + 1rem); }
-      .table-grid > * {
-        display: table-cell;
-        vertical-align: top;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem; } }
+/* .table-grid {
+	@include table-grid;
+}
 
 .table-grid--bp-medium {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-  .table-grid--bp-medium > * {
-    display: block; }
-  @media (min-width: 760px) {
-    .table-grid--bp-medium {
-      display: table;
-      table-layout: fixed;
-      margin-left: -0.5rem;
-      margin-right: -0.5rem;
-      width: 100%;
-      width: calc(100% + 1rem); }
-      .table-grid--bp-medium > * {
-        display: table-cell;
-        vertical-align: top;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem; } }
-
+	@include table-grid($gutter-default, false, $bp-medium);
+} */
 /***
     title: Text Colors
     section: Colors
-    description: Use to give an element's text a different color.
+    description: Use to give an element's text a different color. This class affects everything, including headings and links.
     example:
         <div class="bg--blue color--white">
             <h2>I have white</h2>
             <p>Text text text text text text text text text text text text text</p>
         </div>
 ***/
-.color--transparent,
-h1.color--transparent,
-h2.color--transparent,
-h3.color--transparent,
-h4.color--transparent,
-h5.color--transparent,
-h6.color--transparent,
-.heading--1.color--transparent,
-.heading--2.color--transparent,
-.heading--3.color--transparent,
-.heading--4.color--transparent,
-.heading--5.color--transparent,
-.heading--6.color--transparent,
-a.color--transparent,
-.link.color--transparent {
-  color: transparent; }
-
-a.color--transparent:hover,
-.link.color--transparent:hover {
-  color: #09f;
-  text-decoration: none; }
-
-.color--transparent h1, .color--transparent h2, .color--transparent h3, .color--transparent h4, .color--transparent h5, .color--transparent h6, .color--transparent .heading--1, .color--transparent .heading--2, .color--transparent .heading--3, .color--transparent .heading--4, .color--transparent .heading--5, .color--transparent .heading--6,
-.color--transparent a:not(.button),
-.color--transparent .link,
-.color--transparent a:not(.button):hover,
-.color--transparent .link:hover {
-  color: transparent;
-  text-decoration: none; }
-
 .color--white,
 h1.color--white,
 h2.color--white,
@@ -4136,10 +3469,13 @@ a.color--white:hover,
 
 .color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
 .color--white a:not(.button),
-.color--white .link,
+.color--white .link {
+  color: #fff;
+  text-decoration: none; }
+
 .color--white a:not(.button):hover,
 .color--white .link:hover {
-  color: #fff;
+  color: #09f;
   text-decoration: none; }
 
 /***
@@ -4170,32 +3506,16 @@ a.color--white:hover,
 .text--right {
   text-align: right; }
 
+.text--small {
+  font-size: 0.8rem; }
+
+.text--large {
+  font-size: 1.2rem; }
+
 .text--ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
-
-.pull-right {
-  float: right; }
-
-img.pull-right {
-  margin-left: 1rem;
-  margin-bottom: 1rem; }
-
-.pull-left {
-  float: left; }
-
-img.pull-left {
-  margin-right: 1rem;
-  margin-bottom: 1rem; }
-
-.clear {
-  clear: both; }
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both; }
 
 .alignleft,
 .alignright,
@@ -4370,12 +3690,12 @@ div.gallery {
     .fixed {
         display: none;
     }
-}</style></head><body class="styleguide"><nav class="styleguide__nav"><ul><li><a href="#Buttons">Buttons</a></li><li><a href="#Colors">Colors</a></li><li><a href="#Forms">Forms</a></li><li><a href="#Grid">Grid</a></li><li><a href="#Icons">Icons</a></li><li><a href="#Images">Images</a></li><li><a href="#Layout">Layout</a></li><li><a href="#Links">Links</a></li><li><a href="#Lists">Lists</a></li><li><a href="#Typography">Typography</a></li></ul></nav><Styleguide></Styleguide><section id="Buttons" class="styleguide__section"><h2>Buttons</h2><article class="styleguide__element"><h3>Button</h3><p><p>Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.</p>
+}</style></head><body class="styleguide"><nav class="styleguide__nav"><ul><li><a href="#Buttons">Buttons</a></li><li><a href="#Colors">Colors</a></li><li><a href="#Forms">Forms</a></li><li><a href="#Grid">Grid</a></li><li><a href="#Icons">Icons</a></li><li><a href="#Images">Images</a></li><li><a href="#Layout">Layout</a></li><li><a href="#Links">Links</a></li><li><a href="#Lists">Lists</a></li><li><a href="#Typography">Typography</a></li></ul></nav><Styleguide></Styleguide><section id="Buttons" class="styleguide__section"><h2>Buttons</h2><article class="styleguide__element"><h3>Button</h3><p><p>Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;</p>
 </p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>I'm a normal button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Button elements automatically look like buttons<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button--ghost"</span>&gt;</span>Button elements automatically look like buttons<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Submit inputs too!"</span>&gt;</span>
@@ -4385,12 +3705,15 @@ div.gallery {
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Continue<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--gray"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--gray button--ghost"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--small"</span>&gt;</span>Small button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article></section><section id="Colors" class="styleguide__section"><h2>Colors</h2><article class="styleguide__element"><h3>Background Colors</h3><p><p>Use to apply a background color to an element. Add your colors to the $bg-colors array in config/_bg-colors.scss.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--white"</span>&gt;</span>I have a white background color<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Text Colors</h3><p><p>Use to give an element&#39;s text a different color.</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--large"</span>&gt;</span>Large button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article></section><section id="Colors" class="styleguide__section"><h2>Colors</h2><article class="styleguide__element"><h3>Background Colors</h3><p><p>Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.</p>
+</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--white"</span>&gt;</span>I have a white background color<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Text Colors</h3><p><p>Use to give an element&#39;s text a different color. This class affects everything, including headings and links.</p>
 </p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--blue color--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I have white<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Text text text text text text text text text text text text
@@ -4408,6 +3731,20 @@ div.gallery {
             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"eg. john.doe@example.com"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Sex
+            <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"sex"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"f"</span>&gt;</span>Female<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"m"</span>&gt;</span>Male<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Age
+            <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"range"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"age"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"150"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Message
             <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">rows</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">cols</span>=<span class="hljs-value">"60"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Write your message here"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
@@ -4416,13 +3753,21 @@ div.gallery {
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Go"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></article></section><section id="Grid" class="styleguide__section"><h2>Grid</h2><article class="styleguide__element"><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config/_cols.scss.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2 cols--4--bp-medium"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>I'm two columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>In low resolution<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>But four columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>In high resolution<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Inline Grid</h3><p><p>Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that there can&#39;t be any whitespace between elements in the HTML source code and for some reason doesn&#39;t work in the styleguide.</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></article></section><section id="Grid" class="styleguide__section"><h2>Grid</h2><article class="styleguide__element"><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.</p>
+</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2--bp-medium cols--3--bp-large"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> I'm two columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> In low resolution<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> But three columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> In high<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Resolutions<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Cool?<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Inline Grid</h3><p><p>Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element&#39;s font-size back to $font-size-default.</p>
 </p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-grid inline-grid--2--bp-medium"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -4459,15 +3804,20 @@ div.gallery {
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter icon--above"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article></section><section id="Images" class="styleguide__section"><h2>Images</h2><article class="styleguide__element"><h3>Images</h3><p><p>Various helper classes for styling images.</p>
 </p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--round"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--rounded"</span>&gt;</span></code></pre></article></section><section id="Layout" class="styleguide__section"><h2>Layout</h2><article class="styleguide__element"><h3>Background Overlay</h3><p><p>Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--rounded"</span>&gt;</span></code></pre></article></section><section id="Layout" class="styleguide__section"><h2>Layout</h2><article class="styleguide__element"><h3>Background Overlay</h3><p><p>Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).</p>
+</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a box<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body and doesn&#39;t work nested like this.</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Card</h3><p><p>A simple box/card. Can be used with the bg-classes.</p>
+</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white"</span>&gt;</span>I'm a shadowed card<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container;</p>
 </p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>I'm centered<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>In the middle of the page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn&#39;t work nested like in the styleguide (that&#39;s why it looks broken here).</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Group</h3><p><p>Use this class to add margin-bottom to an element.</p>
+</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white group--x-large"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I have margin<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>More than usual<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don&#39;t work properly nested like in the styleguide (that&#39;s why it looks broken here).</p>
 </p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"section bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a section<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
@@ -4488,7 +3838,7 @@ div.gallery {
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article></section><section id="Typography" class="styleguide__section"><h2>Typography</h2><article class="styleguide__element"><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size.</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article></section><section id="Typography" class="styleguide__section"><h2>Typography</h2><article class="styleguide__element"><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;</p>
 </p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--4"</span>&gt;</span>I'm a H1 but look like a H4<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>I'm a normal H3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--1"</span>&gt;</span>I'm not a heading at all!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Text</h3><p><p>Various helper classes for working with text.</p>
@@ -4510,4 +3860,4 @@ div.gallery {
         })();
     }
 //});
-</script><script src="https://code.jquery.com/jquery-1.12.2.js"></script><script src="all.js"></script></body></html>
+</script></body></html>

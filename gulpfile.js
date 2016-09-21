@@ -4,7 +4,15 @@ var sassGlob = require('gulp-sass-glob');
 var autoprefixer = require('gulp-autoprefixer');
 var styleguidejs = require('gulp-styleguidejs');
 
-gulp.task('default', function () {
+gulp.task('sass', function () {
+	return gulp.src('sleek-css.scss')
+		.pipe(sassGlob())
+		.pipe(sass())
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('.'));
+});
+
+gulp.task('styleguide', function () {
 	return gulp.src('sleek-css.scss')
 		.pipe(sassGlob())
 		.pipe(sass())
@@ -15,5 +23,10 @@ gulp.task('default', function () {
 			template: __dirname + '/styleguide/template.jade',
 			outputFile: __dirname + '/styleguide.html'
 		}))
-		.pipe(gulp.dest('.'));
+});
+
+gulp.task('default', ['sass', 'styleguide']);
+
+gulp.task('watch', function () {
+	gulp.watch('**/*.scss', ['default']);
 });

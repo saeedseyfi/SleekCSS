@@ -16,3 +16,9 @@
 .img--grayscale {
 	filter: grayscale(100%);
 }
+
+.img--wide {
+	display: block;
+	width: 100%;
+	margin-bottom: $margin-default;
+}

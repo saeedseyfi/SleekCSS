@@ -1,23 +1,28 @@
+// Background and text colors
 $color-form-field-bg: #fff !default;
 $color-form-success: #060 !default;
 $color-form-error: #600 !default;
 $color-form-placeholder: #999 !default;
 $color-form-text: #333 !default;
 
-$form-padding-horizontal: 1rem !default;
-$form-padding-vertical: .8rem !default;
+// Padding
+$form-padding-horizontal: $button-padding-vertical !default;
+$form-padding-vertical: $button-padding-vertical !default;
 
+// Border
 $form-border: true !default;
 $form-border-radius: .2rem !default;
 
+// Select elements
 $form-select-bg: #fff !default;
-$form-select-border: false !default;
+$form-select-border: true !default;
 $form-select-border-radius: .2rem !default;
-$form-select-arrow: "assets/svg/select-arrow.svg" !default;
+$form-select-arrow: "assets/svg/select-arrow.svg" !default; // Set to false to have unstyled select elements
 $form-select-arrow-size: .5rem !default;
-$form-select-padding-horizontal: .4rem !default;
-$form-select-padding-vertical: .4rem !default;
+$form-select-padding-horizontal: $form-padding-horizontal !default;
+$form-select-padding-vertical: $form-padding-vertical !default;
 
+// Range inputs
 $form-range-bg: #bbb !default;
 $form-range-height: .25rem !default;
 $form-range-border: false !default;

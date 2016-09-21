@@ -1,14 +1,15 @@
 /***
     title: Button
     section: Buttons
-    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.
+    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;
     example:
         <p><a href="#" class="button">I'm a normal button</a></p>
-        <p><button>Button elements automatically look like buttons</button></p>
+        <p><button class="button--ghost">Button elements automatically look like buttons</button></p>
         <p><input type="submit" value="Submit inputs too!"></p>
         <p><button class="button--wide">Full width!</button></p>
-        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray">Cancel</a></p>
+        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
         <p><a href="#" class="button button--small">Small button</a></p>
+        <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 @mixin button-background ($color) {
 	// If a gradient is specified
@@ -90,7 +91,7 @@
 	line-height: $button-line-height;
 	color: $button-text-color;
 	font-weight: $button-font-weight;
-	font-style: normal; // TODO: $button-font-style
+	font-style: $button-font-weight;
 	text-transform: $button-text-transform;
 	text-decoration: none;
 	text-align: center;
@@ -112,7 +113,7 @@
 
 	// Transition?
 	@if ($button-transition == true) {
-		transition: all .1s ease-out;
+		transition: all .2s ease-out;
 	}
 	@elseif ($button-transition) {
 		transition: $button-transition;
@@ -141,22 +142,15 @@
 	}
 }
 
-// Button class and submits
-.button,
-input[type=submit],
-button {
-	@include button;
-}
-
-.button--ghost {
+@mixin button-ghost ($color: $button-color) {
 	background-color: transparent;
-	color: $button-color;
-	border: $button-border-width $button-border-style $button-color;
+	color: $color;
+	border: $button-border-width $button-border-style $color;
 
 	&:hover {
-		background-color: $button-color;
+		background-color: $color;
 
-		@if (lightness($button-color) > 70) {
+		@if (lightness($color) > 70) {
 			color: invert($button-text-color);
 		}
 		@else {
@@ -165,26 +159,24 @@ button {
 	}
 }
 
+// Button class and submits
+.button,
+input[type=submit],
+button {
+	@include button;
+}
+
+.button--ghost {
+	@include button-ghost;
+}
+
 // Button colors
 @each $bc in $button-colors {
 	.button--#{nth($bc, 1)} {
 		@include button-background(nth($bc, 2));
 
 		&.button--ghost {
-			background-color: transparent;
-			color: nth($bc, 2);
-			border-color: nth($bc, 2);
-
-			&:hover {
-				background-color: nth($bc, 2);
-
-				@if (lightness(nth($bc, 2)) > 70) {
-					color: invert($button-text-color);
-				}
-				@else {
-					color: $button-text-color;
-				}
-			}
+			@include button-ghost(nth($bc, 2));
 		}
 	}
 }

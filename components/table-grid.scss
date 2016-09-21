@@ -1,3 +1,4 @@
+// TODO: Needs work
 @mixin table-grid ($gutter: $gutter-default, $border: false, $bp: $bp-medium) {
 	margin-left: 0;
 	padding-left: 0;
@@ -58,10 +59,10 @@
 	}
 }
 
-.table-grid {
+/* .table-grid {
 	@include table-grid;
 }
 
 .table-grid--bp-medium {
 	@include table-grid($gutter-default, false, $bp-medium);
-}
+} */

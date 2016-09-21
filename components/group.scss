@@ -1,3 +1,13 @@
+/***
+    title: Group
+    section: Layout
+    description: Use this class to add margin-bottom to an element.
+    example:
+        <div class="card bg--white group--x-large">
+            <h2>I have margin</h2>
+            <p>More than usual</p>
+        </div>
+***/
 .group {
 	margin-bottom: $margin-default;
 

@@ -1,7 +1,7 @@
 /***
     title: Text Colors
     section: Colors
-    description: Use to give an element's text a different color.
+    description: Use to give an element's text a different color. This class affects everything, including headings and links.
     example:
         <div class="bg--blue color--white">
             <h2>I have white</h2>
@@ -39,11 +39,15 @@
 	.color--#{nth($color, 1)} {
 		#{$headings},
 		a:not(.button),
-		.link,
-		a:not(.button):hover,
-		.link:hover {
+		.link {
 			color: #{nth($color, 2)};
 			text-decoration: none;
+		}
+
+		a:not(.button):hover,
+		.link:hover {
+			color: $color-link-hover;
+			text-decoration: $text-decoration-link-hover;
 		}
 	}
 }

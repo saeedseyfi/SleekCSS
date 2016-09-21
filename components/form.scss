@@ -18,6 +18,21 @@
             </p>
             <p>
                 <label>
+                    Sex<br>
+                    <select name="sex">
+                        <option value="f">Female</option>
+                        <option value="m">Male</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Age<br>
+                    <input type="range" name="age" min="1" max="150">
+                </label>
+            </p>
+            <p>
+                <label>
                     Message<br>
                     <textarea name="message" rows="3" cols="60" placeholder="Write your message here"></textarea>
                 </label>
@@ -154,32 +169,34 @@ button {
 }
 
 // Select
-select {
-	appearance: none;
+@if ($form-select-arrow) {
+	select {
+		appearance: none;
 
-	background: $form-select-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
-	background-size: $form-select-arrow-size auto;
+		background: $form-select-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
+		background-size: $form-select-arrow-size auto;
 
-	box-sizing: border-box;
-	max-width: 100%;
+		box-sizing: border-box;
+		max-width: 100%;
 
-	padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
+		padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
 
-	@if ($form-select-border == true) {
-		border: 1px solid $color-border;
-	}
-	@elseif ($form-select-border) {
-		border: $form-select-border;
-	}
-	@else {
-		border: 0;
-	}
+		@if ($form-select-border == true) {
+			border: 1px solid $color-border;
+		}
+		@elseif ($form-select-border) {
+			border: $form-select-border;
+		}
+		@else {
+			border: 0;
+		}
 
-	@if ($form-select-border-radius) {
-		border-radius: $form-select-border-radius;
-	}
-	@else {
-		border-radius: 0;
+		@if ($form-select-border-radius) {
+			border-radius: $form-select-border-radius;
+		}
+		@else {
+			border-radius: 0;
+		}
 	}
 }
 

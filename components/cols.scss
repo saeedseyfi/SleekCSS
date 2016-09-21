@@ -1,13 +1,15 @@
 /***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config/_cols.scss.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
     example:
-        <ul class="cols cols--2 cols--4--bp-medium">
-            <li>I'm two columns</li>
-            <li>In low resolution</li>
-            <li>But four columns</li>
-            <li>In high resolution</li>
+        <ul class="cols cols--2--bp-medium cols--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
         </ul>
 ***/
 
@@ -27,6 +29,7 @@
 
 	// In case it's used on a UL
 	margin-left: 0;
+	padding-left: 0;
 	list-style: none;
 
 	> #{$selector} {
@@ -92,7 +95,12 @@
 
 	// In case it's used on a list
 	margin-left: 0;
+	padding-left: 0;
 	list-style: none;
+
+	> * {
+		margin-bottom: $gutter-default;
+	}
 }
 
 // Create cols--X classes for all specified column counts

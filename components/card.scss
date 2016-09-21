@@ -1,0 +1,23 @@
+/***
+    title: Card
+    section: Layout
+    description: A simple box/card. Can be used with the bg-classes.
+    example:
+        <div class="card bg--white">I'm a shadowed card</div>
+***/
+@mixin card ($bg: false) {
+	@if ($bg) {
+		background-color: $bg;
+	}
+
+	display: block;
+	margin-bottom: $margin-default;
+	padding: $padding-default;
+
+	box-shadow: $shadow-3;
+}
+
+// TODO: Add config (card-padding, card-shadow, card-border, card-paddings[] (.card--large etc))
+.card {
+	@include card;
+}

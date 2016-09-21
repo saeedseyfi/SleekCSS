@@ -1,12 +1,11 @@
+// Add more here to use cols--4, cols--5 etc
 $col-nums: (
 	"2": 2,
-	"3": 3,
-	"4": 4
+	"3": 3
 ) !default;
 
+// Add more here to use cols--3--bp-large etc
 $col-breakpoints: (
-	"bp-small": $bp-small,
 	"bp-medium": $bp-medium,
-	"bp-large": $bp-large,
-	"bp-x-large": $bp-x-large
+	"bp-large": $bp-large
 ) !default;

@@ -204,7 +204,7 @@
 /***
     title: Section
     section: Layout
-    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn't work nested like in the styleguide (that's why it looks broken here).
+    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don't work properly nested like in the styleguide (that's why it looks broken here).
     example:
         <div class="section bg--white">
             <h2>I'm a section</h2>

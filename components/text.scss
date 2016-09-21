@@ -35,6 +35,14 @@
 	text-align: right;
 }
 
+.text--small {
+	font-size: $font-size-small;
+}
+
+.text--large {
+	font-size: $font-size-large;
+}
+
 @mixin ellipsis {
 	white-space: nowrap;
 	overflow: hidden;
