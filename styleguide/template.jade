@@ -7,7 +7,7 @@ html
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
 
-    title Styleguide
+    title SleekCSS Styleguide
 
     style
       #{css}
@@ -17,38 +17,41 @@ html
 
   body.styleguide
 
-    nav.styleguide__nav
-      ul
+    header.styleguide__header
+        h1 Styleguide
+        p Examples of all CSS components and configuration.
+
+      nav.styleguide__nav
+        ul
+          for elements, section in docs
+            li
+              a(href="##{section.replace(/[^a-z0-9]/ig,'')}") #{section}
+
+    main
         for elements, section in docs
-          li
-            a(href="##{section.replace(/[^a-z0-9]/ig,'')}") #{section}
+          section.styleguide__section(id=section.replace(/[^a-z0-9]/ig,''))
+            h2 #{section}
 
-    Styleguide
+            for element, i in elements
+              article.styleguide__element
+                h3 #{element.title}
 
-    for elements, section in docs
-      section.styleguide__section(id=section.replace(/[^a-z0-9]/ig,''))
-        h2 #{section}
+                if element.description
+                  p !{marked(element.description)}
 
-        for element, i in elements
-          article.styleguide__element
-            h3 #{element.title}
+                if element.example
+                  h4 Example
 
-            if element.description
-              p !{marked(element.description)}
+                  div.styleguide__example
 
-            if element.example
-              h4 Example
+                  h4 Example Code
 
-              div.styleguide__example
-
-              h4 Example Code
-
-              pre.styleguide__example-code
-                code
-                  if Array.isArray(element.example)
-                    | !{element.example.join(' ').trim()}
-                  else
-                    | !{element.example.trim()}
+                  pre.styleguide__example-code
+                    code
+                      if Array.isArray(element.example)
+                        | !{element.example.join(' ').trim()}
+                      else
+                        | !{element.example.trim()}
 
     script
       |!{ templateJs }

@@ -1780,3 +1780,76 @@ div.gallery {
       div.gallery dl.gallery-item dt a img {
         display: block;
         border: 0 !important; }
+
+/**
+ * Border box
+ */
+* {
+  box-sizing: border-box; }
+
+/**
+ * General styling
+ */
+html {
+  background: #fff;
+  font-size: 100%; }
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: Helvetica, sans-serif;
+  color: #333;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased; }
+
+/**
+ * Paragraphs, lists, quotes etc
+ */
+p {
+  margin: 0 0 1rem; }
+
+ul,
+ol {
+  margin: 0 0 1rem 2rem;
+  padding: 0; }
+
+blockquote,
+q {
+  font-size: 1.2rem;
+  margin: 0; }
+
+pre {
+  background: #fafafa;
+  color: #111;
+  padding: 1rem;
+  max-height: 300px;
+  overflow: auto; }
+
+/**
+ * Inline elements
+ */
+small {
+  font-size: 0.8rem; }
+
+/**
+ * Images, iframes etc
+ */
+img,
+svg {
+  max-width: 100%;
+  height: auto; }
+
+hr {
+  clear: both;
+  margin: 1rem 0;
+  padding: 0;
+  height: 0;
+  border: 0;
+  border-top: 1px solid rgba(100, 100, 100, 0.5); }
+  @media (min-width: 760px) {
+    hr {
+      margin: 2rem 0; } }

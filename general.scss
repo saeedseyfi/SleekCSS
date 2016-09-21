@@ -45,15 +45,6 @@ q {
 }
 
 blockquote {
-	> :first-child:before,
-	> :last-child:after {
-		content: open-quote;
-		line-height: 1;
-	}
-
-	> :last-child:after {
-		content: close-quote;
-	}
 }
 
 pre {
@@ -86,13 +77,16 @@ iframe {
 
 hr {
 	clear: both;
+
 	margin: $margin-default 0;
 	padding: 0;
+
 	height: 0;
+
 	border: 0;
 	border-top: 1px solid $color-border;
 
 	@media #{$bp-medium} {
-		margin: ($margin-default * 2) 0;
+		margin: ($margin-large) 0;
 	}
 }
