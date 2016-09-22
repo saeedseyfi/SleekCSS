@@ -3709,14 +3709,149 @@ hr {
     hr {
       margin: 2rem 0; } }
 ></style><style>body {
-  background: #21252b;
-  margin: 0; }
+	padding: 0;
+	margin: 0;
+}
 
+/* Header */
 body > header {
-  background: #282c34;
-  padding: 1rem 2rem; }
-</style></head><body class="styleguide"><header class="styleguide__header"><h1>Styleguide</h1><p>Examples of all CSS components and configuration.</p></header><nav class="styleguide__nav"><ul><li><a href="#Buttons">Buttons</a></li><li><a href="#Colors">Colors</a></li><li><a href="#Forms">Forms</a></li><li><a href="#Grid">Grid</a></li><li><a href="#Icons">Icons</a></li><li><a href="#Images">Images</a></li><li><a href="#Layout">Layout</a></li><li><a href="#Links">Links</a></li><li><a href="#Lists">Lists</a></li><li><a href="#Typography">Typography</a></li></ul></nav><main><section id="Buttons" class="styleguide__section"><h2>Buttons</h2><article class="styleguide__element"><h3>Button</h3><p><p>Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+	padding: 2rem;
+	border-bottom: 1px solid rgba(100, 100, 100, .4);
+}
+
+	body > header p {
+		margin: 0;
+	}
+
+/* Nav */
+body > nav {
+}
+
+	body > nav ul {
+		margin: 0;
+		list-style: none;
+	}
+
+		body > nav ul li {
+			display: block;
+			border-bottom: 1px solid rgba(100, 100, 100, .4);
+		}
+
+			body > nav ul li a {
+				display: block;
+				padding: 1rem 2rem;
+				color: inherit;
+			}
+
+/* Each section */
+main section {
+}
+
+	/* Section header */
+	main section > header {
+		background: rgba(50, 50, 50, .2);
+		padding: 2rem;
+		border-bottom: 1px solid rgba(100, 100, 100, .4);
+	}
+
+		main section > header h2 {
+			margin: 0;
+		}
+
+	/* Each component */
+	main section article {
+		padding: 2rem;
+		border-bottom: 1px solid rgba(100, 100, 100, .4);
+	}
+
+		/* Example and code */
+		main section article > div {
+
+		}
+
+			main section article div.example-container div.example {
+				background-image: linear-gradient(45deg, #f4f4f4 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #f4f4f4), linear-gradient(45deg, #f4f4f4 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #f4f4f4);
+			    background-size: 20px 20px;
+			    background-position: 0 0, 10px 10px;
+
+			    margin: 0 0 1.5rem;
+			    padding: 1rem;
+			    border: 1px solid rgba(100, 100, 100, .4);
+
+			    position: relative;
+			    overflow: hidden;
+			}
+
+@media (min-width: 1000px) {
+	main section article {
+		overflow: hidden;
+	}
+
+		main section article header {
+
+		}
+
+		main section article > div {
+			width: calc(50% - 1rem);
+			float: left;
+		}
+
+		main section article > div + div {
+			float: right;
+		}
+}
+
+@media (min-width: 1200px) {
+	body:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	body > nav {
+		width: 20rem;
+		float: left;
+		position: sticky;
+		top: 0;
+	}
+
+	main {
+		width: calc(100% - 20rem);
+		float: right;
+		border-left: 1px solid rgba(100, 100, 100, .4);
+	}
+}
+
+/* Syntax Highlight */
+pre {
+	background: #393939;
+
+    margin: 0 0 1.5rem;
+    max-height: 30rem;
+    overflow: auto;
+
+    padding: 1rem;
+    color: #c6c6c6;
+    font-size: .8rem;
+}
+
+.hljs-tag {
+    color: #ddc982;
+}
+
+.hljs-title {
+    color: #ddc982;
+}
+
+.hljs-attribute {
+    color: #c6c6c6;
+}
+
+.hljs-value {
+    color: #a9c978;
+}
+</style></head><body><header><h1>Styleguide</h1><p>Examples of all CSS components and configuration.</p></header><nav><ul><li><a href="#buttons">Buttons</a></li><li><a href="#colors">Colors</a></li><li><a href="#forms">Forms</a></li><li><a href="#grid">Grid</a></li><li><a href="#icons">Icons</a></li><li><a href="#images">Images</a></li><li><a href="#layout">Layout</a></li><li><a href="#links">Links</a></li><li><a href="#lists">Lists</a></li><li><a href="#typography">Typography</a></li></ul></nav><main><section id="buttons"><header><h2>Buttons</h2></header><article><header><h3>Button</h3><p><p>Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>I'm a normal button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
@@ -3737,14 +3872,14 @@ body > header {
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--large"</span>&gt;</span>Large button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article></section><section id="Colors" class="styleguide__section"><h2>Colors</h2><article class="styleguide__element"><h3>Background Colors</h3><p><p>Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--white"</span>&gt;</span>I have a white background color<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Text Colors</h3><p><p>Use to give an element&#39;s text a different color. This class affects everything, including headings and links.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--blue color--white"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></article></section><section id="colors"><header><h2>Colors</h2></header><article><header><h3>Background Colors</h3><p><p>Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--white"</span>&gt;</span>I have a white background color<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Text Colors</h3><p><p>Use to give an element&#39;s text a different color. This class affects everything, including headings and links.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--blue color--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I have white<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Text text text text text text text text text text text text
         text<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article></section><section id="Forms" class="styleguide__section"><h2>Forms</h2><article class="styleguide__element"><h3>Forms</h3><p><p>Form styling.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article></section><section id="forms"><header><h2>Forms</h2></header><article><header><h3>Forms</h3><p><p>Form styling.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Name
             <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
@@ -3778,8 +3913,8 @@ body > header {
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Go"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></article></section><section id="Grid" class="styleguide__section"><h2>Grid</h2><article class="styleguide__element"><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2--bp-medium cols--3--bp-large"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div></article></section><section id="grid"><header><h2>Grid</h2></header><article><header><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2--bp-medium cols--3--bp-large"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> I'm two columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
@@ -3792,14 +3927,14 @@ body > header {
         <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Resolutions<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Cool?<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Inline Grid</h3><p><p>Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element&#39;s font-size back to $font-size-default.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-grid inline-grid--2--bp-medium"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article><article><header><h3>Inline Grid</h3><p><p>Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element&#39;s font-size back to $font-size-default.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-grid inline-grid--2--bp-medium"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Primary/Secondary</h3><p><p>Super basic primary/secondary content columns when you really don&#39;t need an entire grid system.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article><article><header><h3>Primary/Secondary</h3><p><p>Super basic primary/secondary content columns when you really don&#39;t need an entire grid system.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"primary-content"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Primary content here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -3814,8 +3949,8 @@ body > header {
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"primary-content"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Primary content here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article></section><section id="Icons" class="styleguide__section"><h2>Icons</h2><article class="styleguide__element"><h3>Icon</h3><p><p>Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article></section><section id="icons"><header><h2>Icons</h2></header><article><header><h3>Icon</h3><p><p>Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook"</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--round"</span>
@@ -3827,31 +3962,31 @@ body > header {
 <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--above"</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter icon--above"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article></section><section id="Images" class="styleguide__section"><h2>Images</h2><article class="styleguide__element"><h3>Images</h3><p><p>Various helper classes for styling images.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--round"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--rounded"</span>&gt;</span></code></pre></article></section><section id="Layout" class="styleguide__section"><h2>Layout</h2><article class="styleguide__element"><h3>Background Overlay</h3><p><p>Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article></section><section id="images"><header><h2>Images</h2></header><article><header><h3>Images</h3><p><p>Various helper classes for styling images.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--round"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--rounded"</span>&gt;</span></code></pre></div></article></section><section id="layout"><header><h2>Layout</h2></header><article><header><h3>Background Overlay</h3><p><p>Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a box<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Card</h3><p><p>A simple box/card. Can be used with the bg-classes.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white"</span>&gt;</span>I'm a shadowed card<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container;</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></article><article><header><h3>Card</h3><p><p>A simple box/card. Can be used with the bg-classes.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white"</span>&gt;</span>I'm a shadowed card<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container;</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>I'm centered<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>In the middle of the page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Group</h3><p><p>Use this class to add margin-bottom to an element.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white group--x-large"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Group</h3><p><p>Use this class to add margin-bottom to an element.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white group--x-large"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I have margin<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>More than usual<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don&#39;t work properly nested like in the styleguide (that&#39;s why it looks broken here).</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"section bg--white"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don&#39;t work properly nested like in the styleguide (that&#39;s why it looks broken here).</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"section bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a section<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article></section><section id="Links" class="styleguide__section"><h2>Links</h2><article class="styleguide__element"><h3>Link</h3><p><p>Link styling. You can use the link class to make anything look like a link.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Normal link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article></section><section id="links"><header><h2>Links</h2></header><article><header><h3>Link</h3><p><p>Link styling. You can use the link class to make anything look like a link.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Normal link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link"</span>&gt;</span>Not a link at all<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link--neutral"</span>&gt;</span>Link that looks like text<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link--underline"</span>&gt;</span>Link with underline<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></article></section><section id="Lists" class="styleguide__section"><h2>Lists</h2><article class="styleguide__element"><h3>List</h3><p><p>Various classes you can use on lists, or list like markup.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Pipe separated<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link--underline"</span>&gt;</span>Link with underline<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div></article></section><section id="lists"><header><h2>Lists</h2></header><article><header><h3>List</h3><p><p>Various classes you can use on lists, or list like markup.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Pipe separated<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list--pipe-separated"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Pipes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Separate<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -3863,26 +3998,30 @@ body > header {
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article></section><section id="Typography" class="styleguide__section"><h2>Typography</h2><article class="styleguide__element"><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--4"</span>&gt;</span>I'm a H1 but look like a H4<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article></section><section id="typography"><header><h2>Typography</h2></header><article><header><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--4"</span>&gt;</span>I'm a H1 but look like a H4<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>I'm a normal H3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--1"</span>&gt;</span>I'm not a heading at all!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Text</h3><p><p>Various helper classes for working with text.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text--center"</span>&gt;</span>This text is centered and
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--1"</span>&gt;</span>I'm not a heading at all!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></article><article><header><h3>Text</h3><p><p>Various helper classes for working with text.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text--center"</span>&gt;</span>This text is centered and
     <span class="hljs-tag">&lt;<span class="hljs-title">strong</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text--upper"</span>&gt;</span>upper case<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article></section></main><script>// Insert all example code into the page so we can actually see the examples
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></article></section></main><script>// Insert all example code into the page so we can actually see the examples
 //window.addEventListener('load', function () {
-    var elements = document.querySelectorAll('.styleguide__element');
+	var elements = document.querySelectorAll('section article');
 
-    for (var i = 0; i < elements.length; i++) {
-        (function () {
-            var element = elements[i];
-            var exampleCode = element.querySelector('.styleguide__example-code');
-            var example = element.querySelector('.styleguide__example');
+	for (var i = 0; i < elements.length; i++) {
+		(function () {
+			var element = elements[i];
+			var exampleCode = element.querySelector('.example-code');
+			var example = element.querySelector('.example');
 
-            if (exampleCode) {
-                example.innerHTML = exampleCode.textContent;
-            }
-        })();
-    }
+			console.log(element.id);
+			console.dir(example);
+			console.dir(exampleCode);
+
+			if (exampleCode) {
+				example.innerHTML = exampleCode.textContent;
+			}
+		})();
+	}
 //});
 </script></body></html>
