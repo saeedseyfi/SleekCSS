@@ -8,10 +8,6 @@
 			var exampleCode = element.querySelector('.example-code');
 			var example = element.querySelector('.example');
 
-			console.log(element.id);
-			console.dir(example);
-			console.dir(exampleCode);
-
 			if (exampleCode) {
 				example.innerHTML = exampleCode.textContent;
 			}
