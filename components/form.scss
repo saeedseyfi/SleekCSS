@@ -133,6 +133,7 @@ label {
 	@include form-field;
 }
 
+// Hide search UI
 input[type=search] {
 	&::-webkit-search-decoration,
 	&::-webkit-search-cancel-button,
@@ -142,13 +143,14 @@ input[type=search] {
 	}
 }
 
+// Radio/checkbox margin
 input[type=radio],
 input[type=checkbox] {
-	margin-right: .4rem;
+	margin: 0 0 $icon-margin;
 
 	[dir=rtl] & {
 		margin-right: 0;
-		margin-left: .4rem;
+		margin-left: $icon-margin;
 	}
 }
 
