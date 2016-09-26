@@ -3729,6 +3729,7 @@ body > nav {
 
 	body > nav ul {
 		margin: 0;
+		padding: 0;
 		list-style: none;
 	}
 
@@ -4013,10 +4014,6 @@ pre {
 			var element = elements[i];
 			var exampleCode = element.querySelector('.example-code');
 			var example = element.querySelector('.example');
-
-			console.log(element.id);
-			console.dir(example);
-			console.dir(exampleCode);
 
 			if (exampleCode) {
 				example.innerHTML = exampleCode.textContent;
