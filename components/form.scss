@@ -183,6 +183,10 @@ button {
 
 		padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
 
+		font-size: $button-font-size;
+		color: $color-form-text;
+		line-height: $button-line-height;
+
 		@if ($form-select-border == true) {
 			border: 1px solid $color-border;
 		}
