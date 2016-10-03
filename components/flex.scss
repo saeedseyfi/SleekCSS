@@ -1,0 +1,67 @@
+@mixin flex-grid ($num: 3, $gutter: $gutter-default) {
+	clear: both;
+
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-start; // We can't use space-between because if the last row isn't full it looks bad
+	flex-wrap: wrap;
+
+	> * {
+		@include flex-grid-item($num, $gutter);
+	}
+}
+
+@mixin flex-grid-item ($num: 3, $gutter: $gutter-default) {
+	$total-gutter: $gutter * ($num - 1);
+	$width-subtract: $total-gutter / $num;
+
+	width: calc(#{(100% / $num)} - #{$width-subtract});
+	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
+
+	// Margin right for all but last element in row (Because we're not using space-between :/)
+	&:not(:nth-child(#{$num}n)) {
+		margin-right: $gutter;
+	}
+
+	// No margin right for last element in row
+	&:nth-child(#{$num}n) {
+		margin-right: 0;
+	}
+}
+
+.flex,
+[class^="flex--"],
+[class*="flex--"] {
+	clear: both;
+
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+
+	> * {
+		display: block;
+		margin-bottom: $margin-large;
+	}
+}
+
+// Create flex--X classes for all specified column counts
+@each $num in $col-nums {
+	.flex--#{nth($num, 1)} {
+		@include flex-grid(nth($num, 2), $gutter-default);
+	}
+}
+
+// Create flex--X--bp-Y classes for all specified column counts and breakpoints
+@each $bp in $col-breakpoints {
+	@each $num in $col-nums {
+		@media #{nth($bp, 2)} {
+			.flex--#{nth($num, 1)}--#{nth($bp, 1)} {
+				@include flex-grid(nth($num, 2), $gutter-default);
+			}
+		}
+	}
+}

@@ -51,7 +51,7 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 	vertical-align: middle;
 
 	box-sizing: border-box;
-	max-width: 100%;
+	width: 100%;
 
 	margin: 0;
 	padding: $form-padding-vertical $form-padding-horizontal;
@@ -81,8 +81,6 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 			border-color: darken($color-border, 10%);
 		}
 	}
-
-	width: 100%;
 }
 
 // A global form message (before the form)
@@ -179,7 +177,7 @@ button {
 		background-size: $form-select-arrow-size auto;
 
 		box-sizing: border-box;
-		max-width: 100%;
+		width: 100%;
 
 		padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
 
