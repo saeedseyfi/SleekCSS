@@ -29,11 +29,11 @@
 	}
 
 	// Make sure links still look like links on hover(?)
-	a.color--#{nth($color, 1)}:hover,
+/*	a.color--#{nth($color, 1)}:hover,
 	.link.color--#{nth($color, 1)}:hover {
 		color: $color-link-hover;
 		text-decoration: $text-decoration-link-hover;
-	}
+	} */
 
 	// Colors added to parent element
 	.color--#{nth($color, 1)} {
@@ -44,10 +44,10 @@
 			text-decoration: none;
 		}
 
-		a:not(.button):hover,
+	/*	a:not(.button):hover,
 		.link:hover {
 			color: $color-link-hover;
 			text-decoration: $text-decoration-link-hover;
-		}
+		} */
 	}
 }

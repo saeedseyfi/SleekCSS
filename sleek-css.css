@@ -1926,21 +1926,22 @@ a.color--white,
 .link.color--white {
   color: #fff; }
 
-a.color--white:hover,
-.link.color--white:hover {
-  color: #09f;
-  text-decoration: none; }
-
-.color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
-.color--white a:not(.button),
-.color--white .link {
-  color: #fff;
-  text-decoration: none; }
-
-.color--white a:not(.button):hover,
-.color--white .link:hover {
-  color: #09f;
-  text-decoration: none; }
+/*	a.color--white:hover,
+	.link.color--white:hover {
+		color: $color-link-hover;
+		text-decoration: $text-decoration-link-hover;
+	} */
+.color--white {
+  /*	a:not(.button):hover,
+		.link:hover {
+			color: $color-link-hover;
+			text-decoration: $text-decoration-link-hover;
+		} */ }
+  .color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
+  .color--white a:not(.button),
+  .color--white .link {
+    color: #fff;
+    text-decoration: none; }
 
 .alignleft,
 .alignright,
