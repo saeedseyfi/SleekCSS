@@ -58,7 +58,7 @@ $form-fields: "input[type=text], input[type=password], input[type=search], input
 
 	font-size: $button-font-size;
 	color: $color-form-text;
-	line-height: $button-line-height;
+	line-height: normal;
 
 	appearance: none;
 
@@ -166,6 +166,7 @@ textarea {
 input[type=submit],
 button {
 	outline: 0;
+	line-height: normal;
 }
 
 // Select
@@ -173,30 +174,30 @@ button {
 	select {
 		appearance: none;
 
-		background: $form-select-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
+		background: $color-form-field-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
 		background-size: $form-select-arrow-size auto;
 
 		box-sizing: border-box;
 		width: 100%;
 
-		padding: $form-select-padding-vertical ($form-select-padding-horizontal + 2rem) $form-select-padding-vertical $form-select-padding-horizontal;
+		padding: $form-padding-vertical ($form-padding-horizontal + $form-select-arrow-size + $padding-default) $form-padding-vertical $form-padding-horizontal;
 
 		font-size: $button-font-size;
 		color: $color-form-text;
-		line-height: $button-line-height;
+		line-height: normal;
 
-		@if ($form-select-border == true) {
+		@if ($form-border == true) {
 			border: 1px solid $color-border;
 		}
-		@elseif ($form-select-border) {
-			border: $form-select-border;
+		@elseif ($form-border) {
+			border: $form-border;
 		}
 		@else {
 			border: 0;
 		}
 
-		@if ($form-select-border-radius) {
-			border-radius: $form-select-border-radius;
+		@if ($form-border-radius) {
+			border-radius: $form-border-radius;
 		}
 		@else {
 			border-radius: 0;
