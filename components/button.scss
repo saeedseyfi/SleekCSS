@@ -159,10 +159,8 @@
 	}
 }
 
-// Button class and submits
-.button,
-input[type=submit],
-button {
+// Button classes
+.button {
 	@include button;
 }
 

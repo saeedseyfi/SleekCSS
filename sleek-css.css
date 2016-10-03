@@ -208,9 +208,7 @@ dl.key-val dd:after {
         <p><a href="#" class="button button--small">Small button</a></p>
         <p><a href="#" class="button button--large">Large button</a></p>
 ***/
-.button,
-input[type=submit],
-button {
+.button {
   background-color: #777;
   border: 2px solid transparent;
   display: inline-block;
@@ -228,30 +226,18 @@ button {
   border-radius: 0.2rem;
   text-shadow: none;
   box-shadow: none; }
-  .button:hover,
-  input[type=submit]:hover,
-  button:hover {
+  .button:hover {
     background-color: #6a6a6a; }
-  .button:active,
-  input[type=submit]:active,
-  button:active {
+  .button:active {
     background-color: #5e5e5e; }
-  .button[class*="icon-"]:empty:not([value]),
-  input[type=submit][class*="icon-"]:empty:not([value]),
-  button[class*="icon-"]:empty:not([value]) {
+  .button[class*="icon-"]:empty:not([value]) {
     padding-left: 2rem;
     padding-right: 2rem; }
   .button a,
-  .button a:hover,
-  input[type=submit] a,
-  input[type=submit] a:hover,
-  button a,
-  button a:hover {
+  .button a:hover {
     color: #fff;
     text-decoration: none; }
-  .button:hover,
-  input[type=submit]:hover,
-  button:hover {
+  .button:hover {
     color: #fff;
     text-decoration: none; }
 
@@ -873,8 +859,45 @@ textarea {
 
 input[type=submit],
 button {
+  background-color: #777;
+  border: 2px solid transparent;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: bold;
+  font-style: bold;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0.2rem;
+  text-shadow: none;
+  box-shadow: none;
   outline: 0;
   line-height: normal; }
+  input[type=submit]:hover,
+  button:hover {
+    background-color: #6a6a6a; }
+  input[type=submit]:active,
+  button:active {
+    background-color: #5e5e5e; }
+  input[type=submit][class*="icon-"]:empty:not([value]),
+  button[class*="icon-"]:empty:not([value]) {
+    padding-left: 2rem;
+    padding-right: 2rem; }
+  input[type=submit] a,
+  input[type=submit] a:hover,
+  button a,
+  button a:hover {
+    color: #fff;
+    text-decoration: none; }
+  input[type=submit]:hover,
+  button:hover {
+    color: #fff;
+    text-decoration: none; }
 
 select {
   -webkit-appearance: none;

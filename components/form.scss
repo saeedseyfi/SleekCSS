@@ -165,6 +165,7 @@ textarea {
 // Buttons
 input[type=submit],
 button {
+	@include button;
 	outline: 0;
 	line-height: normal;
 }
