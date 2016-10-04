@@ -36,7 +36,7 @@
 	}
 }
 
-@mixin burger-menu-icon-open ($color: $color-link, $size: 2rem, $thickness: .25rem) {
+@mixin burger-menu-icon-open ($color: $color-link, $size: 2rem) {
 	$transition: .2s;
 
 	height: 0;
