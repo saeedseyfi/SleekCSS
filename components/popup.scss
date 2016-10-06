@@ -70,6 +70,14 @@
 	&__content {
 		padding: 0 $padding-default;
 		overflow: auto;
+
+		&:first-child {
+			padding-top: $padding-default;
+		}
+
+		&:last-child {
+			padding-bottom: $padding-default;
+		}
 	}
 
 	// Footer
