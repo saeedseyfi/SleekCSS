@@ -11,13 +11,12 @@
 	}
 
 	display: block;
-	margin-bottom: $margin-default;
-	padding: $padding-default;
+	margin-bottom: $card-margin;
+	padding: $card-padding;
 
-	box-shadow: $shadow-3;
+	box-shadow: $card-shadow;
 }
 
-// TODO: Add config (card-padding, card-shadow, card-border, card-paddings[] (.card--large etc))
 .card {
 	@include card;
 }
