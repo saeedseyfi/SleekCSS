@@ -68,9 +68,9 @@
 	}
 }
 
-@mixin button {
+@mixin button ($color: $button-color) {
 	// Gradient or solid background with hover/active states
-	@include button-background($button-color);
+	@include button-background($color);
 
 	// Hello
 	display: inline-block;
