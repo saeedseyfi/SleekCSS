@@ -48,11 +48,29 @@
 	.secondary-content + .primary-content + * {
 		clear: both;
 	}
+
+	// When used on wrapping element
+	.primary-secondary {
+		@include clearfix;
+	}
+
+	.primary-secondary > * {
+		@include clearfix;
+		width: calc(#{$primary-content-width} - #{$gutter-large / 2});
+		float: left;
+	}
+
+	.primary-secondary > :last-child {
+		@include clearfix;
+		width: calc(#{100% - $primary-content-width} - #{$gutter-large / 2});
+		float: left;
+	}
 }
 
 @media #{$bp-large-max} {
 	.primary-content,
-	.secondary-content {
+	.secondary-content,
+	.primary-secondary > * {
 		margin-bottom: $margin-default;
 	}
 }
