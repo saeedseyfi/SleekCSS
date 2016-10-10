@@ -1464,14 +1464,16 @@ a,
     clear: both; }
   .primary-secondary > * {
     width: calc(70% - 1rem);
-    float: left; }
+    float: left;
+    margin-right: 2rem; }
     .primary-secondary > *:after {
       content: "";
       display: table;
       clear: both; }
   .primary-secondary > :last-child {
     width: calc(30% - 1rem);
-    float: left; }
+    float: left;
+    margin-right: 0; }
     .primary-secondary > :last-child:after {
       content: "";
       display: table;
