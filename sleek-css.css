@@ -219,7 +219,7 @@ dl.key-val dd:after {
   line-height: 1.2;
   color: #fff;
   font-weight: bold;
-  font-style: bold;
+  font-style: normal;
   text-transform: none;
   text-decoration: none;
   text-align: center;
@@ -696,7 +696,7 @@ button {
   line-height: 1.2;
   color: #fff;
   font-weight: bold;
-  font-style: bold;
+  font-style: normal;
   text-transform: none;
   text-decoration: none;
   text-align: center;
