@@ -6,10 +6,7 @@
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
 @mixin inline-grid ($num, $bp: false, $gutter: $gutter-default) {
-	margin-left: 0;
-	padding-left: 0;
 	font-size: 0;
-	list-style: none;
 
 	@if ($bp) {
 		@media #{$bp} {
@@ -43,6 +40,14 @@
 
 .inline-grid {
 	@include inline-grid(1);
+}
+
+ul.inline-grid,
+ul[class^="inline-grid--"],
+ul[class*="inline-grid--"] {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
 }
 
 @each $num in $col-nums {

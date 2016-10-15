@@ -27,11 +27,6 @@
 
 	clear: both; // Probably desirable
 
-	// In case it's used on a UL
-	margin-left: 0;
-	padding-left: 0;
-	list-style: none;
-
 	> #{$selector} {
 		@include col($num, $gutter);
 	}
@@ -93,14 +88,17 @@
 
 	clear: both; // This is probably desirable
 
-	// In case it's used on a list
-	margin-left: 0;
-	padding-left: 0;
-	list-style: none;
-
 	> * {
 		margin-bottom: $gutter-default;
 	}
+}
+
+ul.cols,
+ul[class^="cols--"],
+ul[class*="cols--"] {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
 }
 
 // Create cols--X classes for all specified column counts

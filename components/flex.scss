@@ -1,9 +1,6 @@
 @mixin flex-grid ($num: 3, $gutter: $gutter-default) {
 	clear: both;
 
-	margin-left: 0;
-	list-style: none;
-
 	display: flex;
 	align-items: stretch;
 	// justify-content: flex-start; // We can't use space-between because if the last row isn't full it looks bad
@@ -19,8 +16,16 @@
 	$total-gutter: $gutter * ($num - 1);
 	$width-subtract: $total-gutter / $num;
 
-	width: calc(#{(100% / $num)} - #{$width-subtract});
+	width: calc(#{(100% / $num)} - #{$width-subtract}); // TODO: Is width really needed?
 	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
+
+
+	// Fix IE's rounding of percentage :/
+	/* width: calc(#{(99% / $num)} - #{$width-subtract})\9;
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calc(#{(99% / $num)} - #{$width-subtract});
+	} */
 
 	// Margin right for all but last element in row (Because we're not using space-between :/)
 	/* &:not(:nth-child(#{$num}n)) {
@@ -38,13 +43,18 @@
 [class*="flex--"] {
 	clear: both;
 
-	margin-left: 0;
-	list-style: none;
-
 	> * {
 		display: block;
 		margin-bottom: $margin-large;
 	}
+}
+
+ul.flex,
+ul[class^="flex--"],
+ul[class*="flex--"] {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
 }
 
 // Create flex--X classes for all specified column counts

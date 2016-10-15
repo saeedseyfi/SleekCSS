@@ -320,10 +320,7 @@ dl.key-val dd:after {
  * @param	unit	$gutter: space between cols
  */
 .cols {
-  clear: both;
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
+  clear: both; }
   .cols:after {
     content: "";
     display: table;
@@ -331,11 +328,15 @@ dl.key-val dd:after {
   .cols > * {
     margin-bottom: 1rem; }
 
-.cols--2 {
-  clear: both;
+ul.cols,
+ul[class^="cols--"],
+ul[class*="cols--"] {
   margin-left: 0;
   padding-left: 0;
   list-style: none; }
+
+.cols--2 {
+  clear: both; }
   .cols--2:after {
     content: "";
     display: table;
@@ -363,10 +364,7 @@ dl.key-val dd:after {
     clear: none; }
 
 .cols--3 {
-  clear: both;
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
+  clear: both; }
   .cols--3:after {
     content: "";
     display: table;
@@ -395,10 +393,7 @@ dl.key-val dd:after {
 
 @media (min-width: 760px) {
   .cols--2--bp-medium {
-    clear: both;
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none; }
+    clear: both; }
     .cols--2--bp-medium:after {
       content: "";
       display: table;
@@ -429,10 +424,7 @@ dl.key-val dd:after {
 
 @media (min-width: 760px) {
   .cols--3--bp-medium {
-    clear: both;
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none; }
+    clear: both; }
     .cols--3--bp-medium:after {
       content: "";
       display: table;
@@ -463,10 +455,7 @@ dl.key-val dd:after {
 
 @media (min-width: 1020px) {
   .cols--2--bp-large {
-    clear: both;
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none; }
+    clear: both; }
     .cols--2--bp-large:after {
       content: "";
       display: table;
@@ -497,10 +486,7 @@ dl.key-val dd:after {
 
 @media (min-width: 1020px) {
   .cols--3--bp-large {
-    clear: both;
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none; }
+    clear: both; }
     .cols--3--bp-large:after {
       content: "";
       display: table;
@@ -1146,10 +1132,7 @@ a:hover .icon--round {
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
 .inline-grid {
-  margin-left: 0;
-  padding-left: 0;
   font-size: 0;
-  list-style: none;
   margin-left: -0.5rem;
   margin-right: -0.5rem; }
   .inline-grid > * {
@@ -1159,6 +1142,13 @@ a:hover .icon--round {
     width: 100%;
     margin: 0 0.5rem;
     width: calc(100% - 1rem); }
+
+ul.inline-grid,
+ul[class^="inline-grid--"],
+ul[class*="inline-grid--"] {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none; }
 
 .inline-grid--2 > * {
   width: calc(50% - 1rem); }
@@ -1705,13 +1695,6 @@ a,
     -webkit-transform: translateY(50%) translateX(1rem);
             transform: translateY(50%) translateX(1rem); }
 
-/* .table-grid {
-	@include table-grid;
-}
-
-.table-grid--bp-medium {
-	@include table-grid($gutter-default, false, $bp-medium);
-} */
 /***
     title: Text
     section: Typography
@@ -1844,19 +1827,22 @@ div.gallery {
 .flex,
 [class^="flex--"],
 [class*="flex--"] {
-  clear: both;
-  margin-left: 0;
-  list-style: none; }
+  clear: both; }
   .flex > *,
   [class^="flex--"] > *,
   [class*="flex--"] > * {
     display: block;
     margin-bottom: 2rem; }
 
+ul.flex,
+ul[class^="flex--"],
+ul[class*="flex--"] {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none; }
+
 .flex--2 {
   clear: both;
-  margin-left: 0;
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1873,6 +1859,11 @@ div.gallery {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(50% - 0.5rem);
             flex: 0 0 calc(50% - 0.5rem);
+    /* width: calc(49.5% - 0.5rem)\9;
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calc(49.5% - 0.5rem);
+	} */
     /* &:not(:nth-child(2n)) {
 		margin-right: $gutter;
 	}
@@ -1884,8 +1875,6 @@ div.gallery {
 
 .flex--3 {
   clear: both;
-  margin-left: 0;
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1902,6 +1891,11 @@ div.gallery {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
             flex: 0 0 calc(33.33333% - 0.66667rem);
+    /* width: calc(33% - 0.66667rem)\9;
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calc(33% - 0.66667rem);
+	} */
     /* &:not(:nth-child(3n)) {
 		margin-right: $gutter;
 	}
@@ -1914,8 +1908,6 @@ div.gallery {
 @media (min-width: 760px) {
   .flex--2--bp-medium {
     clear: both;
-    margin-left: 0;
-    list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1932,6 +1924,11 @@ div.gallery {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.5rem);
               flex: 0 0 calc(50% - 0.5rem);
+      /* width: calc(49.5% - 0.5rem)\9;
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calc(49.5% - 0.5rem);
+	} */
       /* &:not(:nth-child(2n)) {
 		margin-right: $gutter;
 	}
@@ -1944,8 +1941,6 @@ div.gallery {
 @media (min-width: 760px) {
   .flex--3--bp-medium {
     clear: both;
-    margin-left: 0;
-    list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1962,6 +1957,11 @@ div.gallery {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
               flex: 0 0 calc(33.33333% - 0.66667rem);
+      /* width: calc(33% - 0.66667rem)\9;
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calc(33% - 0.66667rem);
+	} */
       /* &:not(:nth-child(3n)) {
 		margin-right: $gutter;
 	}
@@ -1974,8 +1974,6 @@ div.gallery {
 @media (min-width: 1020px) {
   .flex--2--bp-large {
     clear: both;
-    margin-left: 0;
-    list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1992,6 +1990,11 @@ div.gallery {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.5rem);
               flex: 0 0 calc(50% - 0.5rem);
+      /* width: calc(49.5% - 0.5rem)\9;
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calc(49.5% - 0.5rem);
+	} */
       /* &:not(:nth-child(2n)) {
 		margin-right: $gutter;
 	}
@@ -2004,8 +2007,6 @@ div.gallery {
 @media (min-width: 1020px) {
   .flex--3--bp-large {
     clear: both;
-    margin-left: 0;
-    list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2022,6 +2023,11 @@ div.gallery {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
               flex: 0 0 calc(33.33333% - 0.66667rem);
+      /* width: calc(33% - 0.66667rem)\9;
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		width: calc(33% - 0.66667rem);
+	} */
       /* &:not(:nth-child(3n)) {
 		margin-right: $gutter;
 	}
