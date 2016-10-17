@@ -131,6 +131,16 @@ label {
 	@include form-field;
 }
 
+// Remove Chrome's autofill styling
+// http://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	transition: background-color 6000s linear 0s;
+	-webkit-text-fill-color: $color-form-text;
+}
+
 // Hide search UI
 input[type=search] {
 	&::-webkit-search-decoration,
