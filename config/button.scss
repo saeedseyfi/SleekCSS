@@ -1,7 +1,7 @@
 // Button size
 $button-padding-horizontal: 2rem !default;
 $button-padding-vertical: .6rem !default;
-$button-empty-padding-horizontal: $button-padding-horizontal !default;
+$button-empty-padding-horizontal: $button-padding-vertical !default;
 $button-small-percentage: .8 !default;
 
 $button-transition: false !default;

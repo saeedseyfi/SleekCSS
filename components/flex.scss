@@ -16,7 +16,7 @@
 	$total-gutter: $gutter * ($num - 1);
 	$width-subtract: $total-gutter / $num;
 
-	width: calc(#{(100% / $num)} - #{$width-subtract}); // TODO: Is width really needed?
+	max-width: calc(#{(100% / $num)} - #{$width-subtract});
 	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
 
 
