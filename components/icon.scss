@@ -180,6 +180,11 @@
 		background: rgba($irc, .2);
 		color: $irc;
 	}
+
+	&.icon--above,
+	&.icon--below {
+		display: flex;
+	}
 }
 
 [class^="icon-"],
