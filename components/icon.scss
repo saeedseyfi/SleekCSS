@@ -147,6 +147,7 @@
  * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
  */
 @mixin icon-round ($irc: $icon-round-color) {
+	display: inline-block;
 	text-decoration: none;
 
 	&:hover {
