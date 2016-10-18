@@ -2090,6 +2090,9 @@ ol {
   margin: 0 0 1rem 2rem;
   padding: 0; }
 
+dl {
+  margin: 0 0 1rem; }
+
 blockquote,
 q {
   font-size: 1.2rem;
