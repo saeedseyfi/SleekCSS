@@ -175,16 +175,16 @@
 		transition: all .2s ease-out;
 	}
 
-	&:hover:before,
-	&.icon--after:hover:after {
-		background: rgba($irc, .2);
-		color: $irc;
-	}
-
 	&.icon--above,
 	&.icon--below {
 		display: flex;
 	}
+
+	/* &:hover:before,
+	&.icon--after:hover:after {
+		background: rgba($irc, .2);
+		color: $irc;
+	} */
 }
 
 [class^="icon-"],
@@ -199,10 +199,10 @@
 			border: 1px solid $icon-round-color;
 		}
 
-		&--ghost:hover:before,
+		/* &--ghost:hover:before,
 		&--ghost.icon--after:hover:after {
 			background: rgba($icon-round-color, .2);
-		}
+		} */
 	}
 }
 
@@ -244,14 +244,14 @@ a:hover .icon--round {
 				border-color: nth($color, 2);
 			}
 
-			&:hover:before {
+			/* &:hover:before {
 				background-color: rgba(nth($color, 2), .2);
 				color: nth($color, 2);
 			}
 
 			&.icon--round--ghost:hover:before {
 				background-color: rgba(nth($color, 2), .2);
-			}
+			} */
 		}
 	}
 }
