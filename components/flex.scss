@@ -3,7 +3,6 @@
 
 	display: flex;
 	align-items: stretch;
-	// justify-content: flex-start; // We can't use space-between because if the last row isn't full it looks bad
 	justify-content: space-between;
 	flex-wrap: wrap;
 
@@ -19,34 +18,13 @@
 	max-width: calc(#{(100% / $num)} - #{$width-subtract});
 	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
 
-
-	// Fix IE's rounding of percentage :/
-	/* width: calc(#{(99% / $num)} - #{$width-subtract})\9;
-
-	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-		width: calc(#{(99% / $num)} - #{$width-subtract});
-	} */
-
-	// Margin right for all but last element in row (Because we're not using space-between :/)
-	/* &:not(:nth-child(#{$num}n)) {
-		margin-right: $gutter;
-	}
-
-	// No margin right for last element in row
-	&:nth-child(#{$num}n) {
-		margin-right: 0;
-	} */
+	margin-bottom: $gutter;
 }
 
 .flex,
 [class^="flex--"],
 [class*="flex--"] {
 	clear: both;
-
-	> * {
-		display: block;
-		margin-bottom: $margin-large;
-	}
 }
 
 ul.flex,
