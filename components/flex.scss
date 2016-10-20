@@ -1,6 +1,4 @@
 @mixin flex-grid ($num: 3, $gutter: $gutter-default) {
-	clear: both;
-
 	display: flex;
 	align-items: stretch;
 	justify-content: space-between;
@@ -15,19 +13,14 @@
 	$total-gutter: $gutter * ($num - 1);
 	$width-subtract: $total-gutter / $num;
 
-	max-width: calc(#{(100% / $num)} - #{$width-subtract});
+	max-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)
 	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
 
-	margin-bottom: $gutter;
+	margin-bottom: $gutter; // Same space between and below
 }
 
-.flex,
-[class^="flex--"],
-[class*="flex--"] {
-	clear: both;
-}
-
-ul.flex,
+// Remove potential list style and margin
+// in case flex--* is used on an unordered list
 ul[class^="flex--"],
 ul[class*="flex--"] {
 	margin-left: 0;

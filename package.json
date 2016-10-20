@@ -1,6 +1,6 @@
 {
   "name": "sleek-css",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A lighweight SASS library",
   "main": "sleek-css.scss",
   "scripts": {

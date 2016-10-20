@@ -5,6 +5,7 @@
     example:
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
+// TODO: Deprecate
 @mixin inline-grid ($num, $bp: false, $gutter: $gutter-default) {
 	font-size: 0;
 

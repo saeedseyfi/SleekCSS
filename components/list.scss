@@ -17,6 +17,7 @@
             <li>Inline list</li>
         </ul>
 ***/
+// TODO: Move mixins to mixins or move all list mixins here
 // Pipe separated list
 .list--pipe-separated {
 	@include separated-list(' | ');
