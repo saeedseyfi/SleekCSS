@@ -101,6 +101,10 @@
 	text-align: center;
 	// cursor: default;
 
+	@if ($button-letter-spacing) {
+		letter-spacing: $button-letter-spacing;
+	}
+
 	a,
 	a:hover {
 		color: $button-text-color;
