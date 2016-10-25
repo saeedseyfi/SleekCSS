@@ -87,6 +87,10 @@
 	}
 
 	// Font styling
+	@if ($button-font-family) {
+		font-family: $button-font-family;
+	}
+
 	font-size: $button-font-size;
 	line-height: $button-line-height;
 	color: $button-text-color;
