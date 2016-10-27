@@ -13,6 +13,7 @@
 	$total-gutter: $gutter * ($num - 1);
 	$width-subtract: $total-gutter / $num;
 
+	min-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)
 	max-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)
 	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
 
