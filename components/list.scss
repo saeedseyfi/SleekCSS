@@ -26,6 +26,7 @@
 // Inline list
 @mixin inline-list ($width: false) {
 	margin-left: 0;
+	margin-bottom: -$margin-small; // to remove the extra margin-button of children
 	list-style: none;
 
 	> * {
