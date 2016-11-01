@@ -3,7 +3,7 @@
 	left: -100000px;
 	top: -100000px;
 
-	[dir=rtl] & {
+	@include rtl {
 		left: auto;
 		right: -100000px;
 	}

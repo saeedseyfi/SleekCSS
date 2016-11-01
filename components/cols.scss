@@ -81,7 +81,7 @@
 		margin-right: 0;
 	}
 
-	[dir=rtl] & {
+	@include rtl {
 		float: right;
 
 		margin-right: 0;
@@ -116,7 +116,7 @@ ul[class*="cols--"] {
 	padding-left: 0;
 	list-style: none;
 
-	[dir=rtl] & {
+	@include rtl {
 		margin-right: 0;
 		padding-right: 0;
 	}

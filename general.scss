@@ -39,7 +39,7 @@ ol {
 	margin: 0 0 $margin-default $margin-large;
 	padding: 0;
 
-	[dir=rtl] & {
+	@include rtl {
 		margin: 0 0 $margin-default $margin-large;
 	}
 }
