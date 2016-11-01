@@ -36,6 +36,11 @@
 		@if ($width) {
 			width: $width;
 		}
+
+		[dir=rtl] & {
+			margin-right: 0;
+			margin-left: $margin-small;
+		}
 	}
 
 	.text--center &,
