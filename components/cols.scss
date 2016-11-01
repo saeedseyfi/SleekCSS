@@ -50,7 +50,7 @@
  * @param	int		$num: how many items per row
  * @param	unit	$gutter: space between cols
  */
-@mixin col ($num: 3, $gutter: $gutter) {
+@mixin col ($num: 3, $gutter: $gutter-default) {
 	@include clearfix;
 
 	// Duh :P
