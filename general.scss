@@ -40,7 +40,7 @@ ol {
 	padding: 0;
 
 	@include rtl {
-		margin: 0 0 $margin-default $margin-large;
+		margin: 0 $margin-large $margin-default 0;
 	}
 }
 
