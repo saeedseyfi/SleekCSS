@@ -28,6 +28,10 @@
 	margin-left: 0;
 	list-style: none;
 
+	@include rtl {
+		margin-right: 0;
+	}
+
 	> * {
 		display: inline-block;
 		margin-right: $margin-small;
@@ -61,6 +65,11 @@
 	padding-left: 0;
 	list-style: none;
 
+	@include rtl {
+		margin-right: 0;
+		padding-right: 0;
+	}
+
 	> :not(:last-child) {
 		margin-bottom: $margin-small;
 		padding-bottom: $margin-small;
@@ -75,6 +84,10 @@
 .list--plain {
 	margin-left: 0;
 	list-style: none;
+
+	@include rtl {
+		margin-right: 0;
+	}
 
 	> * {
 
