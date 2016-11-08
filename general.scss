@@ -20,10 +20,12 @@ body {
 	font-size: $font-size-default;
 	line-height: $line-height-default;
 	font-family: $font-family-default;
+	font-weight: $font-weight-default;
+
 	color: $color-text;
+
 	word-wrap: break-word;
 	hyphens: auto;
-	font-weight: $font-weight-default;
 	-webkit-font-smoothing: antialiased;
 }
 
