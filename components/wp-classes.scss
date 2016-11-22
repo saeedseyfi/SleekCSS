@@ -7,6 +7,22 @@
 //	margin-bottom: $margin-default;
 }
 
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.clear {
+	clear: both;
+}
+
 @media #{$bp-medium} {
 	.alignleft {
 		float: left;

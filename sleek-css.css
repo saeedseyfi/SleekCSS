@@ -1756,6 +1756,20 @@ a.color--white,
     color: #fff;
     text-decoration: none; }
 
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.clear {
+  clear: both; }
+
 @media (min-width: 760px) {
   .alignleft {
     float: left;
