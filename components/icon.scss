@@ -146,7 +146,7 @@
  * Round icon
  * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
  */
-@mixin icon-round ($irc: $icon-round-color) {
+@mixin icon-round ($irc: $icon-round-color, $size: $icon-round-size) {
 	display: inline-block;
 	text-decoration: none;
 
@@ -158,8 +158,8 @@
 	&.icon--after:after {
 		background: $irc;
 
-		width: $icon-round-size;
-		height: $icon-round-size;
+		width: $size;
+		height: $size;
 
 		// line-height: $icon-round-size;
 		text-align: center;
@@ -172,12 +172,12 @@
 		justify-content: center;
 
 		border-radius: 50%;
-		transition: all .2s ease-out;
+		transition: all .2s ease-out; // TODO: When used with hover effect?
 	}
 
 	&.icon--above,
 	&.icon--below {
-		display: flex;
+		display: flex; // TODO: WHy?
 	}
 
 	/* &:hover:before,
