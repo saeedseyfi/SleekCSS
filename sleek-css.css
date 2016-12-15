@@ -89,7 +89,7 @@ dl.key-val dd:after {
   position: relative;
   overflow: hidden; }
   .bg-overlay:before {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     display: block;
     content: "";
     position: absolute;
@@ -109,10 +109,11 @@ dl.key-val dd:after {
     display: block;
     position: relative;
     overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
+    background-size: 100% auto;
+    -webkit-transition: background-size .2s ease-out;
+    transition: background-size .2s ease-out; }
     .bg-overlay--hover:before {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.4);
       display: block;
       content: "";
       position: absolute;
@@ -126,10 +127,12 @@ dl.key-val dd:after {
     .bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
-    .bg-overlay--hover:hover:before {
-      background: rgba(0, 0, 0, 0.9); }
+      -webkit-transition: background-size .2s ease-out;
+      transition: background-size .2s ease-out; }
+    .bg-overlay--hover:hover {
+      background-size: 110% auto; }
+      .bg-overlay--hover:hover:before {
+        background: rgba(0, 0, 0, 0.6); }
 
 .bg-overlay--white {
   background-position: center top;
@@ -139,7 +142,7 @@ dl.key-val dd:after {
   position: relative;
   overflow: hidden; }
   .bg-overlay--white:before {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
     display: block;
     content: "";
     position: absolute;
@@ -159,10 +162,11 @@ dl.key-val dd:after {
     display: block;
     position: relative;
     overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
+    background-size: 100% auto;
+    -webkit-transition: background-size .2s ease-out;
+    transition: background-size .2s ease-out; }
     .bg-overlay--white.bg-overlay--hover:before {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.4);
       display: block;
       content: "";
       position: absolute;
@@ -176,10 +180,12 @@ dl.key-val dd:after {
     .bg-overlay--white.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--white.bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
-    .bg-overlay--white.bg-overlay--hover:hover:before {
-      background: rgba(255, 255, 255, 0.9); }
+      -webkit-transition: background-size .2s ease-out;
+      transition: background-size .2s ease-out; }
+    .bg-overlay--white.bg-overlay--hover:hover {
+      background-size: 110% auto; }
+      .bg-overlay--white.bg-overlay--hover:hover:before {
+        background: rgba(255, 255, 255, 0.6); }
 
 /***
     title: Button
@@ -1266,7 +1272,7 @@ a,
   transition: background .2s 0s ease-out, transform 0s .2s linear;
   transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
   .pane__overlay.open {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     -webkit-transform: translateX(0);
             transform: translateX(0);
     z-index: 101;
@@ -1308,7 +1314,7 @@ a,
     top: 1rem; }
 
 .popup {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
   top: 0;
