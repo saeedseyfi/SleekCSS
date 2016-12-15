@@ -41,18 +41,18 @@
 
 	// Hover effect
 	@if ($hover) {
-		background-size: 100% auto;
-		transition: background-size .2s ease-out;
+		// background-size: 100% auto;
+		// transition: background-size .2s ease-out;
 
 		&:before {
-			transition: background-size .2s ease-out;
+			transition: all .2s ease-out;
 		}
 
 		&:hover {
-			background-size: 110% auto;
+			// background-size: 110% auto;
 
 			&:before {
-				background: rgba($color, .6);
+				background: rgba($color, .7);
 			}
 		}
 	}
@@ -68,10 +68,10 @@
 
 @each $color in $bg-colors {
 	.bg-overlay--#{nth($color, 1)} {
-		@include bg-overlay(rgba(nth($color, 2), .4), false);
+		@include bg-overlay(rgba(nth($color, 2), .5), false);
 
 		&.bg-overlay--hover {
-			@include bg-overlay(rgba(nth($color, 2), .4), true);
+			@include bg-overlay(rgba(nth($color, 2), .5), true);
 		}
 	}
 }
