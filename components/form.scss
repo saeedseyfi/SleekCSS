@@ -185,7 +185,7 @@ button {
 	select {
 		appearance: none;
 
-		background: $color-form-field-bg url($form-select-arrow) no-repeat calc(100% - .5rem) 50%;
+		background: $color-form-field-bg url($form-select-arrow) no-repeat calc(100% - #{$padding-default}) 50%;
 		background-size: $form-select-arrow-size auto;
 
 		box-sizing: border-box;
