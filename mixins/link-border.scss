@@ -9,7 +9,7 @@
 		content: "";
 		border-top: 1px solid $color;
 		width: 0;
-		transition: width .1s ease-out;
+		transition: width $transition-default $transition-easing;
 	}
 
 	&:hover:after {

@@ -1,5 +1,4 @@
-@mixin burger-menu-icon ($color: $color-link, $size: 2rem, $thickness: .25rem) {
-	$transition: .2s;
+@mixin burger-menu-icon ($color: $color-link, $size: 1.25rem, $thickness: .25rem) {
 	$height: $size;
 	$width: $size * 1.5;
 
@@ -16,7 +15,7 @@
 	position: relative;
 	z-index: 99;
 
-	transition: height $transition $transition ease-out, border-width $transition $transition ease-out, min-height 0s 0s linear;
+	transition: height $transition-default $transition-default $transition-easing, border-width $transition-default $transition-default $transition-easing, min-height 0s 0s linear;
 
 	&:before,
 	&:after {
@@ -32,22 +31,20 @@
 		right: 0;
 
 		transform: translateY(-50%);
-		transition: transform $transition 0s ease-out;
+		transition: transform $transition-default 0s $transition-easing;
 	}
 }
 
-@mixin burger-menu-icon-open ($color: $color-link, $size: 2rem) {
-	$transition: .2s;
-
+@mixin burger-menu-icon-open ($color: $color-link, $size: 1.25rem) {
 	height: 0;
 	min-height: $size;
 	border-width: 0;
 
-	transition: height $transition 0s ease-out, border-width $transition 0s ease-out, min-height 0s $transition linear;
+	transition: height $transition-default 0s $transition-easing, border-width $transition-default 0s $transition-easing, min-height 0s $transition-default linear;
 
 	&:before,
 	&:after {
-		transition: transform $transition $transition ease-out;
+		transition: transform $transition-default $transition-default $transition-easing;
 	}
 
 	&:before {

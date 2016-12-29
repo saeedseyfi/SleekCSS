@@ -52,16 +52,13 @@ q {
 	margin: 0;
 }
 
-blockquote {
-}
-
 pre {
 	background: #fafafa;
-	color: #111;
 	margin: 0 0 $margin-default;
 	padding: $padding-default;
 	max-height: 300px;
 	overflow: auto;
+	color: #111;
 }
 
 /**

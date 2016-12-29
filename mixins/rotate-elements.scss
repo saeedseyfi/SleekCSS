@@ -42,7 +42,7 @@
 		transform: translateY(-1rem);
 
 		animation: rotate-elements;
-		animation-timing-function: ease-out;
+		animation-timing-function: $transition-easing;
 		animation-duration: #{$delay * $num}s;
 		animation-iteration-count: infinite;
 		animation-delay: 0s;
