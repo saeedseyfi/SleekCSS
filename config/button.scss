@@ -4,7 +4,7 @@ $button-padding-vertical: .6rem !default;
 $button-empty-padding-horizontal: $button-padding-vertical !default;
 $button-small-percentage: .8 !default;
 
-$button-transition: false !default;
+$button-transition: true !default;
 
 // Button border
 $button-border-width: 2px !default;
@@ -27,7 +27,3 @@ $button-font-weight: bold !default;
 $button-font-style: normal !default;
 $button-text-transform: none !default;
 $button-letter-spacing: false !default;
-
-$button-colors: (
-	"red": #600
-) !default;

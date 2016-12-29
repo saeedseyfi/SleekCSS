@@ -1,6 +1,18 @@
 // -s @import "(.*?)/(.*?)"; -r @import "$1/$2";
 @import "functions";
 
+// Config
+@import "config/breakpoints";
+@import "config/button";
+@import "config/card";
+@import "config/colors";
+@import "config/cols";
+@import "config/form";
+@import "config/icons";
+@import "config/layout";
+@import "config/shadows";
+@import "config/typography";
+
 // Mixins
 @import "mixins/a11y-hide";
 @import "mixins/arrow";
@@ -19,18 +31,6 @@
 @import "mixins/slanted";
 @import "mixins/transparent-inner-arrow";
 
-// Config
-@import "config/breakpoints";
-@import "config/button";
-@import "config/card";
-@import "config/colors";
-@import "config/cols";
-@import "config/form";
-@import "config/icons";
-@import "config/layout";
-@import "config/shadows";
-@import "config/typography";
-
 // Components
 @import "components/bg-colors";
 @import "components/bg-overlay";
@@ -38,6 +38,7 @@
 @import "components/card";
 @import "components/cols";
 @import "components/container";
+@import "components/flex";
 @import "components/form";
 @import "components/group";
 @import "components/heading";
@@ -54,8 +55,8 @@
 @import "components/strike-through";
 @import "components/text";
 @import "components/text-colors";
+@import "components/video";
 @import "components/wp-classes";
-@import "components/flex";
 
 // General
 @import "general";

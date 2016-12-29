@@ -13,13 +13,13 @@ $pane-max-width: 30rem;
 	z-index: 100;
 
 	transform: translateX(-100%);
-	transition: background .2s 0s ease-out, transform 0s .2s linear;
+	transition: background .2s 0s $transition-easing, transform 0s .2s linear;
 
 	&.open {
 		background: $color-overlay;
 		transform: translateX(0);
 		z-index: 101;
-		transition: transform 0s linear, background .2s ease-out;
+		transition: transform 0s linear, background .2s $transition-easing;
 	}
 }
 
@@ -36,7 +36,7 @@ $pane-max-width: 30rem;
 	max-width: $pane-max-width;
 
 	transform: translateX(-100%);
-	transition: transform .2s .2s ease-out;
+	transition: transform .2s .2s $transition-easing;
 
 	// Right aligned
 	&--right {

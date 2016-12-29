@@ -46,8 +46,8 @@ dl.key-val dd:after {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all .1s ease-out;
-  transition: all .1s ease-out; }
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
 
 .osx-dock:hover > *,
 .osx-dock.active > * {
@@ -124,8 +124,8 @@ dl.key-val dd:after {
     .bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--hover:before {
-      -webkit-transition: all .2s ease-out;
-      transition: all .2s ease-out; }
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
     .bg-overlay--hover:hover:before {
       background: rgba(0, 0, 0, 0.7); }
 
@@ -172,8 +172,8 @@ dl.key-val dd:after {
     .bg-overlay--white.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--white.bg-overlay--hover:before {
-      -webkit-transition: all .2s ease-out;
-      transition: all .2s ease-out; }
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
     .bg-overlay--white.bg-overlay--hover:hover:before {
       background: rgba(255, 255, 255, 0.7); }
 
@@ -206,6 +206,8 @@ dl.key-val dd:after {
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
   .button:hover {
@@ -273,7 +275,7 @@ dl.key-val dd:after {
 /***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
     example:
         <ul class="cols cols--2--bp-medium cols--3--bp-large">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
@@ -516,6 +518,134 @@ ul[class*="cols--"] {
       margin-left: auto;
       margin-right: auto; } }
 
+ul[class^="flex--"],
+ul[class*="flex--"] {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none; }
+
+[class^="flex--"] > *,
+[class*="flex--"] > * {
+  margin-bottom: 1rem; }
+
+.flex--2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .flex--2 > * {
+    max-width: calc(50% - 0.5rem);
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 0.5rem);
+            flex: 0 0 calc(50% - 0.5rem);
+    margin-bottom: 1rem; }
+
+.flex--3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .flex--3 > * {
+    max-width: calc(33.33333% - 0.66667rem);
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
+            flex: 0 0 calc(33.33333% - 0.66667rem);
+    margin-bottom: 1rem; }
+
+@media (min-width: 760px) {
+  .flex--2--bp-medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--2--bp-medium > * {
+      max-width: calc(50% - 0.5rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(50% - 0.5rem);
+              flex: 0 0 calc(50% - 0.5rem);
+      margin-bottom: 1rem; } }
+
+@media (min-width: 760px) {
+  .flex--3--bp-medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--bp-medium > * {
+      max-width: calc(33.33333% - 0.66667rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
+              flex: 0 0 calc(33.33333% - 0.66667rem);
+      margin-bottom: 1rem; } }
+
+@media (min-width: 1020px) {
+  .flex--2--bp-large {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--2--bp-large > * {
+      max-width: calc(50% - 0.5rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(50% - 0.5rem);
+              flex: 0 0 calc(50% - 0.5rem);
+      margin-bottom: 1rem; } }
+
+@media (min-width: 1020px) {
+  .flex--3--bp-large {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .flex--3--bp-large > * {
+      max-width: calc(33.33333% - 0.66667rem);
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
+              flex: 0 0 calc(33.33333% - 0.66667rem);
+      margin-bottom: 1rem; } }
+
 /***
     title: Forms
     section: Forms
@@ -616,7 +746,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 
 input[type=radio],
 input[type=checkbox] {
-  margin: 0 0 0.4em; }
+  margin: 0 0.4em 0 0; }
   [dir=rtl] input[type=radio], [dir=rtl]
   input[type=checkbox] {
     margin-right: 0;
@@ -655,6 +785,8 @@ button {
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none;
   outline: 0;
@@ -1025,8 +1157,8 @@ h6,
         -ms-flex-pack: center;
             justify-content: center;
     border-radius: 50%;
-    -webkit-transition: all .2s ease-out;
-    transition: all .2s ease-out; }
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out; }
   [class^="icon-"].icon--round.icon--above, [class^="icon-"].icon--round.icon--below,
   [class*="icon-"].icon--round.icon--above,
   [class*="icon-"].icon--round.icon--below {
@@ -1257,19 +1389,19 @@ a,
   z-index: 100;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: background .2s 0s ease-out, transform 0s .2s linear;
-  transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
+  -webkit-transition: background 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, transform 0s 0.2s linear, -webkit-transform 0s 0.2s linear; }
   .pane__overlay.open {
     background: rgba(0, 0, 0, 0.4);
     -webkit-transform: translateX(0);
             transform: translateX(0);
     z-index: 101;
-    -webkit-transition: background .2s ease-out, -webkit-transform 0s linear;
-    transition: background .2s ease-out, -webkit-transform 0s linear;
-    transition: transform 0s linear, background .2s ease-out;
-    transition: transform 0s linear, background .2s ease-out, -webkit-transform 0s linear; }
+    -webkit-transition: background 0.2s ease-out, -webkit-transform 0s linear;
+    transition: background 0.2s ease-out, -webkit-transform 0s linear;
+    transition: transform 0s linear, background 0.2s ease-out;
+    transition: transform 0s linear, background 0.2s ease-out, -webkit-transform 0s linear; }
 
 .pane {
   background: #fff;
@@ -1282,10 +1414,10 @@ a,
   max-width: 30rem;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: -webkit-transform .2s .2s ease-out;
-  transition: -webkit-transform .2s .2s ease-out;
-  transition: transform .2s .2s ease-out;
-  transition: transform .2s .2s ease-out, -webkit-transform .2s .2s ease-out; }
+  -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
+  transition: -webkit-transform 0.2s 0.2s ease-out;
+  transition: transform 0.2s 0.2s ease-out;
+  transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out; }
   .pane--right {
     left: auto;
     right: 0;
@@ -1323,15 +1455,15 @@ a,
   opacity: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: opacity .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: opacity .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: transform 0s .2s linear, opacity .2s 0s ease-out;
-  transition: transform 0s .2s linear, opacity .2s 0s ease-out, -webkit-transform 0s .2s linear; }
+  -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out;
+  transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear; }
   .popup:target, .popup.open {
-    -webkit-transition: opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
-    transition: opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
-    transition: transform 0s 0s linear, opacity .2s 0s ease-out;
-    transition: transform 0s 0s linear, opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
+    -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
+    transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
+    transition: transform 0s 0s linear, opacity 0.2s 0s ease-out;
+    transition: transform 0s 0s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0); }
@@ -1507,8 +1639,8 @@ a,
   display: block;
   position: relative;
   margin: 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   /*	@media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1530,10 +1662,10 @@ a,
     margin-right: -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1564,11 +1696,11 @@ a,
       margin-right: -1rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      margin-top: -2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      margin-top: -3rem;
       /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1599,11 +1731,11 @@ a,
       margin-right: -1rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      margin-bottom: -2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      margin-bottom: -3rem;
       /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1632,16 +1764,16 @@ a,
   .section--slanted {
     -webkit-clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);
             clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);
-    padding-top: 5rem;
-    padding-bottom: 5rem; }
+    padding-top: 6rem;
+    padding-bottom: 6rem; }
     .section--slanted-top {
       -webkit-clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
               clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
-      padding-top: 5rem; }
+      padding-top: 6rem; }
     .section--slanted-bottom {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
               clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
-      padding-bottom: 5rem; }
+      padding-bottom: 6rem; }
 
 .separated--bottom {
   padding-bottom: 1rem;
@@ -1752,6 +1884,22 @@ a.color--white,
     color: #fff;
     text-decoration: none; }
 
+div.video,
+.entry-content-asset {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 1rem; }
+  div.video iframe,
+  .entry-content-asset iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
 .pull-left {
   float: left; }
 
@@ -1805,134 +1953,6 @@ div.gallery {
         display: block;
         border: 0 !important; }
 
-ul[class^="flex--"],
-ul[class*="flex--"] {
-  margin-left: 0;
-  padding-left: 0;
-  list-style: none; }
-
-[class^="flex--"] > *,
-[class*="flex--"] > * {
-  margin-bottom: 1rem; }
-
-.flex--2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  .flex--2 > * {
-    max-width: calc(50% - 0.5rem);
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 0.5rem);
-            flex: 0 0 calc(50% - 0.5rem);
-    margin-bottom: 1rem; }
-
-.flex--3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  .flex--3 > * {
-    max-width: calc(33.33333% - 0.66667rem);
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
-            flex: 0 0 calc(33.33333% - 0.66667rem);
-    margin-bottom: 1rem; }
-
-@media (min-width: 760px) {
-  .flex--2--bp-medium {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
-    .flex--2--bp-medium > * {
-      max-width: calc(50% - 0.5rem);
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(50% - 0.5rem);
-              flex: 0 0 calc(50% - 0.5rem);
-      margin-bottom: 1rem; } }
-
-@media (min-width: 760px) {
-  .flex--3--bp-medium {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
-    .flex--3--bp-medium > * {
-      max-width: calc(33.33333% - 0.66667rem);
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
-              flex: 0 0 calc(33.33333% - 0.66667rem);
-      margin-bottom: 1rem; } }
-
-@media (min-width: 1020px) {
-  .flex--2--bp-large {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
-    .flex--2--bp-large > * {
-      max-width: calc(50% - 0.5rem);
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(50% - 0.5rem);
-              flex: 0 0 calc(50% - 0.5rem);
-      margin-bottom: 1rem; } }
-
-@media (min-width: 1020px) {
-  .flex--3--bp-large {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
-    .flex--3--bp-large > * {
-      max-width: calc(33.33333% - 0.66667rem);
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
-              flex: 0 0 calc(33.33333% - 0.66667rem);
-      margin-bottom: 1rem; } }
-
 /**
  * Border box
  */
@@ -1981,11 +2001,11 @@ q {
 
 pre {
   background: #fafafa;
-  color: #111;
   margin: 0 0 1rem;
   padding: 1rem;
   max-height: 300px;
-  overflow: auto; }
+  overflow: auto;
+  color: #111; }
 
 /**
  * Inline elements

@@ -15,12 +15,12 @@
 
 	opacity: 0;
 	transform: translateY(-100%);
-	transition: transform 0s .2s linear, opacity .2s 0s ease-out;
+	transition: transform 0s .2s linear, opacity .2s 0s $transition-easing;
 
 	// When open
 	&:target,
 	&.open {
-		transition: transform 0s 0s linear, opacity .2s 0s ease-out;
+		transition: transform 0s 0s linear, opacity .2s 0s $transition-easing;
 		opacity: 1;
 		transform: translateY(0);
 	}

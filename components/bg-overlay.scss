@@ -42,17 +42,17 @@
 	// Hover effect
 	@if ($hover) {
 		// background-size: 100% auto;
-		// transition: background-size .2s ease-out;
+		// transition: background-size $transition-default $transition-easing;
 
 		&:before {
-			transition: all .2s ease-out;
+			transition: all $transition-default $transition-easing;
 		}
 
 		&:hover {
 			// background-size: 110% auto;
 
 			&:before {
-				background: rgba($color, .7);
+				background: rgba($color, .7); // TODO: Opacity should be configurable
 			}
 		}
 	}

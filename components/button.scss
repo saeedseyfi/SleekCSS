@@ -121,7 +121,7 @@
 
 	// Transition?
 	@if ($button-transition == true) {
-		transition: all .2s ease-out;
+		transition: all $transition-default $transition-easing;
 	}
 	@elseif ($button-transition) {
 		transition: $button-transition;
