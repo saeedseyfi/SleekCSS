@@ -55,40 +55,6 @@
 
 		display: flex;
 		flex-direction: column;
-	}
-
-	// Header
-	&__header {
-		padding: $padding-default;
-
-		h2 {
-			text-align: center;
-			margin: 0;
-		}
-	}
-
-	// Content
-	&__content {
-		padding: 0 $padding-default;
 		overflow: auto;
-
-		&:first-child {
-			padding-top: $padding-default;
-		}
-
-		&:last-child {
-			padding-bottom: $padding-default;
-		}
-	}
-
-	// Footer
-	&__footer {
-		padding: $padding-default;
-	}
-
-	// Fix bug in Chrome where header/footer are too small for their contents
-	&__header,
-	&__footer {
-		box-sizing: content-box;
 	}
 }
