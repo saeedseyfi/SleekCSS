@@ -1,4 +1,4 @@
-// TODO
+// TODO: Documentation
 .popup {
 	background: $color-overlay;
 
@@ -37,7 +37,10 @@
 		color: $color-white;
 		text-decoration: none;
 
+		transform: scale(1);
+
 		&:hover {
+			transform: scale(1.1);
 			color: $color-white;
 			text-decoration: none;
 		}
@@ -48,13 +51,21 @@
 		background: $color-white;
 
 		width: 80%;
-		max-width: 35rem;
+		max-width: 45rem;
 		max-height: 90%;
+
+		position: relative;
+		overflow: auto;
+		padding: $padding-large;
 
 		border-radius: .5rem;
 
-		display: flex;
-		flex-direction: column;
-		overflow: auto;
+		.popup__close {
+			color: inherit;
+
+			&:hover {
+				color: inherit;
+			}
+		}
 	}
 }
