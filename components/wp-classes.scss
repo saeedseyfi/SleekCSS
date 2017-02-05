@@ -2,9 +2,25 @@
 .alignleft,
 .alignright,
 .alignnone {
-	display: block;
+//	display: block;
 //	width: 100%;
-	margin-bottom: $margin-default;
+//	margin-bottom: $margin-default;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.clear {
+	clear: both;
 }
 
 @media #{$bp-medium} {

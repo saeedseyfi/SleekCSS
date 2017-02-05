@@ -1,4 +1,4 @@
-// TODO
+// TODO: Documentation
 .popup {
 	background: $color-overlay;
 
@@ -15,12 +15,12 @@
 
 	opacity: 0;
 	transform: translateY(-100%);
-	transition: transform 0s .2s linear, opacity .2s 0s ease-out;
+	transition: transform 0s .2s linear, opacity .2s 0s $transition-easing;
 
 	// When open
 	&:target,
 	&.open {
-		transition: transform 0s 0s linear, opacity .2s 0s ease-out;
+		transition: transform 0s 0s linear, opacity .2s 0s $transition-easing;
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -37,7 +37,10 @@
 		color: $color-white;
 		text-decoration: none;
 
+		transform: scale(1);
+
 		&:hover {
+			transform: scale(1.1);
 			color: $color-white;
 			text-decoration: none;
 		}
@@ -48,47 +51,21 @@
 		background: $color-white;
 
 		width: 80%;
-		max-width: 35rem;
-		max-height: 75%;
+		max-width: 45rem;
+		max-height: 90%;
+
+		position: relative;
+		overflow: auto;
+		padding: $padding-large;
 
 		border-radius: .5rem;
 
-		display: flex;
-		flex-direction: column;
-	}
+		.popup__close {
+			color: inherit;
 
-	// Header
-	&__header {
-		padding: $padding-default;
-
-		h2 {
-			text-align: center;
-			margin: 0;
+			&:hover {
+				color: inherit;
+			}
 		}
-	}
-
-	// Content
-	&__content {
-		padding: 0 $padding-default;
-		overflow: auto;
-
-		&:first-child {
-			padding-top: $padding-default;
-		}
-
-		&:last-child {
-			padding-bottom: $padding-default;
-		}
-	}
-
-	// Footer
-	&__footer {
-		padding: $padding-default;
-	}
-
-	// Fix bug in Chrome where header/footer are too small for their contents
-	&__header,
-	&__footer {
-		box-sizing: content-box;
 	}
 }

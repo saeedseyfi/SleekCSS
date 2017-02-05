@@ -13,8 +13,8 @@
 	$total-gutter: $gutter * ($num - 1);
 	$width-subtract: $total-gutter / $num;
 
-	min-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)
-	max-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)
+	// min-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)??
+	max-width: calc(#{(100% / $num)} - #{$width-subtract}); // For Firefox(and IE?)?? (and Chrome, try a word that's longer than the width of the element)
 	flex: 0 0 calc(#{(100% / $num)} - #{$width-subtract});
 
 	margin-bottom: $gutter; // Same space between and below
@@ -27,6 +27,14 @@ ul[class*="flex--"] {
 	margin-left: 0;
 	padding-left: 0;
 	list-style: none;
+}
+
+// Make sure flex items have margin bottom(?)
+[class^="flex--"],
+[class*="flex--"] {
+	> * {
+		margin-bottom: $gutter-default;
+	}
 }
 
 // Create flex--X classes for all specified column counts

@@ -27,6 +27,12 @@
 			bottom: 0;
 		}
 	}
+	@elseif ($position == top) {
+		&:before,
+		&:after {
+			top: 0;
+		}
+	}
 }
 
 /**

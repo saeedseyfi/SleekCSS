@@ -20,10 +20,12 @@ body {
 	font-size: $font-size-default;
 	line-height: $line-height-default;
 	font-family: $font-family-default;
+	font-weight: $font-weight-default;
+
 	color: $color-text;
+
 	word-wrap: break-word;
 	hyphens: auto;
-	font-weight: $font-weight-default;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -54,15 +56,13 @@ q {
 	margin: 0;
 }
 
-blockquote {
-}
-
 pre {
 	background: #fafafa;
-	color: #111;
-	padding: 1rem;
+	margin: 0 0 $margin-default;
+	padding: $padding-default;
 	max-height: 300px;
 	overflow: auto;
+	color: #111;
 }
 
 /**

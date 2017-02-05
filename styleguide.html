@@ -46,8 +46,8 @@ dl.key-val dd:after {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all .1s ease-out;
-  transition: all .1s ease-out; }
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
 
 .osx-dock:hover > *,
 .osx-dock.active > * {
@@ -89,7 +89,7 @@ dl.key-val dd:after {
   position: relative;
   overflow: hidden; }
   .bg-overlay:before {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     display: block;
     content: "";
     position: absolute;
@@ -108,11 +108,9 @@ dl.key-val dd:after {
     background-size: cover;
     display: block;
     position: relative;
-    overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
+    overflow: hidden; }
     .bg-overlay--hover:before {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.4);
       display: block;
       content: "";
       position: absolute;
@@ -126,10 +124,10 @@ dl.key-val dd:after {
     .bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
     .bg-overlay--hover:hover:before {
-      background: rgba(0, 0, 0, 0.9); }
+      background: rgba(0, 0, 0, 0.7); }
 
 .bg-overlay--white {
   background-position: center top;
@@ -139,7 +137,7 @@ dl.key-val dd:after {
   position: relative;
   overflow: hidden; }
   .bg-overlay--white:before {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5);
     display: block;
     content: "";
     position: absolute;
@@ -158,11 +156,9 @@ dl.key-val dd:after {
     background-size: cover;
     display: block;
     position: relative;
-    overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
+    overflow: hidden; }
     .bg-overlay--white.bg-overlay--hover:before {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.5);
       display: block;
       content: "";
       position: absolute;
@@ -176,10 +172,10 @@ dl.key-val dd:after {
     .bg-overlay--white.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--white.bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
     .bg-overlay--white.bg-overlay--hover:hover:before {
-      background: rgba(255, 255, 255, 0.9); }
+      background: rgba(255, 255, 255, 0.7); }
 
 /***
     title: Button
@@ -210,6 +206,8 @@ dl.key-val dd:after {
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
   .button:hover {
@@ -272,12 +270,12 @@ dl.key-val dd:after {
   display: block;
   margin-bottom: 2rem;
   padding: 2rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 /***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
     example:
         <ul class="cols cols--2--bp-medium cols--3--bp-large">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
@@ -673,7 +671,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 
 input[type=radio],
 input[type=checkbox] {
-  margin: 0 0 0.4em; }
+  margin: 0 0.4em 0 0; }
   [dir=rtl] input[type=radio], [dir=rtl]
   input[type=checkbox] {
     margin-right: 0;
@@ -712,6 +710,8 @@ button {
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none;
   outline: 0;
@@ -741,7 +741,7 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #fff url("assets/svg/select-arrow.svg") no-repeat calc(100% - .5rem) 50%;
+  background: #fff url("assets/svg/select-arrow.svg") no-repeat calc(100% - 1rem) 50%;
   background-size: 0.5rem auto;
   box-sizing: border-box;
   width: 100%;
@@ -1082,8 +1082,8 @@ h6,
         -ms-flex-pack: center;
             justify-content: center;
     border-radius: 50%;
-    -webkit-transition: all .2s ease-out;
-    transition: all .2s ease-out; }
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out; }
   [class^="icon-"].icon--round.icon--above, [class^="icon-"].icon--round.icon--below,
   [class*="icon-"].icon--round.icon--above,
   [class*="icon-"].icon--round.icon--below {
@@ -1317,19 +1317,19 @@ a,
   z-index: 100;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: background .2s 0s ease-out, transform 0s .2s linear;
-  transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
+  -webkit-transition: background 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, transform 0s 0.2s linear, -webkit-transform 0s 0.2s linear; }
   .pane__overlay.open {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     -webkit-transform: translateX(0);
             transform: translateX(0);
     z-index: 101;
-    -webkit-transition: background .2s ease-out, -webkit-transform 0s linear;
-    transition: background .2s ease-out, -webkit-transform 0s linear;
-    transition: transform 0s linear, background .2s ease-out;
-    transition: transform 0s linear, background .2s ease-out, -webkit-transform 0s linear; }
+    -webkit-transition: background 0.2s ease-out, -webkit-transform 0s linear;
+    transition: background 0.2s ease-out, -webkit-transform 0s linear;
+    transition: transform 0s linear, background 0.2s ease-out;
+    transition: transform 0s linear, background 0.2s ease-out, -webkit-transform 0s linear; }
 
 .pane {
   background: #fff;
@@ -1342,10 +1342,10 @@ a,
   max-width: 30rem;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: -webkit-transform .2s .2s ease-out;
-  transition: -webkit-transform .2s .2s ease-out;
-  transition: transform .2s .2s ease-out;
-  transition: transform .2s .2s ease-out, -webkit-transform .2s .2s ease-out; }
+  -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
+  transition: -webkit-transform 0.2s 0.2s ease-out;
+  transition: transform 0.2s 0.2s ease-out;
+  transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out; }
   .pane--right {
     left: auto;
     right: 0;
@@ -1364,7 +1364,7 @@ a,
     top: 1rem; }
 
 .popup {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
   top: 0;
@@ -1383,15 +1383,15 @@ a,
   opacity: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: opacity .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: opacity .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: transform 0s .2s linear, opacity .2s 0s ease-out;
-  transition: transform 0s .2s linear, opacity .2s 0s ease-out, -webkit-transform 0s .2s linear; }
+  -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out;
+  transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear; }
   .popup:target, .popup.open {
-    -webkit-transition: opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
-    transition: opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
-    transition: transform 0s 0s linear, opacity .2s 0s ease-out;
-    transition: transform 0s 0s linear, opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
+    -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
+    transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
+    transition: transform 0s 0s linear, opacity 0.2s 0s ease-out;
+    transition: transform 0s 0s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0); }
@@ -1403,39 +1403,27 @@ a,
     font-size: 3rem;
     line-height: 1rem;
     color: #fff;
-    text-decoration: none; }
+    text-decoration: none;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
     .popup__close:hover {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
       color: #fff;
       text-decoration: none; }
   .popup__box {
     background: #fff;
     width: 80%;
-    max-width: 35rem;
-    max-height: 75%;
-    border-radius: .5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-  .popup__header {
-    padding: 1rem; }
-    .popup__header h2 {
-      text-align: center;
-      margin: 0; }
-  .popup__content {
-    padding: 0 1rem;
-    overflow: auto; }
-    .popup__content:first-child {
-      padding-top: 1rem; }
-    .popup__content:last-child {
-      padding-bottom: 1rem; }
-  .popup__footer {
-    padding: 1rem; }
-  .popup__header, .popup__footer {
-    box-sizing: content-box; }
+    max-width: 45rem;
+    max-height: 90%;
+    position: relative;
+    overflow: auto;
+    padding: 2rem;
+    border-radius: .5rem; }
+    .popup__box .popup__close {
+      color: inherit; }
+      .popup__box .popup__close:hover {
+        color: inherit; }
 
 /***
     title: Primary/Secondary
@@ -1567,8 +1555,8 @@ a,
   display: block;
   position: relative;
   margin: 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   /*	@media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1590,10 +1578,10 @@ a,
     margin-right: -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1624,11 +1612,11 @@ a,
       margin-right: -1rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      margin-top: -2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      margin-top: -3rem;
       /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1659,11 +1647,11 @@ a,
       margin-right: -1rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      margin-bottom: -2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      margin-bottom: -3rem;
       /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -1692,16 +1680,16 @@ a,
   .section--slanted {
     -webkit-clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);
             clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);
-    padding-top: 5rem;
-    padding-bottom: 5rem; }
+    padding-top: 6rem;
+    padding-bottom: 6rem; }
     .section--slanted-top {
       -webkit-clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
               clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
-      padding-top: 5rem; }
+      padding-top: 6rem; }
     .section--slanted-bottom {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
               clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
-      padding-bottom: 5rem; }
+      padding-bottom: 6rem; }
 
 .separated--bottom {
   padding-bottom: 1rem;
@@ -1812,11 +1800,35 @@ a.color--white,
     color: #fff;
     text-decoration: none; }
 
-.alignleft,
-.alignright,
-.alignnone {
-  display: block;
+div.video,
+.entry-content-asset {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
   margin-bottom: 1rem; }
+  div.video iframe,
+  .entry-content-asset iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.clear {
+  clear: both; }
 
 @media (min-width: 760px) {
   .alignleft {
@@ -1863,6 +1875,10 @@ ul[class*="flex--"] {
   padding-left: 0;
   list-style: none; }
 
+[class^="flex--"] > *,
+[class*="flex--"] > * {
+  margin-bottom: 1rem; }
+
 .flex--2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1876,7 +1892,6 @@ ul[class*="flex--"] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .flex--2 > * {
-    min-width: calc(50% - 0.5rem);
     max-width: calc(50% - 0.5rem);
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(50% - 0.5rem);
@@ -1896,7 +1911,6 @@ ul[class*="flex--"] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .flex--3 > * {
-    min-width: calc(33.33333% - 0.66667rem);
     max-width: calc(33.33333% - 0.66667rem);
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
@@ -1917,7 +1931,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--2--bp-medium > * {
-      min-width: calc(50% - 0.5rem);
       max-width: calc(50% - 0.5rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.5rem);
@@ -1938,7 +1951,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--3--bp-medium > * {
-      min-width: calc(33.33333% - 0.66667rem);
       max-width: calc(33.33333% - 0.66667rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
@@ -1959,7 +1971,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--2--bp-large > * {
-      min-width: calc(50% - 0.5rem);
       max-width: calc(50% - 0.5rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.5rem);
@@ -1980,7 +1991,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--3--bp-large > * {
-      min-width: calc(33.33333% - 0.66667rem);
       max-width: calc(33.33333% - 0.66667rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
@@ -2006,12 +2016,12 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   font-family: Helvetica, sans-serif;
+  font-weight: normal;
   color: #333;
   word-wrap: break-word;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
-  font-weight: normal;
   -webkit-font-smoothing: antialiased; }
 
 /**
@@ -2038,10 +2048,11 @@ q {
 
 pre {
   background: #fafafa;
-  color: #111;
+  margin: 0 0 1rem;
   padding: 1rem;
   max-height: 300px;
-  overflow: auto; }
+  overflow: auto;
+  color: #111; }
 
 /**
  * Inline elements
@@ -2115,8 +2126,8 @@ dl.key-val dd:after {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all .1s ease-out;
-  transition: all .1s ease-out; }
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
 
 .osx-dock:hover > *,
 .osx-dock.active > * {
@@ -2158,7 +2169,7 @@ dl.key-val dd:after {
   position: relative;
   overflow: hidden; }
   .bg-overlay:before {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     display: block;
     content: "";
     position: absolute;
@@ -2177,11 +2188,9 @@ dl.key-val dd:after {
     background-size: cover;
     display: block;
     position: relative;
-    overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
+    overflow: hidden; }
     .bg-overlay--hover:before {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.4);
       display: block;
       content: "";
       position: absolute;
@@ -2195,10 +2204,10 @@ dl.key-val dd:after {
     .bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
     .bg-overlay--hover:hover:before {
-      background: rgba(0, 0, 0, 0.9); }
+      background: rgba(0, 0, 0, 0.7); }
 
 .bg-overlay--white {
   background-position: center top;
@@ -2208,7 +2217,7 @@ dl.key-val dd:after {
   position: relative;
   overflow: hidden; }
   .bg-overlay--white:before {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5);
     display: block;
     content: "";
     position: absolute;
@@ -2227,11 +2236,9 @@ dl.key-val dd:after {
     background-size: cover;
     display: block;
     position: relative;
-    overflow: hidden;
-    /* background-size: 100% auto;
-		transition: background-size .2s ease-out; */ }
+    overflow: hidden; }
     .bg-overlay--white.bg-overlay--hover:before {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.5);
       display: block;
       content: "";
       position: absolute;
@@ -2245,10 +2252,10 @@ dl.key-val dd:after {
     .bg-overlay--white.bg-overlay--hover > * {
       position: relative; }
     .bg-overlay--white.bg-overlay--hover:before {
-      -webkit-transition: background-color .2s ease-out;
-      transition: background-color .2s ease-out; }
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
     .bg-overlay--white.bg-overlay--hover:hover:before {
-      background: rgba(255, 255, 255, 0.9); }
+      background: rgba(255, 255, 255, 0.7); }
 
 /***
     title: Button
@@ -2279,6 +2286,8 @@ dl.key-val dd:after {
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
   .button:hover {
@@ -2341,12 +2350,12 @@ dl.key-val dd:after {
   display: block;
   margin-bottom: 2rem;
   padding: 2rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 /***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.
     example:
         <ul class="cols cols--2--bp-medium cols--3--bp-large">
             <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
@@ -2742,7 +2751,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 
 input[type=radio],
 input[type=checkbox] {
-  margin: 0 0 0.4em; }
+  margin: 0 0.4em 0 0; }
   [dir=rtl] input[type=radio], [dir=rtl]
   input[type=checkbox] {
     margin-right: 0;
@@ -2781,6 +2790,8 @@ button {
   text-decoration: none;
   text-align: center;
   border-radius: 0.2rem;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none;
   outline: 0;
@@ -2810,7 +2821,7 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #fff url("assets/svg/select-arrow.svg") no-repeat calc(100% - .5rem) 50%;
+  background: #fff url("assets/svg/select-arrow.svg") no-repeat calc(100% - 1rem) 50%;
   background-size: 0.5rem auto;
   box-sizing: border-box;
   width: 100%;
@@ -3151,8 +3162,8 @@ h6,
         -ms-flex-pack: center;
             justify-content: center;
     border-radius: 50%;
-    -webkit-transition: all .2s ease-out;
-    transition: all .2s ease-out; }
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out; }
   [class^="icon-"].icon--round.icon--above, [class^="icon-"].icon--round.icon--below,
   [class*="icon-"].icon--round.icon--above,
   [class*="icon-"].icon--round.icon--below {
@@ -3386,19 +3397,19 @@ a,
   z-index: 100;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: background .2s 0s ease-out, transform 0s .2s linear;
-  transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
+  -webkit-transition: background 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, transform 0s 0.2s linear;
+  transition: background 0.2s 0s ease-out, transform 0s 0.2s linear, -webkit-transform 0s 0.2s linear; }
   .pane__overlay.open {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     -webkit-transform: translateX(0);
             transform: translateX(0);
     z-index: 101;
-    -webkit-transition: background .2s ease-out, -webkit-transform 0s linear;
-    transition: background .2s ease-out, -webkit-transform 0s linear;
-    transition: transform 0s linear, background .2s ease-out;
-    transition: transform 0s linear, background .2s ease-out, -webkit-transform 0s linear; }
+    -webkit-transition: background 0.2s ease-out, -webkit-transform 0s linear;
+    transition: background 0.2s ease-out, -webkit-transform 0s linear;
+    transition: transform 0s linear, background 0.2s ease-out;
+    transition: transform 0s linear, background 0.2s ease-out, -webkit-transform 0s linear; }
 
 .pane {
   background: #fff;
@@ -3411,10 +3422,10 @@ a,
   max-width: 30rem;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: -webkit-transform .2s .2s ease-out;
-  transition: -webkit-transform .2s .2s ease-out;
-  transition: transform .2s .2s ease-out;
-  transition: transform .2s .2s ease-out, -webkit-transform .2s .2s ease-out; }
+  -webkit-transition: -webkit-transform 0.2s 0.2s ease-out;
+  transition: -webkit-transform 0.2s 0.2s ease-out;
+  transition: transform 0.2s 0.2s ease-out;
+  transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out; }
   .pane--right {
     left: auto;
     right: 0;
@@ -3433,7 +3444,7 @@ a,
     top: 1rem; }
 
 .popup {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   position: fixed;
   left: 0;
   top: 0;
@@ -3452,15 +3463,15 @@ a,
   opacity: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: opacity .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: opacity .2s 0s ease-out, -webkit-transform 0s .2s linear;
-  transition: transform 0s .2s linear, opacity .2s 0s ease-out;
-  transition: transform 0s .2s linear, opacity .2s 0s ease-out, -webkit-transform 0s .2s linear; }
+  -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear;
+  transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out;
+  transition: transform 0s 0.2s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0.2s linear; }
   .popup:target, .popup.open {
-    -webkit-transition: opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
-    transition: opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
-    transition: transform 0s 0s linear, opacity .2s 0s ease-out;
-    transition: transform 0s 0s linear, opacity .2s 0s ease-out, -webkit-transform 0s 0s linear;
+    -webkit-transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
+    transition: opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
+    transition: transform 0s 0s linear, opacity 0.2s 0s ease-out;
+    transition: transform 0s 0s linear, opacity 0.2s 0s ease-out, -webkit-transform 0s 0s linear;
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0); }
@@ -3472,39 +3483,27 @@ a,
     font-size: 3rem;
     line-height: 1rem;
     color: #fff;
-    text-decoration: none; }
+    text-decoration: none;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
     .popup__close:hover {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
       color: #fff;
       text-decoration: none; }
   .popup__box {
     background: #fff;
     width: 80%;
-    max-width: 35rem;
-    max-height: 75%;
-    border-radius: .5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-  .popup__header {
-    padding: 1rem; }
-    .popup__header h2 {
-      text-align: center;
-      margin: 0; }
-  .popup__content {
-    padding: 0 1rem;
-    overflow: auto; }
-    .popup__content:first-child {
-      padding-top: 1rem; }
-    .popup__content:last-child {
-      padding-bottom: 1rem; }
-  .popup__footer {
-    padding: 1rem; }
-  .popup__header, .popup__footer {
-    box-sizing: content-box; }
+    max-width: 45rem;
+    max-height: 90%;
+    position: relative;
+    overflow: auto;
+    padding: 2rem;
+    border-radius: .5rem; }
+    .popup__box .popup__close {
+      color: inherit; }
+      .popup__box .popup__close:hover {
+        color: inherit; }
 
 /***
     title: Primary/Secondary
@@ -3636,8 +3635,8 @@ a,
   display: block;
   position: relative;
   margin: 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   /*	@media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -3659,10 +3658,10 @@ a,
     margin-right: -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -3693,11 +3692,11 @@ a,
       margin-right: -1rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      margin-top: -2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      margin-top: -3rem;
       /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -3728,11 +3727,11 @@ a,
       margin-right: -1rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      margin-bottom: -2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      margin-bottom: -3rem;
       /* @media (min-width: 760px) {
 		padding-top: $section-padding--bp-medium;
 		padding-bottom: $section-padding--bp-medium;
@@ -3761,16 +3760,16 @@ a,
   .section--slanted {
     -webkit-clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);
             clip-path: polygon(0 3rem, 100% 0, 100% calc(100% - 3rem), 0 100%);
-    padding-top: 5rem;
-    padding-bottom: 5rem; }
+    padding-top: 6rem;
+    padding-bottom: 6rem; }
     .section--slanted-top {
       -webkit-clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
               clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
-      padding-top: 5rem; }
+      padding-top: 6rem; }
     .section--slanted-bottom {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
               clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3rem), 0 100%);
-      padding-bottom: 5rem; }
+      padding-bottom: 6rem; }
 
 .separated--bottom {
   padding-bottom: 1rem;
@@ -3881,11 +3880,35 @@ a.color--white,
     color: #fff;
     text-decoration: none; }
 
-.alignleft,
-.alignright,
-.alignnone {
-  display: block;
+div.video,
+.entry-content-asset {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
   margin-bottom: 1rem; }
+  div.video iframe,
+  .entry-content-asset iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.clear {
+  clear: both; }
 
 @media (min-width: 760px) {
   .alignleft {
@@ -3932,6 +3955,10 @@ ul[class*="flex--"] {
   padding-left: 0;
   list-style: none; }
 
+[class^="flex--"] > *,
+[class*="flex--"] > * {
+  margin-bottom: 1rem; }
+
 .flex--2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3945,7 +3972,6 @@ ul[class*="flex--"] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .flex--2 > * {
-    min-width: calc(50% - 0.5rem);
     max-width: calc(50% - 0.5rem);
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(50% - 0.5rem);
@@ -3965,7 +3991,6 @@ ul[class*="flex--"] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .flex--3 > * {
-    min-width: calc(33.33333% - 0.66667rem);
     max-width: calc(33.33333% - 0.66667rem);
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
@@ -3986,7 +4011,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--2--bp-medium > * {
-      min-width: calc(50% - 0.5rem);
       max-width: calc(50% - 0.5rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.5rem);
@@ -4007,7 +4031,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--3--bp-medium > * {
-      min-width: calc(33.33333% - 0.66667rem);
       max-width: calc(33.33333% - 0.66667rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
@@ -4028,7 +4051,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--2--bp-large > * {
-      min-width: calc(50% - 0.5rem);
       max-width: calc(50% - 0.5rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(50% - 0.5rem);
@@ -4049,7 +4071,6 @@ ul[class*="flex--"] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
     .flex--3--bp-large > * {
-      min-width: calc(33.33333% - 0.66667rem);
       max-width: calc(33.33333% - 0.66667rem);
       -webkit-box-flex: 0;
           -ms-flex: 0 0 calc(33.33333% - 0.66667rem);
@@ -4075,12 +4096,12 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   font-family: Helvetica, sans-serif;
+  font-weight: normal;
   color: #333;
   word-wrap: break-word;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
-  font-weight: normal;
   -webkit-font-smoothing: antialiased; }
 
 /**
@@ -4107,10 +4128,11 @@ q {
 
 pre {
   background: #fafafa;
-  color: #111;
+  margin: 0 0 1rem;
   padding: 1rem;
   max-height: 300px;
-  overflow: auto; }
+  overflow: auto;
+  color: #111; }
 
 /**
  * Inline elements
@@ -4342,7 +4364,7 @@ pre {
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Go"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div></article></section><section id="grid"><header><h2>Grid</h2></header><article><header><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div></article></section><section id="grid"><header><h2>Grid</h2></header><article><header><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}. Note! You might wanna use the flex component instead nowadays.</p>
 </p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2--bp-medium cols--3--bp-large"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> I'm two columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -4384,9 +4406,9 @@ pre {
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--round"</span>
         <span class="hljs-attribute">title</span>=<span class="hljs-value">"Facebook"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter icon--round"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Twitter"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-search"</span>&gt;</span>Find<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-right icon--after"</span>&gt;</span>Icon after text<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter icon--round"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Twitter"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-search"</span>&gt;</span>Find<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-right icon--after"</span>&gt;</span>Icon after text<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--above"</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>

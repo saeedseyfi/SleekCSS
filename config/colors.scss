@@ -2,7 +2,7 @@ $color-body-bg: #fff !default;
 
 $color-border: rgba(100, 100, 100, .5) !default;
 $color-shadow: rgba(0, 0, 0, .2) !default;
-$color-overlay: rgba(0, 0, 0, .5) !default;
+$color-overlay: rgba(0, 0, 0, .4) !default;
 
 $color-lightgray: gainsboro !default;
 $color-gray: gray !default;
@@ -12,3 +12,24 @@ $color-white: #fff !default;
 $color-black: #000 !default;
 
 // Add more colors as needed...
+// $color-red: #600 etc...
+
+// Define more to use bg--black etc
+$bg-colors: (
+	"white": #fff
+) !default;
+
+// Add more to use .color--red etc
+$text-colors: (
+	"white": #fff
+) !default;
+
+// Add more to use .icon--red etc
+$icon-colors: (
+	"blue": #06f
+) !default;
+
+// Add more to use .button--green etc
+$button-colors: (
+	"red": #600
+) !default;

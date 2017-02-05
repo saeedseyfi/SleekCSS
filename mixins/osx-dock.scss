@@ -3,7 +3,7 @@
 	> * {
 		opacity: 1;
 		transform: scale(1);
-		transition: all .1s ease-out;
+		transition: all $transition-default $transition-easing;
 	}
 
 	&:hover > *,

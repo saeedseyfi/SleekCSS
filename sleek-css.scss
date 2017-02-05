@@ -1,6 +1,18 @@
 // -s @import "(.*?)/(.*?)"; -r @import "$1/$2";
 @import "functions";
 
+// Config
+@import "config/breakpoints";
+@import "config/button";
+@import "config/card";
+@import "config/colors";
+@import "config/cols";
+@import "config/form";
+@import "config/icons";
+@import "config/layout";
+@import "config/shadows";
+@import "config/typography";
+
 // Mixins
 @import "mixins/direction";
 @import "mixins/a11y-hide";
@@ -19,20 +31,6 @@
 @import "mixins/separated-list";
 @import "mixins/slanted";
 @import "mixins/transparent-inner-arrow";
-
-// Config
-@import "config/bg-colors";
-@import "config/breakpoints";
-@import "config/button";
-@import "config/card";
-@import "config/colors";
-@import "config/cols";
-@import "config/form";
-@import "config/icons";
-@import "config/layout";
-@import "config/shadows";
-@import "config/text-colors";
-@import "config/typography";
 
 // Components
 @import "components/bg-colors";
@@ -57,8 +55,9 @@
 @import "components/strike-through";
 @import "components/text";
 @import "components/text-colors";
+@import "components/video";
 @import "components/wp-classes";
-@import "components/flex";
+@import "components/flex"; // Needs to include after other components that set display: so that you can use .section.flex together for example
 
 // General
 @import "general";
