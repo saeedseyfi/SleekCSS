@@ -191,7 +191,7 @@ dl.key-val dd:after {
         <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 .button {
-  background-color: #777;
+  background-color: #06f;
   border: 2px solid transparent;
   display: inline-block;
   vertical-align: middle;
@@ -205,15 +205,15 @@ dl.key-val dd:after {
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 0.2rem;
+  border-radius: 2rem;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
   .button:hover {
-    background-color: #6a6a6a; }
+    background-color: #005ce6; }
   .button:active {
-    background-color: #5e5e5e; }
+    background-color: #0052cc; }
   .button[class*="icon-"]:empty:not([value]) {
     padding-left: 0.6rem;
     padding-right: 0.6rem; }
@@ -227,11 +227,11 @@ dl.key-val dd:after {
 
 .button--ghost {
   background-color: transparent;
-  color: #777;
-  border: 2px solid #777; }
+  color: #06f;
+  border: 2px solid #06f; }
   .button--ghost:hover {
-    background-color: #777;
-    color: #fff; }
+    background-color: rgba(0, 102, 255, 0.25);
+    color: #06f; }
 
 .button--red {
   background-color: #600;
@@ -245,8 +245,8 @@ dl.key-val dd:after {
     color: #600;
     border: 2px solid #600; }
     .button--red.button--ghost:hover {
-      background-color: #600;
-      color: #fff; }
+      background-color: rgba(102, 0, 0, 0.25);
+      color: #600; }
 
 .button--small {
   font-size: 0.8rem;
@@ -262,7 +262,7 @@ dl.key-val dd:after {
 /***
     title: Card
     section: Layout
-    description: A simple box/card. Can be used with the bg-classes.
+    description: A simple box/card. Should be used with the bg-classes (transparent by default).
     example:
         <div class="card bg--white">I'm a shadowed card</div>
 ***/
@@ -313,7 +313,6 @@ dl.key-val dd:after {
     margin-bottom: 1rem; }
 
 ul.cols,
-ul[class^="cols--"],
 ul[class*="cols--"] {
   margin-left: 0;
   padding-left: 0;
@@ -642,7 +641,7 @@ textarea {
 
 input[type=submit],
 button {
-  background-color: #777;
+  background-color: #06f;
   border: 2px solid transparent;
   display: inline-block;
   vertical-align: middle;
@@ -656,7 +655,7 @@ button {
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 0.2rem;
+  border-radius: 2rem;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
@@ -665,10 +664,10 @@ button {
   line-height: normal; }
   input[type=submit]:hover,
   button:hover {
-    background-color: #6a6a6a; }
+    background-color: #005ce6; }
   input[type=submit]:active,
   button:active {
-    background-color: #5e5e5e; }
+    background-color: #0052cc; }
   input[type=submit][class*="icon-"]:empty:not([value]),
   button[class*="icon-"]:empty:not([value]) {
     padding-left: 0.6rem;
@@ -842,7 +841,7 @@ input[type=range] {
 /***
     title: Headings
     section: Typography
-    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;
+    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include heading;
     example:
         <h1 class="heading--4">I'm a H1 but look like a H4</h1>
         <h3>I'm a normal H3</h3>
@@ -920,22 +919,16 @@ h6,
 /**
  * Some icon tweaks and margins
  */
-[class^="icon-"]:before, [class^="icon-"]:after,
-[class*="icon-"]:before,
-[class*="icon-"]:after {
+[class*="icon-"]:before, [class*="icon-"]:after {
   text-decoration: none; }
 
-[class^="icon-"]:before,
 [class*="icon-"]:before {
   margin: 0 0.4em 0 0; }
 
-[class^="icon-"].icon--after:after,
 [class*="icon-"].icon--after:after {
   margin: 0 0 0 0.4em; }
 
-[class^="icon-"]:empty:after, [class^="icon-"]:empty:before,
-[class*="icon-"]:empty:after,
-[class*="icon-"]:empty:before {
+[class*="icon-"]:empty:after, [class*="icon-"]:empty:before {
   margin: 0; }
 
 /**
@@ -947,21 +940,17 @@ h6,
 /**
  * Icon Above
  */
-[class^="icon-"].icon--above,
 [class*="icon-"].icon--above {
   display: inline-block;
   text-align: center; }
-  [class^="icon-"].icon--above:before,
   [class*="icon-"].icon--above:before {
     display: block;
     margin: 0 auto 0.5rem;
     font-size: 2em; }
 
-[class^="icon-"].icon--after.icon--below,
 [class*="icon-"].icon--after.icon--below {
   display: inline-block;
   text-align: center; }
-  [class^="icon-"].icon--after.icon--below:after,
   [class*="icon-"].icon--after.icon--below:after {
     display: block;
     margin: 0 auto;
@@ -994,7 +983,6 @@ h6,
  * Round icon
  * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
  */
-[class^="icon-"].icon--round,
 [class*="icon-"].icon--round {
   display: inline-block;
   text-decoration: none;
@@ -1007,12 +995,9 @@ h6,
 		&--ghost.icon--after:hover:after {
 			background: rgba($icon-round-color, .2);
 		} */ }
-  [class^="icon-"].icon--round:hover,
   [class*="icon-"].icon--round:hover {
     text-decoration: none; }
-  [class^="icon-"].icon--round:before, [class^="icon-"].icon--round.icon--after:after,
-  [class*="icon-"].icon--round:before,
-  [class*="icon-"].icon--round.icon--after:after {
+  [class*="icon-"].icon--round:before, [class*="icon-"].icon--round.icon--after:after {
     background: #369;
     width: 2.2em;
     height: 2.2em;
@@ -1031,15 +1016,11 @@ h6,
     border-radius: 50%;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
-  [class^="icon-"].icon--round.icon--above, [class^="icon-"].icon--round.icon--below,
-  [class*="icon-"].icon--round.icon--above,
-  [class*="icon-"].icon--round.icon--below {
+  [class*="icon-"].icon--round.icon--above, [class*="icon-"].icon--round.icon--below {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  [class^="icon-"].icon--round--ghost:before, [class^="icon-"].icon--round--ghost.icon--after:after,
-  [class*="icon-"].icon--round--ghost:before,
-  [class*="icon-"].icon--round--ghost.icon--after:after {
+  [class*="icon-"].icon--round--ghost:before, [class*="icon-"].icon--round--ghost.icon--after:after {
     background: transparent;
     color: #369;
     border: 1px solid #369; }
@@ -1054,15 +1035,12 @@ a:hover .icon--round {
 /**
  * Icon colors
  */
-[class^="icon-"].icon--blue:before,
 [class*="icon-"].icon--blue:before {
   color: #06f; }
 
-[class^="icon-"].icon--after.icon--blue:after,
 [class*="icon-"].icon--after.icon--blue:after {
   color: #06f; }
 
-[class^="icon-"].icon--round--blue,
 [class*="icon-"].icon--round--blue {
   /* &:hover:before {
 				background-color: rgba(nth($color, 2), .2);
@@ -1072,10 +1050,8 @@ a:hover .icon--round {
 			&.icon--round--ghost:hover:before {
 				background-color: rgba(nth($color, 2), .2);
 			} */ }
-  [class^="icon-"].icon--round--blue:before,
   [class*="icon-"].icon--round--blue:before {
     background-color: #06f; }
-  [class^="icon-"].icon--round--blue.icon--round--ghost:before,
   [class*="icon-"].icon--round--blue.icon--round--ghost:before {
     background-color: transparent;
     color: #06f;
@@ -1122,7 +1098,6 @@ a:hover .icon--round {
     width: calc(100% - 1rem); }
 
 ul.inline-grid,
-ul[class^="inline-grid--"],
 ul[class*="inline-grid--"] {
   margin-left: 0;
   padding-left: 0;
@@ -1248,8 +1223,11 @@ a,
 .list--plain {
   margin-left: 0;
   list-style: none; }
-  .list--plain--margin > * {
-    margin-bottom: 0.5rem; }
+  .list--plain--margin {
+    margin-left: 0;
+    list-style: none; }
+    .list--plain--margin > * {
+      margin-bottom: 0.5rem; }
 
 .pane__overlay {
   background: transparent;
@@ -1727,22 +1705,10 @@ a.color--white,
 .link.color--white {
   color: #fff; }
 
-/*	a.color--white:hover,
-	.link.color--white:hover {
-		color: $color-link-hover;
-		text-decoration: $text-decoration-link-hover;
-	} */
-.color--white {
-  /*	a:not(.button):hover,
-		.link:hover {
-			color: $color-link-hover;
-			text-decoration: $text-decoration-link-hover;
-		} */ }
-  .color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
-  .color--white a:not(.button),
-  .color--white .link {
-    color: #fff;
-    text-decoration: none; }
+.color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
+.color--white a:not(.button),
+.color--white .link {
+  color: #fff; }
 
 div.video,
 .entry-content-asset {
@@ -1813,13 +1779,25 @@ div.gallery {
         display: block;
         border: 0 !important; }
 
-ul[class^="flex--"],
+/***
+    title: Flex
+    section: Grid
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.
+    example:
+        <ul class="flex--2--bp-medium flex--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
+        </ul>
+***/
 ul[class*="flex--"] {
   margin-left: 0;
   padding-left: 0;
   list-style: none; }
 
-[class^="flex--"] > *,
 [class*="flex--"] > * {
   margin-bottom: 1rem; }
 
@@ -2218,7 +2196,7 @@ dl.key-val dd:after {
         <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 .button {
-  background-color: #777;
+  background-color: #06f;
   border: 2px solid transparent;
   display: inline-block;
   vertical-align: middle;
@@ -2232,15 +2210,15 @@ dl.key-val dd:after {
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 0.2rem;
+  border-radius: 2rem;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
   box-shadow: none; }
   .button:hover {
-    background-color: #6a6a6a; }
+    background-color: #005ce6; }
   .button:active {
-    background-color: #5e5e5e; }
+    background-color: #0052cc; }
   .button[class*="icon-"]:empty:not([value]) {
     padding-left: 0.6rem;
     padding-right: 0.6rem; }
@@ -2254,11 +2232,11 @@ dl.key-val dd:after {
 
 .button--ghost {
   background-color: transparent;
-  color: #777;
-  border: 2px solid #777; }
+  color: #06f;
+  border: 2px solid #06f; }
   .button--ghost:hover {
-    background-color: #777;
-    color: #fff; }
+    background-color: rgba(0, 102, 255, 0.25);
+    color: #06f; }
 
 .button--red {
   background-color: #600;
@@ -2272,8 +2250,8 @@ dl.key-val dd:after {
     color: #600;
     border: 2px solid #600; }
     .button--red.button--ghost:hover {
-      background-color: #600;
-      color: #fff; }
+      background-color: rgba(102, 0, 0, 0.25);
+      color: #600; }
 
 .button--small {
   font-size: 0.8rem;
@@ -2289,7 +2267,7 @@ dl.key-val dd:after {
 /***
     title: Card
     section: Layout
-    description: A simple box/card. Can be used with the bg-classes.
+    description: A simple box/card. Should be used with the bg-classes (transparent by default).
     example:
         <div class="card bg--white">I'm a shadowed card</div>
 ***/
@@ -2340,7 +2318,6 @@ dl.key-val dd:after {
     margin-bottom: 1rem; }
 
 ul.cols,
-ul[class^="cols--"],
 ul[class*="cols--"] {
   margin-left: 0;
   padding-left: 0;
@@ -2669,7 +2646,7 @@ textarea {
 
 input[type=submit],
 button {
-  background-color: #777;
+  background-color: #06f;
   border: 2px solid transparent;
   display: inline-block;
   vertical-align: middle;
@@ -2683,7 +2660,7 @@ button {
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  border-radius: 0.2rem;
+  border-radius: 2rem;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-shadow: none;
@@ -2692,10 +2669,10 @@ button {
   line-height: normal; }
   input[type=submit]:hover,
   button:hover {
-    background-color: #6a6a6a; }
+    background-color: #005ce6; }
   input[type=submit]:active,
   button:active {
-    background-color: #5e5e5e; }
+    background-color: #0052cc; }
   input[type=submit][class*="icon-"]:empty:not([value]),
   button[class*="icon-"]:empty:not([value]) {
     padding-left: 0.6rem;
@@ -2869,7 +2846,7 @@ input[type=range] {
 /***
     title: Headings
     section: Typography
-    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;
+    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include heading;
     example:
         <h1 class="heading--4">I'm a H1 but look like a H4</h1>
         <h3>I'm a normal H3</h3>
@@ -2947,22 +2924,16 @@ h6,
 /**
  * Some icon tweaks and margins
  */
-[class^="icon-"]:before, [class^="icon-"]:after,
-[class*="icon-"]:before,
-[class*="icon-"]:after {
+[class*="icon-"]:before, [class*="icon-"]:after {
   text-decoration: none; }
 
-[class^="icon-"]:before,
 [class*="icon-"]:before {
   margin: 0 0.4em 0 0; }
 
-[class^="icon-"].icon--after:after,
 [class*="icon-"].icon--after:after {
   margin: 0 0 0 0.4em; }
 
-[class^="icon-"]:empty:after, [class^="icon-"]:empty:before,
-[class*="icon-"]:empty:after,
-[class*="icon-"]:empty:before {
+[class*="icon-"]:empty:after, [class*="icon-"]:empty:before {
   margin: 0; }
 
 /**
@@ -2974,21 +2945,17 @@ h6,
 /**
  * Icon Above
  */
-[class^="icon-"].icon--above,
 [class*="icon-"].icon--above {
   display: inline-block;
   text-align: center; }
-  [class^="icon-"].icon--above:before,
   [class*="icon-"].icon--above:before {
     display: block;
     margin: 0 auto 0.5rem;
     font-size: 2em; }
 
-[class^="icon-"].icon--after.icon--below,
 [class*="icon-"].icon--after.icon--below {
   display: inline-block;
   text-align: center; }
-  [class^="icon-"].icon--after.icon--below:after,
   [class*="icon-"].icon--after.icon--below:after {
     display: block;
     margin: 0 auto;
@@ -3021,7 +2988,6 @@ h6,
  * Round icon
  * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
  */
-[class^="icon-"].icon--round,
 [class*="icon-"].icon--round {
   display: inline-block;
   text-decoration: none;
@@ -3034,12 +3000,9 @@ h6,
 		&--ghost.icon--after:hover:after {
 			background: rgba($icon-round-color, .2);
 		} */ }
-  [class^="icon-"].icon--round:hover,
   [class*="icon-"].icon--round:hover {
     text-decoration: none; }
-  [class^="icon-"].icon--round:before, [class^="icon-"].icon--round.icon--after:after,
-  [class*="icon-"].icon--round:before,
-  [class*="icon-"].icon--round.icon--after:after {
+  [class*="icon-"].icon--round:before, [class*="icon-"].icon--round.icon--after:after {
     background: #369;
     width: 2.2em;
     height: 2.2em;
@@ -3058,15 +3021,11 @@ h6,
     border-radius: 50%;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
-  [class^="icon-"].icon--round.icon--above, [class^="icon-"].icon--round.icon--below,
-  [class*="icon-"].icon--round.icon--above,
-  [class*="icon-"].icon--round.icon--below {
+  [class*="icon-"].icon--round.icon--above, [class*="icon-"].icon--round.icon--below {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  [class^="icon-"].icon--round--ghost:before, [class^="icon-"].icon--round--ghost.icon--after:after,
-  [class*="icon-"].icon--round--ghost:before,
-  [class*="icon-"].icon--round--ghost.icon--after:after {
+  [class*="icon-"].icon--round--ghost:before, [class*="icon-"].icon--round--ghost.icon--after:after {
     background: transparent;
     color: #369;
     border: 1px solid #369; }
@@ -3081,15 +3040,12 @@ a:hover .icon--round {
 /**
  * Icon colors
  */
-[class^="icon-"].icon--blue:before,
 [class*="icon-"].icon--blue:before {
   color: #06f; }
 
-[class^="icon-"].icon--after.icon--blue:after,
 [class*="icon-"].icon--after.icon--blue:after {
   color: #06f; }
 
-[class^="icon-"].icon--round--blue,
 [class*="icon-"].icon--round--blue {
   /* &:hover:before {
 				background-color: rgba(nth($color, 2), .2);
@@ -3099,10 +3055,8 @@ a:hover .icon--round {
 			&.icon--round--ghost:hover:before {
 				background-color: rgba(nth($color, 2), .2);
 			} */ }
-  [class^="icon-"].icon--round--blue:before,
   [class*="icon-"].icon--round--blue:before {
     background-color: #06f; }
-  [class^="icon-"].icon--round--blue.icon--round--ghost:before,
   [class*="icon-"].icon--round--blue.icon--round--ghost:before {
     background-color: transparent;
     color: #06f;
@@ -3149,7 +3103,6 @@ a:hover .icon--round {
     width: calc(100% - 1rem); }
 
 ul.inline-grid,
-ul[class^="inline-grid--"],
 ul[class*="inline-grid--"] {
   margin-left: 0;
   padding-left: 0;
@@ -3275,8 +3228,11 @@ a,
 .list--plain {
   margin-left: 0;
   list-style: none; }
-  .list--plain--margin > * {
-    margin-bottom: 0.5rem; }
+  .list--plain--margin {
+    margin-left: 0;
+    list-style: none; }
+    .list--plain--margin > * {
+      margin-bottom: 0.5rem; }
 
 .pane__overlay {
   background: transparent;
@@ -3754,22 +3710,10 @@ a.color--white,
 .link.color--white {
   color: #fff; }
 
-/*	a.color--white:hover,
-	.link.color--white:hover {
-		color: $color-link-hover;
-		text-decoration: $text-decoration-link-hover;
-	} */
-.color--white {
-  /*	a:not(.button):hover,
-		.link:hover {
-			color: $color-link-hover;
-			text-decoration: $text-decoration-link-hover;
-		} */ }
-  .color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
-  .color--white a:not(.button),
-  .color--white .link {
-    color: #fff;
-    text-decoration: none; }
+.color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
+.color--white a:not(.button),
+.color--white .link {
+  color: #fff; }
 
 div.video,
 .entry-content-asset {
@@ -3840,13 +3784,25 @@ div.gallery {
         display: block;
         border: 0 !important; }
 
-ul[class^="flex--"],
+/***
+    title: Flex
+    section: Grid
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.
+    example:
+        <ul class="flex--2--bp-medium flex--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
+        </ul>
+***/
 ul[class*="flex--"] {
   margin-left: 0;
   padding-left: 0;
   list-style: none; }
 
-[class^="flex--"] > *,
 [class*="flex--"] > * {
   margin-bottom: 1rem; }
 
@@ -4272,6 +4228,20 @@ pre {
         <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Resolutions<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Cool?<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article><article><header><h3>Flex</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex--2--bp-medium flex--3--bp-large"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> I'm two columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> In low resolution<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> But three columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> In high<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Resolutions<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Cool?<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article><article><header><h3>Inline Grid</h3><p><p>Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element&#39;s font-size back to $font-size-default.</p>
 </p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-grid inline-grid--2--bp-medium"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -4313,7 +4283,7 @@ pre {
 </p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a box<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></article><article><header><h3>Card</h3><p><p>A simple box/card. Can be used with the bg-classes.</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></article><article><header><h3>Card</h3><p><p>A simple box/card. Should be used with the bg-classes (transparent by default).</p>
 </p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white"</span>&gt;</span>I'm a shadowed card<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container;</p>
 </p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>I'm centered<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
@@ -4343,7 +4313,7 @@ pre {
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article></section><section id="typography"><header><h2>Typography</h2></header><article><header><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;</p>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article></section><section id="typography"><header><h2>Typography</h2></header><article><header><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include heading;</p>
 </p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--4"</span>&gt;</span>I'm a H1 but look like a H4<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>I'm a normal H3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--1"</span>&gt;</span>I'm not a heading at all!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></article><article><header><h3>Text</h3><p><p>Various helper classes for working with text.</p>

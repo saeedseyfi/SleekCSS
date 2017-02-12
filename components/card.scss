@@ -1,7 +1,7 @@
 /***
     title: Card
     section: Layout
-    description: A simple box/card. Can be used with the bg-classes.
+    description: A simple box/card. Should be used with the bg-classes (transparent by default).
     example:
         <div class="card bg--white">I'm a shadowed card</div>
 ***/
@@ -13,7 +13,6 @@
 	display: block;
 	margin-bottom: $card-margin;
 	padding: $card-padding;
-
 	box-shadow: $card-shadow;
 }
 

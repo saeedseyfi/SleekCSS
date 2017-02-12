@@ -1,3 +1,17 @@
+/***
+    title: Flex
+    section: Grid
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include flex-grid(3)}.
+    example:
+        <ul class="flex--2--bp-medium flex--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
+        </ul>
+***/
 @mixin flex-grid ($num: 3, $gutter: $gutter-default) {
 	display: flex;
 	align-items: stretch;
@@ -22,7 +36,6 @@
 
 // Remove potential list style and margin
 // in case flex--* is used on an unordered list
-ul[class^="flex--"],
 ul[class*="flex--"] {
 	margin-left: 0;
 	padding-left: 0;
@@ -30,7 +43,6 @@ ul[class*="flex--"] {
 }
 
 // Make sure flex items have margin bottom(?)
-[class^="flex--"],
 [class*="flex--"] {
 	> * {
 		margin-bottom: $gutter-default;

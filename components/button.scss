@@ -13,7 +13,7 @@
 ***/
 @mixin button-background ($color) {
 	// If a gradient is specified
-	@if ($button-gradient > 0) {
+	@if ($button-gradient) {
 		background-image: linear-gradient($color, darken($color, $button-gradient));
 
 		// TODO: Something here? Eh? WTF is this comment supposed to mean? :P
@@ -150,19 +150,25 @@
 	}
 }
 
-@mixin button-ghost ($color: $button-color) {
+@mixin button-ghost ($color: $button-color, $opacity: $button-ghost-opacity) {
 	background-color: transparent;
 	color: $color;
 	border: $button-border-width $button-border-style $color;
 
 	&:hover {
-		background-color: $color;
+		@if ($opacity == 1) {
+			background-color: $color;
 
-		@if (lightness($color) > 70) {
-			color: invert($button-text-color);
+			@if (lightness($color) > 70) {
+				color: invert($button-text-color);
+			}
+			@else {
+				color: $button-text-color;
+			}
 		}
 		@else {
-			color: $button-text-color;
+			background-color: rgba($color, $opacity);
+			color: $color;
 		}
 	}
 }
