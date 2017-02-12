@@ -71,11 +71,10 @@
 	margin-left: 0;
 	list-style: none;
 
-	> * {
-
-	}
-
 	&--margin {
+		margin-left: 0;
+		list-style: none;
+
 		> * {
 			margin-bottom: $margin-small;
 		}
