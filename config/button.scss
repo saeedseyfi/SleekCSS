@@ -14,7 +14,7 @@ $button-border-radius: 2rem !default;
 
 // Button background
 $button-color: #06f !default;
-$button-ghost-opacity: .25; // Opacity of a ghost buttons bg on hover
+$button-ghost-opacity: 1 !default; // Opacity of a ghost buttons bg on hover
 $button-gradient: false !default; // false = no gradient, % = darken BG this much %
 $button-shadow: false !default; // shadow declaration or true for a default shadow
 

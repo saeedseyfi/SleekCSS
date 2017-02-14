@@ -230,8 +230,8 @@ dl.key-val dd:after {
   color: #06f;
   border: 2px solid #06f; }
   .button--ghost:hover {
-    background-color: rgba(0, 102, 255, 0.25);
-    color: #06f; }
+    background-color: #06f;
+    color: #fff; }
 
 .button--red {
   background-color: #600;
@@ -245,8 +245,8 @@ dl.key-val dd:after {
     color: #600;
     border: 2px solid #600; }
     .button--red.button--ghost:hover {
-      background-color: rgba(102, 0, 0, 0.25);
-      color: #600; }
+      background-color: #600;
+      color: #fff; }
 
 .button--small {
   font-size: 0.8rem;
