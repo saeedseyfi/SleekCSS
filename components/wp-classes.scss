@@ -1,7 +1,8 @@
 // Float classes
 .alignleft,
 .alignright,
-.alignnone {
+.alignnone,
+.aligncenter {
 //	display: block;
 //	width: 100%;
 //	margin-bottom: $margin-default;
@@ -21,6 +22,11 @@
 
 .clear {
 	clear: both;
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto $margin-default;
 }
 
 @media #{$bp-medium} {

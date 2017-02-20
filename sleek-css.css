@@ -1740,6 +1740,10 @@ div.video,
 .clear {
   clear: both; }
 
+.aligncenter {
+  display: block;
+  margin: 0 auto 1rem; }
+
 @media (min-width: 760px) {
   .alignleft {
     float: left;
